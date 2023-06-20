@@ -12,6 +12,7 @@ import { PanelComponent } from './panel/panel.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { MapsComponent } from './maps/maps.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { IngresosComponent } from './ingresos/ingresos.component';
     PanelComponent,
     LoginFormComponent,
     MapsComponent,
-    IngresosComponent
+    IngresosComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

@@ -19,4 +19,7 @@ export class NavComponent {
   goHome() {
     this.router.navigate(['/'])
   }
+  goNews() {
+    this.router.navigate(['/noticias'])
+  }
 }
