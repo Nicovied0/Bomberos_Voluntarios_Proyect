@@ -10,6 +10,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { FooterComponent } from './footer/footer.component';
 import { PanelComponent } from './panel/panel.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { MapsComponent } from './maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     PerfilComponent,
     FooterComponent,
     PanelComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
