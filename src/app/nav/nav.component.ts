@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
+  constructor(private router: Router) { }
 
+  goContacts() {
+    this.router.navigate(['/contacto'])
+  }
+  goProfile() {
+    this.router.navigate(['/perfil'])
+  }
+
+  goHome() {
+    this.router.navigate(['/'])
+  }
 }
