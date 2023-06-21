@@ -10,8 +10,12 @@ export class ThemeService {
     const currentTheme = this.themeSubject.getValue();
     const newTheme = currentTheme === 'claro' ? 'oscuro' : 'claro';
     this.themeSubject.next(newTheme);
+    this.updateRootStyles(newTheme);
+  }
 
-
-    console.log(newTheme)
+  public updateRootStyles(theme: string): void {
+    const root = document.documentElement;
+    root.style.setProperty('--background-color', theme === 'claro' ? 'white' : 'black');
+    root.style.setProperty('--text-color', theme === 'claro' ? 'black' : 'white');
   }
 }

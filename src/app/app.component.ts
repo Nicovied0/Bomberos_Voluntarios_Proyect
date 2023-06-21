@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './Services/Theme.service';
 
 @Component({
@@ -6,9 +6,12 @@ import { ThemeService } from './Services/Theme.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app-bomberos';
-  constructor(private localeTheme: ThemeService) { }
+export class AppComponent implements OnInit {
+  constructor(private themeService: ThemeService) { }
 
-  
+  ngOnInit() {
+    this.themeService.theme$.subscribe(theme => {
+      this.themeService.updateRootStyles(theme);
+    });
+  }
 }
