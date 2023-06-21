@@ -13,6 +13,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { MapsComponent } from './maps/maps.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
 import { NewsComponent } from './news/news.component';
+import { ThemeService } from './Services/Theme.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { NewsComponent } from './news/news.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ThemeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

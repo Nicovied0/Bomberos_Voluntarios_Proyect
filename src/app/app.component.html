@@ -1,5 +1,5 @@
-<div class="bodyInAPP">
-  <app-nav />
+<div [ngClass]="themeClass" class="bodyInAPP" >
+  <app-nav [ngClass]="themeClass" />
   <router-outlet />
   <app-footer />
 </div>

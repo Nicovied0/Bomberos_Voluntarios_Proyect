@@ -1,6 +1,15 @@
-:root {
+.claro-theme {
   --background-color: white;
   --text-color: black;
+  --background-color-nav: black;
+  --text-color-nav: white;
+}
+
+.oscuro-theme {
+  --background-color: black;
+  --text-color: white;
+  --background-color-nav: white;
+  --text-color-nav: black;
 }
 
 .bodyInAPP {
