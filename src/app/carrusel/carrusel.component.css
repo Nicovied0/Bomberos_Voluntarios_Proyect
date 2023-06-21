@@ -1,0 +1,39 @@
+/* .carousel-item {
+  display: flex;
+  justify-content: center;
+} */
+
+.image-container {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+.title {
+  font:1.5rem "raleway-bold", sans-serif;
+  letter-spacing: -1px;
+  color: white;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.6);
+}
+
+.divInterno {
+  z-index: 5;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+}
+.description{
+  margin-top: 2rem;
+  font:1rem "raleway-bold", sans-serif;
+  color: white;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* aplicar media de max heigth:20rem si esta en fono */

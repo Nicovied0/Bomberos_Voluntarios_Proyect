@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { IngresosComponent } from './ingresos/ingresos.component';
 import { NewsComponent } from './news/news.component';
 import { ThemeService } from './Services/Theme.service';
 import { NoFoundComponent } from './no-found/no-found.component';
+import { CarruselComponent } from './carrusel/carrusel.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,13 @@ import { NoFoundComponent } from './no-found/no-found.component';
     MapsComponent,
     IngresosComponent,
     NewsComponent,
-    NoFoundComponent
+    NoFoundComponent,
+    CarruselComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule.forRoot()
   ],
   providers: [
     ThemeService
