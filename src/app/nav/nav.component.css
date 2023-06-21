@@ -1,6 +1,13 @@
 .nav{
   background-color: var(--background-color-nav);
   color: var(--text-color-nav);
+
+}
+.textLink{
+  text-transform:uppercase;
 }
 
-
+.textLink:hover{
+  cursor: pointer;
+  color: var(--text-color-secondary);
+}
