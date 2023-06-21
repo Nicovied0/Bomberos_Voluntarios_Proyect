@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThemeService } from '../Services/Theme.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private themeService: ThemeService) { }
+  public themeLocal = false
 
   goContacts() {
     this.router.navigate(['/contacto'])
@@ -21,5 +23,17 @@ export class NavComponent {
   }
   goNews() {
     this.router.navigate(['/noticias'])
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+    this.themeService.theme$.subscribe(theme => {
+      if (theme === "claro") {
+        this.themeLocal = false;
+      }
+      if (theme === "oscuro") {
+        this.themeLocal = true;
+      }
+    });
   }
 }
