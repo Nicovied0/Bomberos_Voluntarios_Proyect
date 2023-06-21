@@ -14,6 +14,7 @@ import { MapsComponent } from './maps/maps.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
 import { NewsComponent } from './news/news.component';
 import { ThemeService } from './Services/Theme.service';
+import { NoFoundComponent } from './no-found/no-found.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ThemeService } from './Services/Theme.service';
     LoginFormComponent,
     MapsComponent,
     IngresosComponent,
-    NewsComponent
+    NewsComponent,
+    NoFoundComponent
   ],
   imports: [
     BrowserModule,
