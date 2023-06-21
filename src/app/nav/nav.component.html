@@ -1,27 +1,22 @@
 <nav class="nav">
-  <img />
-  <h2 (click)="goHome()">Inicio</h2>
-  <h2 (click)="goNews()">Noticias</h2>
-  <h2 (click)="goContacts()">Contacto</h2>
-  <h2 (click)="goProfile()">Perfil</h2>
   <div>
-    <h2>redes</h2>
+    <img />
+    <h2 (click)="goHome()">Inicio</h2>
+    <h2 (click)="goNews()">Noticias</h2>
+    <h2 (click)="goContacts()">Contacto</h2>
+    <h2 (click)="goProfile()">Perfil</h2>
   </div>
-  <i></i>
-  <img
-    *ngIf="themeLocal"
-    width="50"
-    height="50"
-    src="https://img.icons8.com/ios-glyphs/30/sun--v1.png"
-    alt="sun--v1"
-    (click)="toggleTheme()"
-  />
-  <img
-    *ngIf="!themeLocal"
-    width="50"
-    height="50"
-    src="https://img.icons8.com/ios-filled/50/bright-moon.png"
-    alt="bright-moon"
-    (click)="toggleTheme()"
-  />
+  <div>
+    <i class="fab fa-instagram"></i>
+    <i class="fa-brands fa-facebook"></i>
+  </div>
+  <div>
+    <i *ngIf="!themeLocal" class="bi bi-moon-stars" (click)="toggleTheme()"></i>
+
+    <i
+      *ngIf="themeLocal"
+      class="bi bi-brightness-high-fill"
+      (click)="toggleTheme()"
+    ></i>
+  </div>
 </nav>

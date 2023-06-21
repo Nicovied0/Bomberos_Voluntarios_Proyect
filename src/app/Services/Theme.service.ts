@@ -15,5 +15,3 @@ export class ThemeService {
     console.log(newTheme)
   }
 }
-
-//

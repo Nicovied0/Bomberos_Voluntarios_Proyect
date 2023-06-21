@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './Services/Theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-bomberos';
+  constructor(private localeTheme: ThemeService) { }
+
+  
 }
