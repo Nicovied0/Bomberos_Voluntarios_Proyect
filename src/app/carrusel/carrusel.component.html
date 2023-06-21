@@ -4,8 +4,7 @@
       <img [src]="image.url" alt="Imagen de producto" class="img" />
       <div class="divInterno">
         <h2 class="title">{{image.title}}</h2>
-        <!-- <p class="description">{{image.description}}</p> -->
-        <a class="description" href="mailto:{{image.description}}">{{image.description}}</a>
+        <a *ngIf="image.description === 'email.ejemplo@gmail.com'" class="description" href="mailto:{{image.description}}">{{image.description}}</a>
       </div>
     </div>
   </slide>

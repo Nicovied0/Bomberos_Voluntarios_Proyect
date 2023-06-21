@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CarruselComponent {
   images = [
-    { url: '../../assets/CARTEL.png', title: 'Producto 1', description: 'Descripción del producto 1' },
+    { url: '../../assets/CARTEL.png', title: 'Inscripciones', description: 'Descripción de inscripciones' },
     { url: '../../assets/CARTEL3.jpg', title: 'Correo Para Aspirantes', description: 'email.ejemplo@gmail.com' },
     { url: '../../assets/CARTEL4.jpg', title: 'Correo Para Aspirantes', description: 'email.ejemplo@gmail.com' },
   ];
