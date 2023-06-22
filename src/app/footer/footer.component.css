@@ -6,6 +6,37 @@
   width: 80%;
   border-top: 2px solid rgba(150, 150, 150, 0.1);
 }
-.imgLogo{
+
+.imgLogo {
   height: 100px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.iconRed {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.divRedesYhr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.divInfo {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.p {
+  text-align: center;
 }
