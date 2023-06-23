@@ -3,20 +3,24 @@
   color: var(--text-color-nav);
 
 }
-.nav2{
+
+.nav2 {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
 }
-.logoNav{
-  height: 2rem;
+
+.logoNav {
+  height: 4rem;
 }
 
 .textLink {
   text-transform: uppercase;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
+
+
 
 .textLink:hover {
   cursor: pointer;
@@ -53,3 +57,32 @@
   cursor: pointer;
 }
 
+/* medias de menu hamburguesa */
+.links {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .links {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    padding: 2rem 1rem;
+  }
+
+  #hamburgerMenu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 800px) {
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+  .iconRed{
+    margin: 0.5rem;
+  }
+}
