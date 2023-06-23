@@ -1,7 +1,7 @@
 .nav {
   background-color: var(--background-color-nav);
   color: var(--text-color-nav);
-
+  height: 80px;
 }
 
 .nav2 {
@@ -9,15 +9,17 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  align-items: stretch;
 }
 
 .logoNav {
-  height: 4rem;
+  height: 3.5rem;
 }
 
 .textLink {
   text-transform: uppercase;
   margin: 0 0.5rem;
+  font-size: 1.3rem;
 }
 
 
@@ -69,7 +71,7 @@
   }
 
   .nav {
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
   }
 
   #hamburgerMenu {
@@ -82,7 +84,8 @@
     display: flex;
     align-items: center;
   }
-  .iconRed{
+
+  .iconRed {
     margin: 0.5rem;
   }
 }
