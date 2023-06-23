@@ -1,22 +1,39 @@
 <nav class="nav">
-  <div>
-    <img />
-    <h2 (click)="goHome()" class="textLink">Inicio</h2>
-    <h2 (click)="goNews()" class="textLink">Noticias</h2>
-    <h2 (click)="goContacts()" class="textLink">Contacto</h2>
-    <h2 (click)="goProfile()" class="textLink">Perfil</h2>
-  </div>
-  <div>
-    <i class="fab fa-instagram"></i>
-    <i class="fa-brands fa-facebook"></i>
-  </div>
-  <div>
-    <i *ngIf="!themeLocal" class="bi bi-moon-stars" (click)="toggleTheme()"></i>
+  <div class="nav2">
+    <!-- <div class="links">
+      <img src="../../assets/Logo.svg" class="logoNav" />
+      <h2 (click)="goHome()" class="textLink">Inicio</h2>
+      <h2 (click)="goNews()" class="textLink">Noticias</h2>
+      <h2 (click)="goContacts()" class="textLink">Contacto</h2>
+      <h2 (click)="goProfile()" class="textLink">Perfil</h2>
+    </div> -->
+    <app-hamburger-menu></app-hamburger-menu>
+    <div class="buttons">
+      <a
+        href="https://www.instagram.com/bomberosvoluntariosstacatalina/"
+        target="_blank"
+        class="a"
+      >
+        <i class="fab fa-instagram iconRed"></i
+      ></a>
+      <a
+        href="https://www.facebook.com/bomberosvoluntarios.stacatalinaholmberg"
+        target="_blank"
+        class="a"
+      >
+        <i class="fa-brands fa-facebook iconRed"></i
+      ></a>
+      <i
+        *ngIf="!themeLocal"
+        class="bi bi-moon-stars iconRed iconTheme"
+        (click)="toggleTheme()"
+      ></i>
 
-    <i
-      *ngIf="themeLocal"
-      class="bi bi-brightness-high-fill"
-      (click)="toggleTheme()"
-    ></i>
+      <i
+        *ngIf="themeLocal"
+        class="bi bi-brightness-high-fill iconRed iconTheme"
+        (click)="toggleTheme()"
+      ></i>
+    </div>
   </div>
 </nav>

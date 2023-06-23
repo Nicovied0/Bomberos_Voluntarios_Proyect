@@ -1,0 +1,14 @@
+<div class="hamburger" (click)="toggleMenu()">
+  <div class="_layer -top"></div>
+  <div class="_layer -mid"></div>
+  <div class="_layer -bottom"></div>
+</div>
+
+<nav class="menuppal" [class.is_active]="menuVisible">
+  <ul>
+    <li><a (click)="goHome()">Inicio</a></li>
+    <li><a (click)="goNews()">Noticias</a></li>
+    <li><a (click)="goContacts()">Contacto</a></li>
+    <li><a (click)="goProfile()">Perfil</a></li>
+  </ul>
+</nav>

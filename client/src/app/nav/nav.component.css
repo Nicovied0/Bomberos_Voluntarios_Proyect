@@ -1,13 +1,55 @@
-.nav{
+.nav {
   background-color: var(--background-color-nav);
   color: var(--text-color-nav);
 
 }
-.textLink{
-  text-transform:uppercase;
+.nav2{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.logoNav{
+  height: 2rem;
 }
 
-.textLink:hover{
+.textLink {
+  text-transform: uppercase;
+  margin: 0 1rem;
+}
+
+.textLink:hover {
   cursor: pointer;
   color: var(--text-color-secondary);
 }
+
+.a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.a:link {
+  text-decoration: none;
+  color: var(--text-color-nav);
+}
+
+.a:visited {
+  text-decoration: none;
+  color: var(--text-color-nav);
+}
+
+.a:hover {
+  color: var(--text-color-secondary);
+}
+
+
+
+.iconRed {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.iconTheme {
+  cursor: pointer;
+}
+

@@ -17,6 +17,7 @@ import { NewsComponent } from './news/news.component';
 import { ThemeService } from './Services/Theme.service';
 import { NoFoundComponent } from './no-found/no-found.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
+import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CarruselComponent } from './carrusel/carrusel.component';
     IngresosComponent,
     NewsComponent,
     NoFoundComponent,
-    CarruselComponent
+    CarruselComponent,
+    HamburgerMenuComponent
   ],
   imports: [
     BrowserModule,
