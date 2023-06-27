@@ -28,4 +28,49 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/", async (req, res) => {
+  try {
+    const {
+      type,
+      brand,
+      model,
+      year,
+      color,
+      image,
+      patent,
+      fuelType,
+      mileage,
+      tankSize,
+      amountOfFuel,
+      lastRecharge,
+      lastMaintenance,
+      lastServiceProgramed,
+    } = req.body;
+
+    const newVehicle = new Vehicles({
+      type,
+      brand,
+      model,
+      year,
+      color,
+      image,
+      patent,
+      fuelType,
+      mileage,
+      tankSize,
+      amountOfFuel,
+      lastRecharge,
+      lastMaintenance,
+      lastServiceProgramed,
+    });
+
+    const savedVehicle = await newVehicle.save();
+    console.log("Se llamó a la ruta POST /vehicles");
+    res.status(201).json(savedVehicle);
+  } catch (error) {
+    console.error("Error al crear el vehículo", error);
+    res.status(500).json({ error: "Error al crear el vehículo" });
+  }
+});
+
 module.exports = router;
