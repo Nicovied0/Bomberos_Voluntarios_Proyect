@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const VehiclesSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    required: true,
+  },
   brand: {
     type: String,
     required: true,
@@ -17,9 +21,13 @@ const VehiclesSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  imagen: {
-    type:String,
-    required: true
+  image: {
+    type: String,
+    required: true,
+  },
+  patent: {
+    type: String,
+    required: true,
   },
   mileage: {
     type: Number,
@@ -32,6 +40,18 @@ const VehiclesSchema = new mongoose.Schema({
   amountOfFuel: {
     type: Number,
     default: 0,
+  },
+  lastRecharge: {
+    type: String,
+    default: "No se Ingreso Dato",
+  },
+  lastMaintenance: {
+    type: String,
+    default: "No se Ingreso Dato",
+  },
+  lastServiceProgramed: {
+    type: String,
+    default: "No se Ingreso Dato",
   },
   createdAt: {
     type: Date,
