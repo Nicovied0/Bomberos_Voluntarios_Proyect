@@ -2,3 +2,7 @@
   font-size: 20rem;
   color: #0d47a1;
 }
+.contenedor{
+  min-height: 80vh;
+}
+
