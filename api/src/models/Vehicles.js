@@ -57,6 +57,10 @@ const VehiclesSchema = new mongoose.Schema({
     type: String,
     default: "No se Ingreso Dato",
   },
+  waterCapacity: {
+    type: Number,
+    default: 0,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

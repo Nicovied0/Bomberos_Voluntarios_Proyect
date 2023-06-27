@@ -45,6 +45,7 @@ router.post("/", async (req, res) => {
       lastRecharge,
       lastMaintenance,
       lastServiceProgramed,
+      waterCapacity
     } = req.body;
 
     const newVehicle = new Vehicles({
@@ -62,6 +63,7 @@ router.post("/", async (req, res) => {
       lastRecharge,
       lastMaintenance,
       lastServiceProgramed,
+      waterCapacity
     });
 
     const savedVehicle = await newVehicle.save();
