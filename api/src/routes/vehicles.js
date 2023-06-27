@@ -14,4 +14,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const vehicle = await Vehicles.findById(req.params.id);
+    if (!vehicle) {
+      return res.status(404).json({ error: "Vehículo no encontrado" });
+    }
+    console.log(`Se llamó a la ruta /vehicles/${req.params.id}`);
+    res.json(vehicle);
+  } catch (error) {
+    console.error("Error al obtener el vehículo", error);
+    res.status(500).json({ error: "Error al obtener el vehículo" });
+  }
+});
+
 module.exports = router;
