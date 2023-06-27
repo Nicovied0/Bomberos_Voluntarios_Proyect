@@ -29,6 +29,10 @@ const VehiclesSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  fuelType: {
+    type: String,
+    required: true,
+  },
   mileage: {
     type: Number,
     default: 0,
