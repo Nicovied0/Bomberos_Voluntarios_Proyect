@@ -2,8 +2,10 @@
   --background-color: white;
   --text-color: black;
   --background-color-nav: black;
-  --text-color-nav: white;
-  --text-color-secondary:#fdc501
+  --text-color-nav: rgb(255, 255, 255);
+  --text-color-secondary:#fdc501;
+  --footer-background-color: #0F1215;
+  --text-color-footer: white;
 }
 
 .oscuro-theme {
@@ -11,7 +13,9 @@
   --text-color: white;
   --background-color-nav: white;
   --text-color-nav: black;
-  --text-color-secondary:#fdc501
+  --text-color-secondary:#fdc501;
+  --footer-background-color: #000000;
+  --text-color-footer: white;
 }
 
 .bodyInAPP {
@@ -19,3 +23,5 @@
   background-color: var(--background-color);
   color: var(--text-color);
 }
+
+
