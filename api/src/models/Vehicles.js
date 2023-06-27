@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+const { urlencoded } = require("express");
+const mongoose = require("mongoose");
 
 const VehiclesSchema = new mongoose.Schema({
   brand: {
@@ -16,6 +17,10 @@ const VehiclesSchema = new mongoose.Schema({
   color: {
     type: String,
     required: true,
+  },
+  imagen: {
+    type:String,
+    required: true
   },
   mileage: {
     type: Number,
