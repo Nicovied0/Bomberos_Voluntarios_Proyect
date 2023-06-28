@@ -7,3 +7,11 @@ SPA para Bomberos Voluntarios de Santa Catalina, en la cual tiene apartados de c
 **Client:** Angular, Bootstrap, Css.
 
 **Api:** Node, Express, MongoDb, Firebase.
+
+### Datos del `.env` 
+
+USER=adminBBVV
+
+PASS=TPryUkoJef4Rskbu
+
+NAME_DB=app_bomberos
