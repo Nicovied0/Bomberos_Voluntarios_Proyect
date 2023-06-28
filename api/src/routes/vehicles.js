@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
       lastRecharge,
       lastMaintenance,
       lastServiceProgramed,
-      waterCapacity
+      waterCapacity,
     } = req.body;
 
     const newVehicle = new Vehicles({
@@ -63,7 +63,7 @@ router.post("/", async (req, res) => {
       lastRecharge,
       lastMaintenance,
       lastServiceProgramed,
-      waterCapacity
+      waterCapacity,
     });
 
     const savedVehicle = await newVehicle.save();
@@ -72,6 +72,60 @@ router.post("/", async (req, res) => {
   } catch (error) {
     console.error("Error al crear el vehículo", error);
     res.status(500).json({ error: "Error al crear el vehículo" });
+  }
+});
+
+router.put("/:id", async (req, res) => {
+  try {
+    const {
+      type,
+      brand,
+      model,
+      year,
+      color,
+      image,
+      patent,
+      fuelType,
+      mileage,
+      tankSize,
+      amountOfFuel,
+      lastRecharge,
+      lastMaintenance,
+      lastServiceProgramed,
+      waterCapacity,
+    } = req.body;
+
+    const updatedVehicle = await Vehicles.findByIdAndUpdate(
+      req.params.id,
+      {
+        type,
+        brand,
+        model,
+        year,
+        color,
+        image,
+        patent,
+        fuelType,
+        mileage,
+        tankSize,
+        amountOfFuel,
+        lastRecharge,
+        lastMaintenance,
+        lastServiceProgramed,
+        waterCapacity,
+      },
+      { new: true }
+    );
+
+    if (!updatedVehicle) {
+      return res.status(404).json({ error: "Vehículo no encontrado" });
+    }
+
+    console.log(`Se llamó a la ruta PUT /vehicles/${req.params.id}`);
+    res.json(updatedVehicle);
+  } catch (error) {
+    console.error("Error al modificar el vehículo", error);
+    res.status(500).json({ error: "Error al modificar el vehículo" });
   }
 });
 

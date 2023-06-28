@@ -6,10 +6,14 @@ const UsersSchema = new mongoose.Schema({
     required: true,
   },
   imagen: {
-    type:String,
-    required: true
+    type: String,
+    required: true,
   },
- 
+  email: {
+    type: String,
+    required: true,
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,

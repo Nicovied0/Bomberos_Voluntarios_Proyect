@@ -17,6 +17,9 @@ const VehiclesSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  movilNumber: {
+    type: Number,
+  },
   color: {
     type: String,
     required: true,
@@ -24,6 +27,7 @@ const VehiclesSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
+    default: "https://img.icons8.com/color/720/fire-truck.png",
   },
   patent: {
     type: String,
