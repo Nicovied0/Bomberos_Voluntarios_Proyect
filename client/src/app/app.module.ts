@@ -18,6 +18,7 @@ import { ThemeService } from './Services/Theme.service';
 import { NoFoundComponent } from './no-found/no-found.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.componen
     NewsComponent,
     NoFoundComponent,
     CarruselComponent,
-    HamburgerMenuComponent
+    HamburgerMenuComponent,
+    VehiclesComponent
   ],
   imports: [
     BrowserModule,
