@@ -19,6 +19,7 @@ import { NoFoundComponent } from './no-found/no-found.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { VehicleService } from './Services/Vehicles.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
     CarouselModule.forRoot()
   ],
   providers: [
-    ThemeService
+    ThemeService,
+    VehicleService
   ],
   bootstrap: [AppComponent]
 })
