@@ -6,7 +6,7 @@ export class VehicleService {
 
   constructor(private http: HttpClient) { }
 
-  getVehicles() {
+   getVehicles() {
     const url = `http://localhost:3001/vehicles`
     return this.http.get<any>(url).toPromise()
       .then((vehicle: any[]) => {

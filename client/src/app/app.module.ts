@@ -43,12 +43,13 @@ import { VehicleService } from './Services/Vehicles.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     CarouselModule.forRoot()
   ],
   providers: [
     ThemeService,
     VehicleService,
-    HttpClientModule
+
   ],
   bootstrap: [AppComponent]
 })
