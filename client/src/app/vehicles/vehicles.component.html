@@ -1,3 +1,4 @@
-<div>
-  <h2></h2>
+<div *ngFor="let vehicle of vehicles" style="padding: 2rem">
+  <h2>{{ vehicle.type }}: {{ vehicle.brand }}</h2>
+  <img src="{{ vehicle.image }}" style="width: 100%" />
 </div>
