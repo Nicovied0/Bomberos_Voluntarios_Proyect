@@ -1,8 +1,6 @@
-<div>
-  <h2 *ngIf="activeVehicles">Moviles</h2>
-  <div *ngFor="let vehicle of vehicles" style="padding: 2rem">
+<div style="padding: 2rem">
+  <div *ngFor="let vehicle of vehicles" s>
     <h2>{{ vehicle.type }}: {{ vehicle.brand }}</h2>
     <img src="{{ vehicle.image }}" style="width: 100%" />
   </div>
-  <button (click)="seeVehicles()">x</button>
 </div>
