@@ -11,5 +11,8 @@ export class HomeComponent {
   goHistory() {
     this.router.navigate(['/historia'])
   }
+  goMoviles() {
+    this.router.navigate(['/moviles'])
+  }
 
 }
