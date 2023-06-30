@@ -6,6 +6,7 @@
   --text-color-secondary:#fdc501;
   --footer-background-color: #0F1215;
   --text-color-footer: white;
+  --text-seguirLeyendo:#0F1215
 }
 
 .oscuro-theme {
@@ -16,6 +17,7 @@
   --text-color-secondary:#fdc501;
   --footer-background-color: #000000;
   --text-color-footer: white;
+  --text-seguirLeyendo:#fdc501
 }
 
 .bodyInAPP {

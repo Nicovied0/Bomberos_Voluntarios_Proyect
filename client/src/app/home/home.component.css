@@ -1,4 +1,11 @@
-.contenedor{
+.contenedor {
   min-height: 80vh;
 }
 
+.buttonGoHistory {
+  color: var(--text-seguirLeyendo);
+  font-size: large;
+  text-decoration-line: none;
+  font-weight: 600;
+  cursor: pointer;
+}
