@@ -24,6 +24,9 @@ export class NavComponent {
   goNews() {
     this.router.navigate(['/noticias'])
   }
+  goHistory() {
+    this.router.navigate(['/historia'])
+  }
 
   toggleTheme() {
     this.themeService.toggleTheme();

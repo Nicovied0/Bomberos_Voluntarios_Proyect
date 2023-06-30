@@ -5,11 +5,13 @@ import { NewsComponent } from './news/news.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { HomeComponent } from './home/home.component';
 import { NoFoundComponent } from './no-found/no-found.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'noticias', component: NewsComponent },
   { path: 'perfil', component: PerfilComponent },
+  { path: 'historia', component: HistoryComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: NoFoundComponent },
 
