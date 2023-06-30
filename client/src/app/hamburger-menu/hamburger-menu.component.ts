@@ -26,6 +26,11 @@ export class HamburgerMenuComponent {
     this.router.navigate(['/noticias'])
     this.menuVisible = false
   }
+  goHistory() {
+    this.router.navigate(['/historia'])
+    this.menuVisible = false
+  }
+
 
   toggleMenu() {
     this.menuVisible = !this.menuVisible;
