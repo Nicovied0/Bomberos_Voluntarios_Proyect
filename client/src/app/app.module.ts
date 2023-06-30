@@ -21,6 +21,8 @@ import { CarruselComponent } from './carrusel/carrusel.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { VehicleService } from './Services/Vehicles.service';
+import { HistoryComponent } from './history/history.component';
+import { MovilesComponent } from './moviles/moviles.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { VehicleService } from './Services/Vehicles.service';
     NoFoundComponent,
     CarruselComponent,
     HamburgerMenuComponent,
-    VehiclesComponent
+    VehiclesComponent,
+    HistoryComponent,
+    MovilesComponent
   ],
   imports: [
     BrowserModule,
