@@ -1,6 +1,7 @@
-<div style="padding: 2rem">
-  <div *ngFor="let vehicle of vehicles" s>
+<div class="contenedor">
+  <div *ngFor="let vehicle of vehicles"  class="div_caja">
     <h2>{{ vehicle.type }}: {{ vehicle.brand }}</h2>
-    <img src="{{ vehicle.image }}" style="width: 100%" />
+    <img src="{{ vehicle.image }}" class="img" />
+    <div></div>
   </div>
 </div>
