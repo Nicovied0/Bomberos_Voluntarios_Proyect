@@ -14,8 +14,6 @@ export class VehiclesComponent {
   public activeVehicles: boolean = false
 
 
-
-
   // seeVehicles() {
   //   this.activeVehicles = !this.activeVehicles
   //   this.vehicleService.getVehicles().then((results) => {
@@ -39,6 +37,6 @@ export class VehiclesComponent {
 
   verDetalle(id: number) {
     console.log(id)
-    this.router.navigate(['/producto', id]);
+    this.router.navigate(['/moviles', id]);
   }
 }
