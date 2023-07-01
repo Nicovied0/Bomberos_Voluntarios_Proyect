@@ -2,6 +2,7 @@
   background-color: var(--background-color-nav);
   color: var(--text-color-nav);
   height: 80px;
+  z-index: 4;
 }
 
 .nav2 {

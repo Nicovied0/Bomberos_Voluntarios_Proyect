@@ -1,5 +1,8 @@
 <div [ngClass]="themeClass" class="bodyInAPP">
-  <app-nav [ngClass]="themeClass" style="width: 100%; position: fixed" />
+  <app-nav
+    [ngClass]="themeClass"
+    style="width: 100%; position: fixed; z-index: 20"
+  />
   <router-outlet />
   <app-footer />
 </div>

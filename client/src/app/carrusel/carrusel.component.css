@@ -6,7 +6,7 @@
 
 .img {
   width: 100%;
-  max-height: 20rem;
+  height: 20rem;
   object-fit: cover;
   filter: brightness(0.3);
 }
@@ -39,6 +39,7 @@
 .carousel-indicators .active {
   background-color: #fdc501;
 }
+
 .image-container {
   width: 100%;
   height: auto;
@@ -72,4 +73,3 @@
   color: white;
   text-shadow: 0 1px 20px rgba(0, 0, 0, 0.6);
 }
-
