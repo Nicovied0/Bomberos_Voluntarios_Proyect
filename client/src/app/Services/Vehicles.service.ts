@@ -17,8 +17,13 @@ export class VehicleService {
   getVehiclesById(id: any) {
     const url = `http://localhost:3001/vehicles/${id}`
     return this.http.get<any>(url).toPromise()
-      .then((vehicle: any[]) => {
-        return vehicle.filter((vehicle: any) => vehicle.actived !== false);
+      .then((vehicle: any) => {
+        if (vehicle && vehicle.actived !== false) {
+          return vehicle
+        } else {
+          return null
+        }
       });
+
   }
 }
