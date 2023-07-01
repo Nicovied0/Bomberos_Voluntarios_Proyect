@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { VehicleService } from '../Services/Vehicles.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-vehicles',
   templateUrl: './vehicles.component.html',
@@ -8,7 +8,7 @@ import { VehicleService } from '../Services/Vehicles.service';
 })
 export class VehiclesComponent {
 
-  constructor(private vehicleService: VehicleService) { }
+  constructor(private vehicleService: VehicleService, private router: Router) { }
 
   public vehicles: any = []
   public activeVehicles: boolean = false
@@ -35,5 +35,10 @@ export class VehiclesComponent {
     }).catch((error) => {
       console.error('Error al obtener los repositorios', error);
     })
+  }
+
+  verDetalle(id: number) {
+    console.log(id)
+    this.router.navigate(['/producto', id]);
   }
 }
