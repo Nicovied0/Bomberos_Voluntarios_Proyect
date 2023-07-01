@@ -23,6 +23,7 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { VehicleService } from './Services/Vehicles.service';
 import { HistoryComponent } from './history/history.component';
 import { MovilesComponent } from './moviles/moviles.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MovilesComponent } from './moviles/moviles.component';
     HamburgerMenuComponent,
     VehiclesComponent,
     HistoryComponent,
-    MovilesComponent
+    MovilesComponent,
+    VehicleComponent
   ],
   imports: [
     BrowserModule,
