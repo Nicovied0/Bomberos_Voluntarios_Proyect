@@ -13,17 +13,6 @@ export class VehiclesComponent {
   public vehicles: any = []
   public activeVehicles: boolean = false
 
-
-  // seeVehicles() {
-  //   this.activeVehicles = !this.activeVehicles
-  //   this.vehicleService.getVehicles().then((results) => {
-  //     this.vehicles = results
-  //     console.log(this.vehicles)
-  //   }).catch((error) => {
-  //     console.error('Error al obtener los repositorios', error);
-  //   })
-  // }
-
   //  mostrar directamente en pagina
   ngOnInit() {
     this.vehicleService.getVehicles().then((results) => {
@@ -35,8 +24,8 @@ export class VehiclesComponent {
     })
   }
 
-  verDetalle(id: number) {
-    console.log(id)
-    this.router.navigate(['/moviles', id]);
+  verDetalle(_id: any) {
+    console.log(_id)
+    this.router.navigate(['/moviles', _id]);
   }
 }

@@ -16,14 +16,14 @@ export class VehicleComponent {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      const productId = params.get('id');
-      if (productId) {
-        this.getVehicle(productId);
+      const vehicleId = params.get('id');
+      if (vehicleId) {
+        this.getVehicle(vehicleId);
       }
     });
   }
 
-  getVehicle(id: string) {
+  getVehicle(id: any) {
     this.vehicleService.getVehiclesById(id)
       .then(vehicle => {
         console.log(vehicle);
