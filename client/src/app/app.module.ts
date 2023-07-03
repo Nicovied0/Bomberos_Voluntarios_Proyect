@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ThemeService } from './Services/Theme.service';
+import { VehicleService } from './Services/Vehicles.service';
+import { LoginService } from './Services/Login.service';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,12 +20,10 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { MapsComponent } from './maps/maps.component';
 import { IngresosComponent } from './ingresos/ingresos.component';
 import { NewsComponent } from './news/news.component';
-import { ThemeService } from './Services/Theme.service';
 import { NoFoundComponent } from './no-found/no-found.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
-import { VehicleService } from './Services/Vehicles.service';
 import { HistoryComponent } from './history/history.component';
 import { MovilesComponent } from './moviles/moviles.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
@@ -44,7 +47,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
     VehiclesComponent,
     HistoryComponent,
     MovilesComponent,
-    VehicleComponent
+    VehicleComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
   providers: [
     ThemeService,
     VehicleService,
+    LoginService
 
   ],
   bootstrap: [AppComponent]
