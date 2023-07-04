@@ -1,6 +1,23 @@
-<div>
-  <form>
-    <div><label>Email </label> <input type="email" /></div>
-    <div><label>Pass </label> <input type="password" /></div>
-  </form>
-</div>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="formData.email"
+      required
+    />
+  </div>
+  <div>
+    <label for="password">Contraseña:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="formData.password"
+      required
+    />
+  </div>
+  <button type="submit">Iniciar sesión</button>
+</form>
