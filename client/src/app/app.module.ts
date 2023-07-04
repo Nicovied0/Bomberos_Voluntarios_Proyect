@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
 
 import { ThemeService } from './Services/Theme.service';
 import { VehicleService } from './Services/Vehicles.service';
 import { AuthService } from './Services/Auth.service';
 
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
@@ -55,6 +57,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     CarouselModule.forRoot()
   ],
   providers: [
