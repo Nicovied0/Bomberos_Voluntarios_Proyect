@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ThemeService } from './Services/Theme.service';
 import { VehicleService } from './Services/Vehicles.service';
-import { LoginService } from './Services/Login.service';
+import { AuthService } from './Services/Auth.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -58,7 +58,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
   providers: [
     ThemeService,
     VehicleService,
-    LoginService
+    AuthService
 
   ],
   bootstrap: [AppComponent]
