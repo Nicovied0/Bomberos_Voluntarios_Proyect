@@ -40,6 +40,38 @@ router.post("/register", (req, res) => {
     });
 });
 
+// Ruta para el inicio de sesión
+router.post("/login", (req, res) => {
+  const { email, password } = req.body;
+
+  // Verificar si el email existe
+  User.findOne({ email: email })
+    .then((user) => {
+      if (!user) {
+        return res
+          .status(404)
+          .json({ message: "Email o contraseña incorrectos" });
+      }
+
+      // Verificar la contraseña
+      const passwordMatch = bcrypt.compareSync(password, user.password);
+      if (!passwordMatch) {
+        return res
+          .status(401)
+          .json({ message: "Email o contraseña incorrectos" });
+      }
+
+      // Generar el token de acceso JWT
+      const token = jwt.sign({ userId: user._id }, "secreto", {
+        expiresIn: "1h",
+      });
+
+      res.status(200).json({ token: token });
+    })
+    .catch((error) => {
+      res.status(500).json({ message: "Error en el servidor" });
+    });
+});
 
 
 module.exports = router;
