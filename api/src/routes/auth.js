@@ -63,7 +63,7 @@ router.post("/login", (req, res) => {
 
       // Generar el token de acceso JWT
       const token = jwt.sign({ userId: user._id }, "secreto", {
-        expiresIn: "1h",
+        expiresIn: "2h",
       });
 
       res.status(200).json({ token: token });
@@ -72,6 +72,5 @@ router.post("/login", (req, res) => {
       res.status(500).json({ message: "Error en el servidor" });
     });
 });
-
 
 module.exports = router;

@@ -27,6 +27,7 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { HistoryComponent } from './history/history.component';
 import { MovilesComponent } from './moviles/moviles.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
     HistoryComponent,
     MovilesComponent,
     VehicleComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
