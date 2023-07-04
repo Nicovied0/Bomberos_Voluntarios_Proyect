@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./register-form.component.css']
 })
 export class RegisterFormComponent {
-
+  formData = {
+    name: '',
+    email: '',
+    password: ''
+  };
 }
