@@ -19,6 +19,10 @@ const UserSchema = new mongoose.Schema({
     required: true,
     default: "userpass",
   },
+  role: {
+    type: String,
+    default: "public",
+  },
 
   createdAt: {
     type: Date,
