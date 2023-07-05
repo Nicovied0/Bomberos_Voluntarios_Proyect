@@ -1,5 +1,27 @@
 .contenedor {
   min-height: 80vh;
-  padding: 3rem;
   padding-top: 5rem;
+}
+
+.divsuperior {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: gray;
+  padding: 1rem;
+  align-items: center;
+}
+
+.img {
+  height: 3rem;
+  width: 100%;
+  margin: 0px 1rem;
+}
+
+.divInterno {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
