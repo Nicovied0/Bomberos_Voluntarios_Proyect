@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService, LoginResponse } from '../Services/Auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -12,8 +12,12 @@ export class LoginFormComponent {
     email: '',
     password: ''
   };
+  constructor(private authService: AuthService, private router: Router) { }
 
-  constructor(private authService: AuthService) { }
+
+  goRegister() {
+    this.router.navigate(['/register'])
+  }
 
   onSubmit() {
     this.authService.login(this.formData.email, this.formData.password)
