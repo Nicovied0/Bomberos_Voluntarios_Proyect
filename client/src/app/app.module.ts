@@ -30,6 +30,8 @@ import { HistoryComponent } from './history/history.component';
 import { MovilesComponent } from './moviles/moviles.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     MovilesComponent,
     VehicleComponent,
     RegisterFormComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
