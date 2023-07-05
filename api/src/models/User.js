@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
   imagen: {
     type: String,
     default:
-      "https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png",
+      "https://img.icons8.com/ios-glyphs/90/user--v1.png",
   },
   email: {
     type: String,

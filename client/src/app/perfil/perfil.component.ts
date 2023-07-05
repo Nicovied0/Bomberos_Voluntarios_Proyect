@@ -7,9 +7,11 @@ import { ProfileService } from '../Services/Profile.service';
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })
+
 export class PerfilComponent implements OnInit {
   public loged = false;
   public profile: any = {};
+  public goProfile = true;
   public profileLoged = false;
 
   constructor(
@@ -65,4 +67,11 @@ export class PerfilComponent implements OnInit {
       this.router.navigate(['/login']);
     }
   }
+
+  getUser() {
+    this.goProfile = false
+    location.reload()
+    // this.profileLoged = !this.profileLoged
+  }
+
 }

@@ -1,9 +1,13 @@
 <div class="contenedor">
   <div *ngIf="loged">
     <h2>Bienvenido</h2>
-    <!-- <h2>{{ profile.name }}</h2> -->
+    <button (click)="getUser()" *ngIf="goProfile && !profile.name">
+      Continuar
+    </button>
+
     <div *ngIf="profileLoged">
-      <h2>si</h2>
+      <h3>{{ profile.name }}</h3>
+      <img src="{{ profile.imagen }}" />
     </div>
   </div>
   <div *ngIf="!loged"></div>
