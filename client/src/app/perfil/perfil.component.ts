@@ -10,15 +10,8 @@ export class PerfilComponent {
 
   constructor(private router: Router) { }
 
-
-  goRegister() {
-    this.router.navigate(['/login'])
-  }
-
-
   ngOnInit() {
     this.getUser()
-
   }
 
   getUser() {
