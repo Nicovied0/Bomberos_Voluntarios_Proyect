@@ -8,6 +8,8 @@ import { NoFoundComponent } from './no-found/no-found.component';
 import { HistoryComponent } from './history/history.component';
 import { MovilesComponent } from './moviles/moviles.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'historia', component: HistoryComponent },
   { path: 'moviles', component: MovilesComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'moviles/:id', component: VehicleComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: NoFoundComponent },
