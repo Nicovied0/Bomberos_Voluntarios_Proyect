@@ -74,4 +74,14 @@ export class PerfilComponent implements OnInit {
     // this.profileLoged = !this.profileLoged
   }
 
+  logout() {
+    // Eliminar el token y el perfil del localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('profile');
+
+    // Redirigir al componente de inicio de sesión
+    this.router.navigate(['/login']);
+  }
+
+
 }
