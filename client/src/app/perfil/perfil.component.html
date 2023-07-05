@@ -1,7 +1,10 @@
 <div class="contenedor">
   <div *ngIf="loged">
     <h2>Bienvenido</h2>
-    <h2>Nombre</h2>
+    <!-- <h2>{{ profile.name }}</h2> -->
+    <div *ngIf="profileLoged">
+      <h2>si</h2>
+    </div>
   </div>
   <div *ngIf="!loged"></div>
 </div>

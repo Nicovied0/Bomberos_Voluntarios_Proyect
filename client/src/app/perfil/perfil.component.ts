@@ -10,21 +10,29 @@ import { ProfileService } from '../Services/Profile.service';
 })
 export class PerfilComponent implements OnInit {
   public loged = false;
+  public profile = {}
+  public profileLoged = false
 
-  constructor(private router: Router, private authService: AuthService, private profileService: ProfileService) { }
+  constructor(private router: Router, private profileService: ProfileService) { }
 
   ngOnInit() {
     this.getUserProfile();
+    if (this.profileLoged != false) {
+      console.log(this.profile)
+    }
   }
 
   getUserProfile() {
     const token = localStorage.getItem('token');
+
 
     if (token) {
       const profile = localStorage.getItem('profile');
 
       if (profile) {
         console.log('Perfil encontrado en el localStorage:', JSON.parse(profile));
+        this.profile = JSON.parse(profile)
+        this.profileLoged = true
         this.loged = true;
       } else {
         // Realizar la solicitud para obtener el perfil

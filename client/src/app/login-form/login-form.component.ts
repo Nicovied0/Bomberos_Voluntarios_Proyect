@@ -26,6 +26,7 @@ export class LoginFormComponent {
           if (response && response.token) {
             localStorage.setItem('token', response.token);
             console.log('Inicio de sesión exitoso');
+            this.router.navigate(['/perfil'])
           }
         },
         error => {
