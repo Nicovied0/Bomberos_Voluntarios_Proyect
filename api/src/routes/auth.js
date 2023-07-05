@@ -96,6 +96,8 @@ router.get("/profile", (req, res) => {
         const userProfile = {
           name: user.name,
           email: user.email,
+          imagen: user.imagen,
+          role: user.role,
           // Agrega cualquier otra información adicional del perfil que necesites
         };
 
