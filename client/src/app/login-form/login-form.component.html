@@ -1,30 +1,36 @@
-<div>
-  <h2>Iniciar Sesion</h2>
+<div class="contenedor">
+  <div class="divPrincipal">
+    <h2>Iniciar Sesion</h2>
+  </div>
   <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="email">Email:</label>
+    <div class="divinputs">
+      <label for="email" class="label">Email:</label>
       <input
         type="email"
         id="email"
         name="email"
+        class="input"
         [(ngModel)]="formData.email"
         required
       />
     </div>
-    <div>
-      <label for="password">Contraseña:</label>
+    <div class="divinputs">
+      <label for="password" class="label">Contraseña:</label>
       <input
         type="password"
         id="password"
         name="password"
+        class="input"
         [(ngModel)]="formData.password"
         required
       />
     </div>
-    <button type="submit">Iniciar sesión</button>
-    <p>
+    <div class="divinputs">
+      <button type="submit" class="button">Iniciar sesión</button>
+    </div>
+    <p class="text">
       No tienes cuenta?
-      <a (click)="goRegister()" id="signup-link">Registrate</a>
+      <a (click)="goRegister()" id="signup-link" class="go">Registrate</a>
     </p>
   </form>
 </div>

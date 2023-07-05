@@ -1,44 +1,49 @@
-<div>
-  <h2>Registrarse</h2>
-
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="name">Nombre:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        class="input"
-        [(ngModel)]="formData.name"
-        required
-      />
-    </div>
-    <div>
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        class="input"
-        [(ngModel)]="formData.email"
-        required
-      />
-    </div>
-    <div>
-      <label for="password">Contraseña:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        class="input"
-        [(ngModel)]="formData.password"
-        required
-      />
-    </div>
-    <button type="submit">Registrarse</button>
-    <p>
-      Ya tienes cuenta?
-      <a (click)="goLogin()" id="signup-link">Inicia Sesion</a>
-    </p>
-  </form>
+<div class="contenedor">
+  <div class="divPrincipal">
+    <h2>Registrarse</h2>
+  </div>
+  <div>
+    <form (ngSubmit)="onSubmit()">
+      <div class="divinputs">
+        <label for="name" class="label">Nombre:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="input"
+          [(ngModel)]="formData.name"
+          required
+        />
+      </div>
+      <div class="divinputs">
+        <label for="email" class="label">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="input"
+          [(ngModel)]="formData.email"
+          required
+        />
+      </div>
+      <div class="divinputs">
+        <label for="password" class="label">Contraseña:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="input"
+          [(ngModel)]="formData.password"
+          required
+        />
+      </div>
+      <div class="divinputs">
+        <button type="submit" class="button">Registrarse</button>
+      </div>
+      <p class="text">
+        Ya tienes cuenta?
+        <a (click)="goLogin()" id="signup-link" class="go">Inicia Sesion</a>
+      </p>
+    </form>
+  </div>
 </div>

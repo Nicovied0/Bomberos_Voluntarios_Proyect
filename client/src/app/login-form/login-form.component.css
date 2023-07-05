@@ -1,0 +1,58 @@
+.contenedor {
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  max-width: 600px;
+}
+
+.label {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.go {
+
+  color: #fdc501
+}
+
+.divPrincipal {
+  color: #fdc501;
+  margin-bottom: 30px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.input {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #555;
+}
+
+.divinputs {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.button {
+  padding: 10px;
+  background-color: #fdc501;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.2s ease-in-out;
+}
+.text{
+  margin: 10px;
+  cursor: pointer;
+}

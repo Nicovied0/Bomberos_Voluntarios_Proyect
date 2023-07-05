@@ -13,8 +13,17 @@
 }
 
 .img {
-  height: 3rem;
-  width: 100%;
+  height: 4rem;
+  width: 4rem;
+  margin: 0px 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.img2 {
+  height: 4rem;
+  width: 4rem;
   margin: 0px 1rem;
 }
 
@@ -24,4 +33,11 @@
   align-content: center;
   flex-wrap: nowrap;
   flex-direction: row;
+}
+
+.bodyProfile{
+  display: flex;
+  align-items: center;
+ justify-content: center;
+  height: 70vh;
 }
