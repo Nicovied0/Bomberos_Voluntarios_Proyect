@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../Services/Auth.service';
 import { ProfileService } from '../Services/Profile.service';
 
 @Component({
@@ -10,32 +9,30 @@ import { ProfileService } from '../Services/Profile.service';
 })
 export class PerfilComponent implements OnInit {
   public loged = false;
-  public profile = {}
-  public profileLoged = false
+  public profile: any = {};
+  public profileLoged = false;
 
-  constructor(private router: Router, private profileService: ProfileService) { }
+  constructor(
+    private router: Router,
+    private profileService: ProfileService,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
     this.getUserProfile();
-    if (this.profileLoged != false) {
-      console.log(this.profile)
-    }
   }
 
   getUserProfile() {
     const token = localStorage.getItem('token');
-
-
     if (token) {
-      const profile = localStorage.getItem('profile');
+      const profileData = localStorage.getItem('profile');
 
-      if (profile) {
-        console.log('Perfil encontrado en el localStorage:', JSON.parse(profile));
-        this.profile = JSON.parse(profile)
-        this.profileLoged = true
+      if (profileData) {
+        console.log('Perfil encontrado en el localStorage:', JSON.parse(profileData));
+        this.profile = JSON.parse(profileData);
         this.loged = true;
+        this.profileLoged = true;
       } else {
-        // Realizar la solicitud para obtener el perfil
         this.profileService.getProfile().subscribe(
           (response: any) => {
             if (response.profile) {
@@ -43,22 +40,28 @@ export class PerfilComponent implements OnInit {
               localStorage.setItem('profile', JSON.stringify(userProfile));
               console.log('Perfil obtenido:', userProfile);
               this.loged = true;
+              this.profileLoged = true;
             } else {
               console.log('No se pudo obtener el perfil');
               this.loged = false;
+              this.profileLoged = false;
               this.router.navigate(['/login']);
             }
+            this.cdr.detectChanges();
           },
           error => {
             console.log('Error al obtener el perfil', error);
             this.loged = false;
+            this.profileLoged = false;
             this.router.navigate(['/login']);
+            this.cdr.detectChanges();
           }
         );
       }
     } else {
       console.log('No se encontró un token');
       this.loged = false;
+      this.profileLoged = false;
       this.router.navigate(['/login']);
     }
   }
