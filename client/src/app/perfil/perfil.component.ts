@@ -82,6 +82,9 @@ export class PerfilComponent implements OnInit {
     // Redirigir al componente de inicio de sesión
     this.router.navigate(['/login']);
   }
+  goEdit(){
+    this.router.navigate(['/perfil/editar']);
+  }
 
 
 }
