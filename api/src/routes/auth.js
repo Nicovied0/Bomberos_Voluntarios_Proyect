@@ -110,4 +110,62 @@ router.get("/profile", (req, res) => {
   });
 });
 
+
+// Ruta para editar la cuenta del usuario
+router.put("/profile/edit", (req, res) => {
+  // Verificar el token de acceso
+  const token = req.headers.token;
+  if (!token) {
+    return res.status(401).json({ message: "Token no proporcionado" });
+  }
+
+  // Verificar y decodificar el token
+  jwt.verify(token, "secreto", (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ message: "Token inválido" });
+    }
+
+    // Obtener el ID del usuario del token decodificado
+    const userId = decoded.userId;
+
+    // Crear un objeto con los campos a actualizar
+    const updateFields = {};
+    if (req.body.name) {
+      updateFields.name = req.body.name;
+    }
+    if (req.body.email) {
+      updateFields.email = req.body.email;
+    }
+    if (req.body.imagen) {
+      updateFields.imagen = req.body.imagen;
+    }
+    // Agrega cualquier otro campo que desees actualizar en la cuenta del usuario
+
+    // Buscar y actualizar el usuario por su ID en la base de datos
+    User.findByIdAndUpdate(userId, updateFields, {
+      new: true,
+      omitUndefined: true,
+    })
+      .then((user) => {
+        if (!user) {
+          return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+
+        // Aquí puedes obtener los datos del perfil actualizado que deseas enviar en la respuesta
+        const userProfile = {
+          name: user.name,
+          email: user.email,
+          imagen: user.imagen,
+          role: user.role,
+          // Agrega cualquier otra información adicional del perfil que necesites
+        };
+
+        res.status(200).json({ profile: userProfile });
+      })
+      .catch((error) => {
+        res.status(500).json({ message: "Error en el servidor" });
+      });
+  });
+});
+
 module.exports = router;
