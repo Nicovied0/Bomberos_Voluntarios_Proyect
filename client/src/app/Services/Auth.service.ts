@@ -23,4 +23,5 @@ export class AuthService {
     const body = { email, password };
     return this.http.post<LoginResponse>(`${this.baseUrl}/login`, body);
   }
+  
 }

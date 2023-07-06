@@ -17,12 +17,26 @@ export class ProfileService {
       console.log("No se encontró un token en el localStorage");
       return of(null); // Devolver un Observable que emite un valor nulo
     }
-
-
     // Configurar el encabezado con el token
     const headers = new HttpHeaders().set('token', token);
 
     // Realizar la solicitud HTTP con el encabezado
     return this.http.get<any>(this.baseUrl, { headers });
   }
+
+  updateProfileData(profileData: any): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // Manejo de error: No se encontró un token en el localStorage
+      console.log('Token no proporcionado');
+      return of(null); // Devolver un Observable que emite un valor nulo
+    }
+
+    // Configurar el encabezado con el token
+    const headers = new HttpHeaders().set('token', token);
+
+    // Realizar la solicitud HTTP PUT con los nuevos datos del perfil
+    return this.http.put<any>(`${this.baseUrl}/edit`, profileData, { headers });
+  }
+
 }
