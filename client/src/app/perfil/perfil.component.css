@@ -13,18 +13,22 @@
 }
 
 .img {
-  height: 4rem;
-  width: 4rem;
+
+  height: 2rem;
+  width: 2rem;
+
   margin: 0px 1rem;
   border-radius: 50%;
   object-fit: cover;
   object-position: center center;
+  cursor: pointer;
 }
 
 .img2 {
-  height: 4rem;
-  width: 4rem;
+  height: 2rem;
+  width: 2rem;
   margin: 0px 1rem;
+  cursor: pointer;
 }
 
 .divInterno {
@@ -35,9 +39,10 @@
   flex-direction: row;
 }
 
-.bodyProfile{
+.bodyProfile {
   display: flex;
   align-items: center;
- justify-content: center;
+  justify-content: center;
   height: 70vh;
+  flex-direction: column;
 }

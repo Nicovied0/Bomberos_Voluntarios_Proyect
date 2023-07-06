@@ -3,6 +3,10 @@
     <div class="divsuperior" *ngIf="profile.name">
       <h3>{{ profile.name }}</h3>
       <div class="divInterno">
+        <i
+          class="bi bi-pencil"
+          style="color: #0a58ca; font-size: 1.7rem; cursor: pointer"
+        ></i>
         <img src="{{ profile.imagen }}" class="img" />
         <!-- <img src="https://i.imgur.com/dMGs6Aw.png" class="img"> -->
         <img
@@ -16,8 +20,17 @@
       </div>
     </div>
     <div class="bodyProfile">
-      <h2>Bienvenido</h2>
-      <p></p>
+      <h3>Bienvenido {{ profile.name }}</h3>
+      <div style="padding: 1rem">
+        <p *ngIf="profile.role === 'public'">
+          Actualmente puedes acceder a ver la informacion publicada en la app,
+          si necesitas actualizar tu rol. Comunicate con algun administrador.
+        </p>
+        <div *ngIf="profile.role === 'admin' || profile.role === 'superAdmin'">
+          <h2>Tu rol es de: {{ profile.role }}</h2>
+          <p>Tienes permiso para :x</p>
+        </div>
+      </div>
       <button (click)="getUser()" *ngIf="goProfile && !profile.name">
         Continuar
       </button>

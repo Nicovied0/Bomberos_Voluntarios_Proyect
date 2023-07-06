@@ -52,7 +52,13 @@
   font-size: 18px;
   transition: background-color 0.2s ease-in-out;
 }
-.text{
+
+.button:hover {
+  transition: ease-in;
+  background-color: #fdc60174;
+}
+
+.text {
   margin: 10px;
   cursor: pointer;
 }
