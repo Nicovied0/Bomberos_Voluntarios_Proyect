@@ -9,6 +9,8 @@
   --text-seguirLeyendo: #0F1215;
   --background-text-contact: #a3a4a6;
   --text-contact: #000000;
+  --text-contact-focus: #ffffff;
+  --contact-background-focus: #545454;
 }
 
 .oscuro-theme {
@@ -22,6 +24,8 @@
   --text-seguirLeyendo: #fdc501;
   --background-text-contact: rgba(255, 255, 255, 0.1);
   --text-contact: #a3a4a6;
+  --text-contact-focus: #000;
+  --contact-background-focus: #fff;
 }
 
 .bodyInAPP {

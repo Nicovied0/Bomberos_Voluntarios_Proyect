@@ -27,12 +27,16 @@
   border-radius: 3px;
   max-width: 100%;
   background: var(--background-text-contact);
-
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.input:focus {
+  background-color: var(--contact-background-focus);
+  color: var(--text-contact-focus);
 }
 
 .button {
