@@ -11,7 +11,12 @@
 .divForm {
   display: flex;
   flex-direction: column;
+  margin: 0 0 1rem 0;
   align-items: stretch;
+}
+
+.h2 {
+  margin: 2rem 0;
 }
 
 .input {
@@ -51,7 +56,7 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-.button:hover{
+.button:hover {
   filter: brightness(0.8);
-  
+
 }
