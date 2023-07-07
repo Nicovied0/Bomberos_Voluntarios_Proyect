@@ -1,28 +1,30 @@
 .contenedor {
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: space-evenly;
+  align-items: center;
   padding: 2rem;
-  padding-top: 8rem;
+  padding-top: 5rem;
 }
 
-.divForm {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 1rem 0;
-  align-items: stretch;
+.divs {
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .h2 {
   margin: 2rem 0;
 }
 
+.divForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
 .input {
   display: block;
   padding: 18px 20px;
-  margin: 0 0 12px 0;
+  margin-bottom: 12px;
   border: 0;
   outline: none;
   color: var(--text-contact);
@@ -32,10 +34,6 @@
   border-radius: 3px;
   max-width: 100%;
   background: var(--background-text-contact);
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -58,5 +56,17 @@
 
 .button:hover {
   filter: brightness(0.8);
+}
 
+@media screen and (min-width: 768px) {
+  .contenedor {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 7rem;
+  }
+
+  .divs {
+    width: 48%;
+    margin-bottom: 0;
+  }
 }
