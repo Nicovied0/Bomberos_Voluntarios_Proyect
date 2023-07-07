@@ -25,7 +25,7 @@
       <div style="padding: 1rem">
         <p *ngIf="profile.role === 'public'">
           Actualmente puedes acceder a ver la informacion publicada en la app,
-          si necesitas actualizar tu rol. Comunicate con algun administrador.
+          no tienes permisos para realizar modificaciones en la web.
         </p>
         <div *ngIf="profile.role === 'admin' || profile.role === 'superAdmin'">
           <h2>Tu rol es de: {{ profile.role }}</h2>

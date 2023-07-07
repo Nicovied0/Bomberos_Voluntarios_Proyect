@@ -1,19 +1,22 @@
 <div class="contenedor">
   <h2>Plantilla de Contacto</h2>
-  <app-maps></app-maps>
 
   <form>
-    <div>
-      <label>Nombre</label>
-      <input type="text" placeholder="Ingrese su Nombre" />
+    <div class="divForm">
+      <label for="contactName">Nombre</label>
+      <input type="text" id="contactName" placeholder="Ingrese su Nombre" />
     </div>
-    <div>
-      <label>Email</label>
-      <input type="email" placeholder="Ingrese su Email" />
+    <div class="divForm">
+      <label for="contactEmail">Email</label>
+      <input type="email" id="contactEmail" placeholder="Ingrese su Email" />
     </div>
-    <div>
-      <label>Mensaje</label>
-      <input type="textarea" placeholder="Ingrese su Mensaje" />
+    <div class="divForm">
+      <label for="contactMessage">Mensaje</label>
+      <textarea id="contactMessage" placeholder="Ingrese su Mensaje"></textarea>
+    </div>
+    <div class="divForm">
+      <button type="submit">Enviar</button>
     </div>
   </form>
+  <app-maps></app-maps>
 </div>

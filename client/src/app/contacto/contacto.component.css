@@ -1,4 +1,15 @@
 .contenedor {
   min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  padding: 2rem;
   padding-top: 5rem;
+}
+
+.divForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
