@@ -1,12 +1,13 @@
 # Bomberos Voluntarios de Santa Catalina
 
-Breve descripción o introducción de tu aplicación.
+Mi objetivo principal es digitalizar los servicios y actividades de la asociación, brindando transparencia y facilitando el acceso a la información para todos.
 
 ## Características principales
 
 - Sistema de usuarios y roles.
 - Manejo y distribucion de mails.
 - Publicaciones y actualizaciones inteligentes.
+- Visualizacion de actividades, infraestructura y noticias.
 
 
 ## Tecnologías utilizadas
