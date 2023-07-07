@@ -20,11 +20,9 @@ Mi objetivo principal es digitalizar los servicios y actividades de la asociaci�
 
 ## Capturas de pantalla
 
-![Captura de pantalla 1](ruta/a/la/captura-de-pantalla-1.png)
-Descripción de la captura de pantalla.
-
-![Captura de pantalla 2](ruta/a/la/captura-de-pantalla-2.png)
-Descripción de la captura de pantalla.
+![Captura de pantalla 1](https://i.imgur.com/5jXsly7.png)
+![Captura de pantalla 2](https://i.imgur.com/HU7tb2a.png)
+![Captura de pantalla 3](https://i.imgur.com/n88KLSc.png)
 
 ## Instalación
 
