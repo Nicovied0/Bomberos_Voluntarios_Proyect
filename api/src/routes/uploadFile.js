@@ -1,17 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const cloudinary = require("cloudinary").v2;
-const multer = require("multer");
+const uploadMiddleware = require("../middleware/uploadMiddleware");
 
 cloudinary.config({
   cloud_name: "dnenoxgh8",
   api_key: "517676561973372",
   api_secret: "w96mHOp6pxaoU7EDBV6oc1kbt80",
 });
-
-const storage = multer.diskStorage({});
-
-const upload = multer({ storage });
 
 function uploadImageToCloudinary(imageFile) {
   return new Promise((resolve, reject) => {
@@ -37,7 +33,7 @@ router.get("/", async (req, res) => {
 });
 
 // Utiliza el middleware de carga de archivos antes de la ruta POST
-router.post("/", upload.single("image"), async (req, res) => {
+router.post("/", uploadMiddleware, async (req, res) => {
   try {
     const imageUrl = await uploadImageToCloudinary(req.file);
     console.log(imageUrl);
