@@ -1,5 +1,48 @@
 .contenedor {
   min-height: 80vh;
-  padding: 3rem;
+  padding: 1rem;
   padding-top: 5rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #BA68C8;
+}
+.divText{
+  color: black !important;
+}
+
+.img {
+  height: 8rem;
+  width: 8rem;
+  margin: 0px 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+}
+
+.profile-button {
+  background: #BA68C8;
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #682773;
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer;
 }

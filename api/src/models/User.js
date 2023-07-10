@@ -7,12 +7,15 @@ const UserSchema = new mongoose.Schema({
   },
   imagen: {
     type: String,
-    default:
-      "https://img.icons8.com/ios-glyphs/90/user--v1.png",
+    default: "https://img.icons8.com/ios-glyphs/90/user--v1.png",
   },
   email: {
     type: String,
     required: true,
+  },
+  number: {
+    type: String,
+    default:"555555"
   },
   password: {
     type: String,

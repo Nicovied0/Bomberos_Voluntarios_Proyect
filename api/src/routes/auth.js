@@ -156,6 +156,7 @@ router.put("/profile/edit", (req, res) => {
           name: user.name,
           email: user.email,
           imagen: user.imagen,
+          numbe:user.number,
           role: user.role,
           // Agrega cualquier otra información adicional del perfil que necesites
         };

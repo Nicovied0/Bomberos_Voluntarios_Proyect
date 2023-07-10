@@ -12,7 +12,8 @@ export class EditProfileComponent implements OnInit {
   public profileData = {
     name: '',
     email: '',
-    imagen: ''
+    imagen: '',
+    number: ''
   };
 
   public selectedFile: File | null = null;
