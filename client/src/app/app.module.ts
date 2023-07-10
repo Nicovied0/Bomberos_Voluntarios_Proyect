@@ -33,6 +33,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { DropImagenComponent } from './drop-imagen/drop-imagen.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     LoginComponent,
     RegisterComponent,
     EditProfileComponent,
+    DropImagenComponent,
   ],
   imports: [
     BrowserModule,

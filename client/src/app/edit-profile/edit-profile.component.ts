@@ -27,6 +27,14 @@ export class EditProfileComponent implements OnInit {
       this.profileData = JSON.parse(profile);
     }
   }
+  
+  handleFileSelected(file: File) {
+    const formData = new FormData();
+    formData.append('image', file);
+
+    // Aquí puedes llamar a un servicio específico para la carga de imágenes en lugar de usar HttpClient directamente
+    // Ejemplo: this.imageService.uploadImage(formData).subscribe(...)
+  }
 
 
   submitForm() {
