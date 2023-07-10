@@ -14,6 +14,10 @@
 
     <div>
       <label for="imagen">Imagen:</label>
+      <img src={{profileData.imagen}} />
+    </div>
+    <div>
+      <label for="imagen">Imagen:</label>
       <input type="file" id="imagen" name="imagen" (change)="handleFileInput($event)" />
     </div>
 
