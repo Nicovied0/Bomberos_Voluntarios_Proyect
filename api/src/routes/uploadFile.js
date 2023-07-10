@@ -1,12 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const cloudinary = require("cloudinary").v2;
+const multer = require("multer");
 
 cloudinary.config({
   cloud_name: "dnenoxgh8",
   api_key: "517676561973372",
   api_secret: "w96mHOp6pxaoU7EDBV6oc1kbt80",
 });
+
+const storage = multer.diskStorage({});
+
+const upload = multer({ storage });
 
 function uploadImageToCloudinary(imageFile) {
   return new Promise((resolve, reject) => {
@@ -23,7 +28,7 @@ function uploadImageToCloudinary(imageFile) {
 router.get("/", async (req, res) => {
   try {
     res.json({
-      mensjae: "funciona al get",
+      mensaje: "funciona al get",
     });
   } catch (error) {
     console.error("Error al get", error);
@@ -31,10 +36,11 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Utiliza la función uploadImageToCloudinary en tu ruta de API para cargar la imagen y obtener el enlace
-router.post("/", async (req, res) => {
+// Utiliza el middleware de carga de archivos antes de la ruta POST
+router.post("/", upload.single("image"), async (req, res) => {
   try {
     const imageUrl = await uploadImageToCloudinary(req.file);
+    console.log(imageUrl);
     res.json({ url: imageUrl });
   } catch (error) {
     res.status(500).json({ error: "Error al cargar la imagen" });
