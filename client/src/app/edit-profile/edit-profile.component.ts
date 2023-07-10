@@ -27,17 +27,7 @@ export class EditProfileComponent implements OnInit {
       this.profileData = JSON.parse(profile);
     }
   }
-  
-  handleFileInput(event: any) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
 
-    reader.onload = (e: any) => {
-      this.profileData.imagen = e.target.result;
-    };
-
-    reader.readAsDataURL(file);
-  }
 
   submitForm() {
     this.profileService.updateProfileData(this.profileData).subscribe(
