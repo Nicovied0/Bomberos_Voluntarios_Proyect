@@ -31,7 +31,7 @@ export class ProfiledetailComponent implements OnInit {
     if (profile) {
       this.profileData = JSON.parse(profile);
     }
-    if (this.profileData.description != '') {
+    if (this.profileData.description == '') {
       this.descrptionInfo = true
     }
   }
