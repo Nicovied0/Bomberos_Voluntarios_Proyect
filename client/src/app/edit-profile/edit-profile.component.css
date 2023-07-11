@@ -11,7 +11,9 @@
 .divText{
   color: black !important;
 }
-
+.label{
+  color: black !important;
+}
 .img {
   height: 8rem;
   width: 8rem;

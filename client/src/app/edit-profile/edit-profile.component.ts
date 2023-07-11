@@ -15,6 +15,7 @@ export class EditProfileComponent implements OnInit {
     imagen: '',
     number: ''
   };
+  selectedImage: string | null = null;
 
   public selectedFile: File | null = null;
 
@@ -37,6 +38,11 @@ export class EditProfileComponent implements OnInit {
 
   handleFileInput(event: any) {
     this.selectedFile = event.target.files[0];
+    const file = event.target.files[0];
+    // Realiza cualquier lógica necesaria para procesar el archivo (subirlo, etc.)
+    // ...
+    // Luego, asigna la URL de la imagen seleccionada a selectedImage
+    this.selectedImage = URL.createObjectURL(file);
   }
 
   uploadImage() {
