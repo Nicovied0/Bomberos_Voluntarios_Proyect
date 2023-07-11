@@ -11,12 +11,14 @@ import { VehicleComponent } from './vehicle/vehicle.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ProfiledetailComponent } from './profiledetail/profiledetail.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'noticias', component: NewsComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'perfil/editar', component: EditProfileComponent },
+  { path: 'perfil/detalles', component: ProfiledetailComponent },
   { path: 'historia', component: HistoryComponent },
   { path: 'moviles', component: MovilesComponent },
   { path: 'login', component: LoginComponent },
