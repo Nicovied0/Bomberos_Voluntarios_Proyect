@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema({
   },
   number: {
     type: String,
-    default:"555555"
+    default: "555555",
   },
   password: {
     type: String,
@@ -25,6 +25,9 @@ const UserSchema = new mongoose.Schema({
   role: {
     type: String,
     default: "public",
+  },
+  description: {
+    type: String,
   },
 
   createdAt: {
