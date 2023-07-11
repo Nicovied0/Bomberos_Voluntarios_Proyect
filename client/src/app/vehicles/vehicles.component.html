@@ -1,7 +1,7 @@
 <div class="contenedor">
   <div *ngFor="let vehicle of vehicles" class="div_caja">
     <div (click)="verDetalle(vehicle._id)">
-      <h2>{{ vehicle.type }}: {{ vehicle.brand }}</h2>
+      <h2>Movil: {{ vehicle.movilNumber }}</h2>
       <img src="{{ vehicle.image }}" class="img" />
     </div>
     <div></div>
