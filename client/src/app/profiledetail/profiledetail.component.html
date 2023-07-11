@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="col-md-8">
-        <div class="p-3 py-5">
+        <div class="p-3 py-5" style="color: black">
           <div
             class="d-flex justify-content-between align-items-center mb-3 divText"
           >
@@ -17,53 +17,35 @@
               <i class="fa fa-long-arrow-left mr-1 mb-1 goProfile"></i>
               <h6 (click)="goProfile()">Volver al inicio</h6>
             </div>
-            <h6 class="text-right">Editar Perfil</h6>
           </div>
-          <form >
-            <div class="row mt-2">
-              <div class="col-md-6">
-                <label for="name" class="label">Nombre: </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Nombre"
-                  [(ngModel)]="profileData.name"
-                  name="name"
-                  required
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="number" class="label">Numero:</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  [(ngModel)]="profileData.number"
-                  name="number"
-                  required
-                  placeholder="Telefono"
-                />
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-md-6">
-                <label for="email" class="label">Email:</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Email"
-                  [(ngModel)]="profileData.email"
-                  name="email"
-                  required
-                />
-              </div>
-            </div>
 
-            <div class="mt-5 text-right">
-              <button class="btn btn-primary profile-button" type="submit">
-                Guardar cambios
-              </button>
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <label for="name" class="label">Nombre: </label>
+              <h3>{{ profileData.name }}</h3>
             </div>
-          </form>
+            <div class="col-md-6">
+              <label for="name" class="label">Numero: </label>
+              <h3>{{ profileData.number }}</h3>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <label for="name" class="label">Email: </label>
+              <h3>{{ profileData.email }}</h3>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <label for="name" class="label">Descripcion: </label>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Tenetur natus doloribus sit eius repellendus reprehenderit nam.
+                Reiciendis ea similique doloribus totam voluptates omnis sunt,
+                aspernatur vero numquam! Incidunt, reprehenderit et.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
