@@ -23,10 +23,14 @@ export class EditProfileComponent implements OnInit {
     private router: Router,
     private profileService: ProfileService,
     private cloudinaryService: CloudinaryService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getProfileData();
+  }
+
+  goProfile() {
+    this.router.navigate(['/perfil'])
   }
 
   getProfileData() {
