@@ -39,11 +39,9 @@
             <div class="col-md-6">
               <label for="name" class="label">Descripcion: </label>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Tenetur natus doloribus sit eius repellendus reprehenderit nam.
-                Reiciendis ea similique doloribus totam voluptates omnis sunt,
-                aspernatur vero numquam! Incidunt, reprehenderit et.
+                {{ profileData.description }}
               </p>
+              <h4 *ngIf="descrptionInfo">Aun no se agrego descripcion</h4>
             </div>
           </div>
         </div>

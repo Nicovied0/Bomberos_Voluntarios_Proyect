@@ -11,15 +11,16 @@ import { ProfileService } from '../Services/Profile.service';
 export class ProfiledetailComponent implements OnInit {
   constructor(
     private router: Router,
-    private profileService: ProfileService
   ) { }
 
   public profileData = {
     name: '',
     email: '',
     imagen: '',
-    number: ''
+    number: '',
+    description: ''
   };
+  public descrptionInfo = false
 
   ngOnInit() {
     this.getProfileData();
@@ -30,8 +31,11 @@ export class ProfiledetailComponent implements OnInit {
     if (profile) {
       this.profileData = JSON.parse(profile);
     }
+    if (this.profileData.description != '') {
+      this.descrptionInfo = true
+    }
   }
-  
+
   goProfile() {
     this.router.navigate(['/perfil'])
   }
