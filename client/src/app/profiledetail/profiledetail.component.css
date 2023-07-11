@@ -1,0 +1,80 @@
+.contenedor {
+  min-height: 80vh;
+  padding: 1rem;
+  padding-top: 5rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #0d6efd;
+}
+
+.divText {
+  color: black !important;
+}
+
+.label {
+  color: black !important;
+}
+
+.goProfile {
+  margin: 0 1rem;
+}
+
+.colBottones {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.divImgBnts {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.img {
+  height: 8rem;
+  width: 8rem;
+  margin: 0px 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+}
+.img2 {
+  height: 8rem;
+  width: 8rem;
+  margin: 0px 1rem;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+}
+
+.profile-button {
+  background: #fdc501;
+  ;
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #fdc501;
+  filter: brightness(0.8);
+}
+
+.profile-button:focus {
+  background: #fdc501;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #fdc501;
+  cursor: pointer;
+}
