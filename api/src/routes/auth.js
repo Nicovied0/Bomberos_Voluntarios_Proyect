@@ -139,6 +139,9 @@ router.put("/profile/edit", (req, res) => {
     }
     if (req.body.imagen) {
       updateFields.imagen = req.body.imagen;
+    } 
+    if (req.body.number) {
+      updateFields.number = req.body.number;
     }
     // Agrega cualquier otro campo que desees actualizar en la cuenta del usuario
 
@@ -157,7 +160,7 @@ router.put("/profile/edit", (req, res) => {
           name: user.name,
           email: user.email,
           imagen: user.imagen,
-          numbe:user.number,
+          number:user.number,
           role: user.role,
           // Agrega cualquier otra información adicional del perfil que necesites
         };
