@@ -8,15 +8,32 @@
   box-shadow: none;
   border-color: #0d6efd;
 }
-.divText{
+
+.divText {
   color: black !important;
 }
-.label{
+
+.label {
   color: black !important;
 }
-.goProfile{
+
+.goProfile {
   margin: 0 1rem;
 }
+
+.colBottones {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.divImgBnts {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
 .img {
   height: 8rem;
   width: 8rem;
@@ -28,7 +45,8 @@
 }
 
 .profile-button {
-  background: #fdc501;;
+  background: #fdc501;
+  ;
   box-shadow: none;
   border: none;
 }
