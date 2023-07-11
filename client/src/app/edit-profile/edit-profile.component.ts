@@ -13,7 +13,8 @@ export class EditProfileComponent implements OnInit {
     name: '',
     email: '',
     imagen: '',
-    number: ''
+    number: '',
+    description: ''
   };
   selectedImage: string | null = null;
 
