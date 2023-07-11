@@ -6,6 +6,7 @@
           <img class="mt-5 img" [src]="profileData.imagen" width="90" />
           <span class="font-weight-bold divText">{{ profileData.name }}</span>
           <span class="text-black-50">{{ profileData.email }}</span>
+          <span class="text-black-50">{{ profileData.description }}</span>
         </div>
       </div>
       <div class="col-md-8">
@@ -72,14 +73,23 @@
 
             <div class="row mt-3">
               <div class="col-md-6" *ngIf="!selectedImage">
-                <label for="imagen" class="label">Imagen:</label>
-                <input
-                  class="label"
-                  type="file"
-                  id="imagen"
-                  name="imagen"
-                  (change)="handleFileInput($event)"
-                />
+                <div *ngIf="changeImage" class="col-md-6">
+                  <label for="imagen" class="label">Imagen:</label>
+                  <input
+                    class="label"
+                    type="file"
+                    id="imagen"
+                    name="imagen"
+                    (change)="handleFileInput($event)"
+                  />
+                </div>
+                <button
+                  (click)="changeImages()"
+                  type="button"
+                  *ngIf="!changeImage"
+                >
+                  Cambiar Imagen
+                </button>
               </div>
               <div class="row mt-3" *ngIf="selectedImage">
                 <div class="col-md-6">

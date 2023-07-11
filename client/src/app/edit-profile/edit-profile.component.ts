@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileService } from '../Services/Profile.service';
 import { CloudinaryService } from '../Services/Cloudinary.service';
+import { event } from 'jquery';
 
 @Component({
   selector: 'app-edit-profile',
@@ -17,7 +18,7 @@ export class EditProfileComponent implements OnInit {
     description: ''
   };
   selectedImage: string | null = null;
-
+  changeImage: boolean = false;
   public selectedFile: File | null = null;
 
   constructor(
@@ -32,6 +33,10 @@ export class EditProfileComponent implements OnInit {
 
   goProfile() {
     this.router.navigate(['/perfil'])
+  }
+
+  changeImages() {
+    this.changeImage = !this.changeImage;
   }
 
   getProfileData() {
