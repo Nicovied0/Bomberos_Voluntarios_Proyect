@@ -97,7 +97,8 @@ router.get("/profile", (req, res) => {
           name: user.name,
           email: user.email,
           imagen: user.imagen,
-          number:user.number,
+          number: user.number,
+          description: user.description,
           role: user.role,
           // Agrega cualquier otra información adicional del perfil que necesites
         };
@@ -110,7 +111,6 @@ router.get("/profile", (req, res) => {
       });
   });
 });
-
 
 // Ruta para editar la cuenta del usuario
 router.put("/profile/edit", (req, res) => {
@@ -139,9 +139,12 @@ router.put("/profile/edit", (req, res) => {
     }
     if (req.body.imagen) {
       updateFields.imagen = req.body.imagen;
-    } 
+    }
     if (req.body.number) {
       updateFields.number = req.body.number;
+    }
+    if (req.body.description) {
+      updateFields.description = req.body.description;
     }
     // Agrega cualquier otro campo que desees actualizar en la cuenta del usuario
 
@@ -160,7 +163,8 @@ router.put("/profile/edit", (req, res) => {
           name: user.name,
           email: user.email,
           imagen: user.imagen,
-          number:user.number,
+          number: user.number,
+          description: user.description,
           role: user.role,
           // Agrega cualquier otra información adicional del perfil que necesites
         };
