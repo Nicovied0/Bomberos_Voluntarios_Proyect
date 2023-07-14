@@ -25,9 +25,17 @@
   cursor: pointer;
   font-size: 18px;
   transition: background-color 0.2s ease-in-out;
+  margin:  1rem
 }
 
 .buttonMoviles:hover {
   transition: background-color 0.2s ease-in-out;
   filter: opacity(0.8)
+}
+.divBotones{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
