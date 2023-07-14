@@ -3,12 +3,17 @@
   padding: 1rem;
   padding-top: 7rem;
   padding-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .img {
   max-width: 100%;
   height: 400px;
   object-fit: cover;
+  border-radius: 1rem;
 }
 
 .contenedorDiv {
