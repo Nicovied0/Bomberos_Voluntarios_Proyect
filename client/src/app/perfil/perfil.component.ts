@@ -83,12 +83,14 @@ export class PerfilComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  goEdit(){
+  goEdit() {
     this.router.navigate(['/perfil/editar']);
   }
-  goDetails(){
+  goDetails() {
     this.router.navigate(['/perfil/detalles']);
   }
-
+  goPanel() {
+    this.router.navigate(['/panelAdmin']);
+  }
 
 }
