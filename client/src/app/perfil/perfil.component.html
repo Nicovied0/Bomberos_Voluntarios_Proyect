@@ -27,10 +27,13 @@
           Actualmente puedes acceder a ver la informacion publicada en la app,
           no tienes permisos para realizar modificaciones en la web.
         </p>
-        <div *ngIf=" profile.role === 'superAdmin'">
-          <h2>Tu rol es de: {{ profile.role }}</h2>
-          <p>Tienes permiso para :x</p>
-          <button (click)="goPanel()">Ir a penel</button>
+        <div *ngIf="profile.role === 'superAdmin'">
+          <h2>Tu rol es de: Administrador</h2>
+          <p>
+            Tienes permiso para cargar datos, editar datos,ver usuarios
+            registrados, bloquar usuarios, etc.
+          </p>
+          <button (click)="goPanel()" class="btn btn-primary">Ir al penel</button>
         </div>
       </div>
       <button (click)="getUser()" *ngIf="goProfile && !profile.name">
