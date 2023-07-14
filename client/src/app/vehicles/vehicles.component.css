@@ -9,6 +9,11 @@
 
 }
 
+.div_caja:hover{
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
 .contenedor {
   display: flex;
   flex-wrap: wrap;

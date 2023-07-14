@@ -1,4 +1,19 @@
 .contenedor {
   min-height: 80vh;
-  padding-top: 5rem;
+  padding: 1rem;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+}
+
+.img {
+  max-width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.contenedorDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
