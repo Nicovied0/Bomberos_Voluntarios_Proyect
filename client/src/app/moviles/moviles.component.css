@@ -1,4 +1,11 @@
 .contenedor {
   min-height: 80vh;
-  padding-top: 5rem;
+  padding: 0rem;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+}
+.div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
