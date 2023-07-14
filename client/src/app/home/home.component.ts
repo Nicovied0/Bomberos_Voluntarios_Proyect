@@ -14,5 +14,8 @@ export class HomeComponent {
   goMoviles() {
     this.router.navigate(['/moviles'])
   }
+  goNews() {
+    this.router.navigate(['/noticias'])
+  }
 
 }

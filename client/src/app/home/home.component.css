@@ -14,3 +14,20 @@
 .contenedor2 {
   padding: 1rem;
 }
+
+.buttonMoviles {
+  padding: 10px;
+  background-color: var(--text-seguirLeyendo);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonMoviles:hover {
+  transition: background-color 0.2s ease-in-out;
+  filter: opacity(0.8)
+}

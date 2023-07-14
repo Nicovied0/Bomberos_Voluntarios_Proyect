@@ -31,9 +31,14 @@
   align-items: center;
 } */
 .divInterno {
+  display: flex;
   z-index: 5;
   position: absolute;
   top: 30%;
+  width: 80%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .description {
