@@ -10,7 +10,19 @@
       <h5>Modelo: {{ vehicleId.year }}</h5>
     </div>
   </div>
-  <div>
-    <p>descripcion</p>
+  <div class="contenedorDiv2">
+    <h2>Informacion adicional</h2>
+    <div>
+      <label>Ultimo Manteniemiento Programado:</label>
+      <p>{{ vehicleId.lastServiceProgramed }}</p>
+    </div>
+    <div>
+      <label>Ultimo Manteniemiento:</label>
+      <p>{{ vehicleId.lastMaintenance }}</p>
+    </div>
+    <div>
+      <label>Ultima Recarga de combustible:</label>
+      <p>{{ vehicleId.lastRecharge }}</p>
+    </div>
   </div>
 </div>
