@@ -13,12 +13,14 @@ import { RegisterComponent } from './register/register.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ProfiledetailComponent } from './profiledetail/profiledetail.component';
 import { PanelComponent } from './panel/panel.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'noticias', component: NewsComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'panelAdmin', component: PanelComponent },
+  { path: 'panelAdmin/NewPost', component: NewPostComponent },
   { path: 'perfil/editar', component: EditProfileComponent },
   { path: 'perfil/detalles', component: ProfiledetailComponent },
   { path: 'historia', component: HistoryComponent },
