@@ -21,4 +21,12 @@ export class UserService {
       });
   }
 
+  async getUsersId(id:any) {
+    const url = `http://localhost:3001/users`
+    return this.http.get<any>(url).toPromise()
+      .then((users: any[]) => {
+        return users.filter((users: any) => users.actived !== false);
+      });
+  }
+
 }
