@@ -21,11 +21,15 @@ export class UserService {
       });
   }
 
-  async getUsersId(id:any) {
-    const url = `http://localhost:3001/users`
+  async getUsersId(id: any) {
+    const url = `http://localhost:3001/users/${id}`;
     return this.http.get<any>(url).toPromise()
-      .then((users: any[]) => {
-        return users.filter((users: any) => users.actived !== false);
+      .then((user: any) => {
+        if (user && user.actived !== false) {
+          return user;
+        } else {
+          throw new Error('Usuario no encontrado o inactivo.');
+        }
       });
   }
 
