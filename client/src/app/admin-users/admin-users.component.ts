@@ -26,6 +26,10 @@ export class AdminUsersComponent implements OnInit {
     }
   }
 
+  onEditUser(userId: any) {
+    this.router.navigate(['users/edit', userId]); // Navegar a la ruta de edición con el ID del usuario
+  }
+
   getActiveUsers() {
     return this.users.filter(user => user.actived === true);
   }

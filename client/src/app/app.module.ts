@@ -37,6 +37,7 @@ import { DropImagenComponent } from './drop-imagen/drop-imagen.component';
 import { ProfiledetailComponent } from './profiledetail/profiledetail.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminPostComponent } from './admin-post/admin-post.component';
+import { AdminUsersEditComponent } from './admin-users-edit/admin-users-edit.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { AdminPostComponent } from './admin-post/admin-post.component';
     ProfiledetailComponent,
     AdminUsersComponent,
     AdminPostComponent,
+    AdminUsersEditComponent,
   ],
   imports: [
     BrowserModule,
