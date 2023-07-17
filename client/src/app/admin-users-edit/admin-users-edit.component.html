@@ -6,9 +6,13 @@
 
     <label>Correo electrónico:</label>
     <input [(ngModel)]="user.email" type="email" disabled />
-    
-    <label>Correo electrónico:</label>
-    <input [(ngModel)]="user.email" type="email" disabled />
+
+    <label>Role:</label>
+    <select [(ngModel)]="user.role" [disabled]="!canEditRole()">
+      <option *ngFor="let role of possibleRoles" [value]="role">
+        {{ role }}
+      </option>
+    </select>
 
     <!-- Agrega más campos de edición según las propiedades del usuario -->
 
