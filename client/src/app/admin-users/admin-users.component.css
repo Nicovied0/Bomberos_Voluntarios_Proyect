@@ -2,7 +2,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
   min-height: 80vh;
   padding-top: 5rem;
+}
+
+.img {
+  height: 3rem;
+  width: 3rem;
+  margin: 0px 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+}
+
+.divInterno {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.divSuperior {
+  width: 100%;
+  background: rgba(128, 128, 128, 0.278);
+}
+
+.p {
+  margin: 1rem;
+}
+
+.divConFor {
+  padding: 1rem 0;
+  width: 100%;
+  border-bottom: 1px solid  rgba(128, 128, 128, 0.278);
+}
+
+.divSuperior2 {
+  width: 6rem;
+  text-align: center;
+}
+
+.icons{
+  font-size: 1.3rem;
+}
+.name{
+  font-size: 0.8rem;
 }
