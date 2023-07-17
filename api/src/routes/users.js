@@ -31,5 +31,25 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const userId = req.params.id; // Obtiene el ID desde el parámetro de la URL
+    const updatedUserData = req.body; // Obtiene los datos actualizados del usuario desde el cuerpo de la solicitud
+
+    // Aquí podrías validar los datos actualizados si es necesario
+
+    const updatedUser = await Users.findByIdAndUpdate(userId, updatedUserData, { new: true });
+
+    if (!updatedUser) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    console.log("Usuario actualizado:", updatedUser);
+    res.json(updatedUser);
+  } catch (error) {
+    console.error("Error al actualizar el usuario", error);
+    res.status(500).json({ error: "Error al actualizar el usuario" });
+  }
+});
 
 module.exports = router;
