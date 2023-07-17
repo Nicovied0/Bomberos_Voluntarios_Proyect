@@ -15,6 +15,7 @@ import { ProfiledetailComponent } from './profiledetail/profiledetail.component'
 import { PanelComponent } from './panel/panel.component';
 import { AdminPostComponent } from './admin-post/admin-post.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminUsersEditComponent } from './admin-users-edit/admin-users-edit.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'panelAdmin', component: PanelComponent },
   { path: 'panelAdmin/NewPost', component: AdminPostComponent },
   { path: 'panelAdmin/Users', component: AdminUsersComponent },
+  { path: 'panelAdmin/Users/:id', component: AdminUsersEditComponent },
   { path: 'perfil/editar', component: EditProfileComponent },
   { path: 'perfil/detalles', component: ProfiledetailComponent },
   { path: 'historia', component: HistoryComponent },

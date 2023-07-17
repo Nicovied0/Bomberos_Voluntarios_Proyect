@@ -1,1 +1,21 @@
-<p>admin-users-edit works!</p>
+<div class="contenedor">
+  <div *ngIf="user">
+    <h3>Editando usuario: {{ user.name }}</h3>
+    <label>Nombre:</label>
+    <input [(ngModel)]="user.name" type="text" />
+
+    <label>Correo electrónico:</label>
+    <input [(ngModel)]="user.email" type="email" disabled />
+    
+    <label>Correo electrónico:</label>
+    <input [(ngModel)]="user.email" type="email" disabled />
+
+    <!-- Agrega más campos de edición según las propiedades del usuario -->
+
+    <button (click)="onSaveChanges()">Guardar cambios</button>
+  </div>
+
+  <div *ngIf="!user">
+    <p>Cargando detalles del usuario...</p>
+  </div>
+</div>

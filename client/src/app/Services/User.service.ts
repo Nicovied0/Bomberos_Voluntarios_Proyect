@@ -20,16 +20,20 @@ export class UserService {
       });
   }
 
-  async getUsersId(id: any) {
+  async getUsersId(id: string) {
     const url = `http://localhost:3001/users/${id}`;
-    return this.http.get<any>(url).toPromise()
-      .then((user: any) => {
-        if (user && user.actived !== false) {
-          return user;
-        } else {
-          throw new Error('Usuario no encontrado o inactivo.');
-        }
-      });
+    try {
+      const userResponse = await this.http.get<any>(url).toPromise();
+      if (userResponse && userResponse.actived !== false) {
+        return userResponse;
+      } else {
+        throw new Error('Usuario no encontrado o inactivo.');
+      }
+    } catch (error) {
+      console.error('Error al obtener los detalles del usuario:', error);
+      throw error;
+    }
   }
+  
 
 }

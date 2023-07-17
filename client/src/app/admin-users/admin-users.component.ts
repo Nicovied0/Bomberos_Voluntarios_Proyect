@@ -27,7 +27,7 @@ export class AdminUsersComponent implements OnInit {
   }
 
   onEditUser(userId: any) {
-    this.router.navigate(['users/edit', userId]); // Navegar a la ruta de edición con el ID del usuario
+    this.router.navigate(['panelAdmin/Users', userId]); // Navegar a la ruta de edición con el ID del usuario
   }
 
   getActiveUsers() {
