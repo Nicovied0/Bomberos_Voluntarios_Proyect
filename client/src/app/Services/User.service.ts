@@ -34,6 +34,11 @@ export class UserService {
       throw error;
     }
   }
-  
+
+  async updateUser(id: string, userData: any) {
+    const url = `http://localhost:3001/users/${id}`;
+    return this.http.put(url, userData).toPromise();
+  }
+
 
 }
