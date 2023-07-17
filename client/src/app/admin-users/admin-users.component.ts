@@ -11,7 +11,6 @@ export class AdminUsersComponent implements OnInit {
   constructor(private router: Router, private userService: UserService) { }
   users: any[] = [];
 
-
   ngOnInit() {
     this.getUsers();
   }
@@ -20,7 +19,7 @@ export class AdminUsersComponent implements OnInit {
     try {
       const usersResponse = await this.userService.getUsers();
       this.users = usersResponse as any[];
-      console.log(this.users)
+      console.log(this.users);
     } catch (error) {
       console.error('Error al obtener los usuarios:', error);
     }
@@ -30,7 +29,19 @@ export class AdminUsersComponent implements OnInit {
     this.router.navigate(['panelAdmin/Users', userId]); // Navegar a la ruta de edición con el ID del usuario
   }
 
-  getActiveUsers() {
-    return this.users.filter(user => user.actived === true);
+  onDeleteUser(userId: string) {
+    const userToDelete = this.users.find(user => user._id === userId);
+
+    if (userToDelete) {
+      // Cambiar el valor de actived a false
+      userToDelete.actived = false;
+
+      // Llamar al servicio para actualizar el usuario en el servidor
+      this.userService.updateUser(userId, { actived: false })
+        .then(() => {
+          console.log('Usuario desactivado correctamente.');
+        })
+        .catch(error => console.error('Error al desactivar el usuario:', error));
+    }
   }
 }
