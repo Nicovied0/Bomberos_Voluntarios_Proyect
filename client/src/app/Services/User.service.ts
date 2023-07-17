@@ -1,4 +1,3 @@
-// http://localhost:3001/users
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 

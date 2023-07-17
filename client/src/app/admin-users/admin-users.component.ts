@@ -1,15 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../Services/User.service'; // Ajusta la ruta a tu UserService
 
 @Component({
   selector: 'app-admin-users',
   templateUrl: './admin-users.component.html',
   styleUrls: ['./admin-users.component.css']
 })
-export class AdminUsersComponent {
-  constructor(private router: Router){}
+export class AdminUsersComponent implements OnInit {
+  constructor(private router: Router, private userService: UserService) { }
+  users: any[] = [];
 
-  goNewPost(){
-    this.router.navigate(['/panelAdmin/NewPost'])
+
+  ngOnInit() {
+    this.getUsers();
+  }
+
+  async getUsers() {
+    try {
+      const usersResponse = await this.userService.getUsers();
+      this.users = usersResponse as any[];
+      console.log(this.users)
+    } catch (error) {
+      console.error('Error al obtener los usuarios:', error);
+    }
+  }
+
+  getActiveUsers() {
+    return this.users.filter(user => user.actived === true);
   }
 }

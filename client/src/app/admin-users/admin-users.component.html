@@ -1,3 +1,21 @@
 <div class="contenedor">
-  <h2>users</h2>
+  <h2>Usuarios</h2>
+  <div *ngFor="let user of users">
+    <div>
+      <h4>Imagen</h4>
+      <h4>Nombre</h4>
+      <h4>Email</h4>
+      <h4>Rol</h4>
+      <h4>Numero</h4>
+      <h4>x</h4>
+    </div>
+    <div>
+      <img src="{{ user.imagen }}"  class="img"/>
+      <h4>{{ user.name }}</h4>
+      <h4>{{ user.email }}</h4>
+      <h4>{{ user.role }}</h4>
+      <h4>{{ user.number }}</h4>
+      <h4>{{ user.actived }}</h4>
+    </div>
+  </div>
 </div>
