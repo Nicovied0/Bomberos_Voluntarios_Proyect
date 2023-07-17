@@ -23,18 +23,39 @@
     <div class="bodyProfile">
       <h3>Bienvenido {{ profile.name }}</h3>
       <div style="padding: 1rem">
-        <p *ngIf="profile.role === 'public'">
+        <p *ngIf="profile.role === 'publico'">
           Actualmente puedes acceder a ver la informacion publicada en la app,
           no tienes permisos para realizar modificaciones en la web.
         </p>
-        <div *ngIf="profile.role === 'superAdmin'">
+        <div *ngIf="profile.role === 'administrador'">
           <h2>Tu rol es de: Administrador</h2>
           <p>
-            Tienes permiso para cargar datos, editar datos,ver usuarios
+            Tienes permiso para cargar datos, editar datos, ver usuarios
             registrados, bloquar usuarios, etc.
           </p>
-          <button (click)="goPanel()" class="btn btn-primary">Ir al penel</button>
         </div>
+        <div *ngIf="profile.role === 'editor'">
+          <h2>Tu rol es de: Editor</h2>
+          <p>
+            Tienes permiso para cargar datos, editar datos, bloquar usuarios,
+            etc.
+          </p>
+        </div>
+        <div *ngIf="profile.role === 'editor'">
+          <h2>Tu rol es de: Bombero</h2>
+          <p>Tienes permiso para cargar y editar datos a moviles.</p>
+        </div>
+        <button
+          (click)="goPanel()"
+          class="btn btn-primary"
+          *ngIf="
+            profile.role === 'administrador' ||
+            profile.role === 'editor' ||
+            profile.role === 'bombero'
+          "
+        >
+          Ir al penel
+        </button>
       </div>
       <button (click)="getUser()" *ngIf="goProfile && !profile.name">
         Continuar
