@@ -1,3 +1,9 @@
 <div class="contenedor">
-  <h2>asdas</h2>
+  <form (submit)="guardarPublicacion()">
+    <label for="iframeLink"
+      >Enlace del iframe de la publicación de Facebook:</label
+    >
+    <input type="text" id="iframeLink" [(ngModel)]="iframeLink" required />
+    <button type="submit">Guardar</button>
+  </form>
 </div>

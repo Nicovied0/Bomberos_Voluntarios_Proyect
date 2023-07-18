@@ -3,7 +3,7 @@ const router = express.Router();
 const Post = require('../models/Post'); // Importa el modelo de la publicación
 
 // Ruta para guardar una nueva publicación
-router.post('/post', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { iframeLink } = req.body; // Obtiene el enlace del iframe desde el cuerpo de la solicitud
     const nuevaPublicacion = new Post({ iframeLink });
