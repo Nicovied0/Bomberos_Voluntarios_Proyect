@@ -12,7 +12,7 @@ export class AdminPostComponent {
   constructor(private http: HttpClient) { }
 
   guardarPublicacion() {
-    this.http.post('/api/post', { iframeLink: this.iframeLink }).subscribe(
+    this.http.post('http://localhost:3001/post', { iframeLink: this.iframeLink }).subscribe(
       (res) => {
         console.log(res);
         this.iframeLink = '';
