@@ -12,10 +12,15 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   obtenerPublicaciones(): Observable<Publicacion[]> {
-    return this.http.get<Publicacion[]>(this.apiUrl);
+    // Obtener el ancho de la pantalla actual
+
+    // Realizar la solicitud HTTP y devolver el resultado
+    console.log("aca")
+    return this.http.get<Publicacion[]>(`${this.apiUrl}`);
   }
 
   guardarPublicacion(iframeLink: string): Observable<any> {
+
     return this.http.post<any>(this.apiUrl, { iframeLink });
   }
 }
