@@ -1,7 +1,15 @@
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
-  iframeLink: {
+  iframeLink300: {
+    type: String,
+    required: true,
+  },
+  iframeLink400: {
+    type: String,
+    required: true,
+  },
+  iframeLink500: {
     type: String,
     required: true,
   },

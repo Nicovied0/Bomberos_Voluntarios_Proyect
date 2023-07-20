@@ -1,8 +1,14 @@
 <div class="contenedor">
   <h2>Publicaciones</h2>
   <div *ngFor="let publicacion of publicaciones">
-    <div class="responsive-iframe-container">
-      {{ this.publicacion }}
+    <div class="responsive-iframe-container large-screen">
+      <div [innerHTML]="getSafeIframeUrl(publicacion.iframeLink500 ?? '')"></div>
+    </div>
+    <div class="responsive-iframe-container medium-screen">
+      <div [innerHTML]="getSafeIframeUrl(publicacion.iframeLink400 ?? '')"></div>
+    </div>
+    <div class="responsive-iframe-container small-screen">
+      <div [innerHTML]="getSafeIframeUrl(publicacion.iframeLink300 ?? '')"></div>
     </div>
   </div>
 </div>

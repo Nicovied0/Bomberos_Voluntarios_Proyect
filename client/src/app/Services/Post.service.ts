@@ -21,8 +21,10 @@ export class PostService {
     const newIframeLink = iframeLink.replace(/width=\d+/, `width=${width}`);
     return newIframeLink.replace(/\\/g, ''); // Eliminar todas las barras invertidas
   }
-  guardarPublicacion(iframeLink: string): Observable<any> {
 
-    return this.http.post<any>(this.apiUrl, { iframeLink });
+  guardarPublicacion(iframeLink500: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl, { iframeLink500 });
   }
+
+
 }

@@ -11,7 +11,57 @@
 
 
 
-iframe {
-  max-width: 100%;
-  height: auto;
+/* Estilos para el div en pantallas grandes */
+.large-screen {
+  display: block;
+}
+
+/* Estilos para el div en pantallas medianas */
+.medium-screen {
+  display: none;
+}
+
+/* Estilos para el div en pantallas pequeñas */
+.small-screen {
+  display: none;
+}
+
+/* Media queries para controlar la visualización en diferentes tamaños de pantalla */
+@media screen and (max-width: 550px) {
+  /* Pantallas pequeñas */
+  .large-screen {
+    display: none;
+  }
+  .medium-screen {
+    display: none;
+  }
+  .small-screen {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 900px) {
+  /* Pantallas medianas */
+  .large-screen {
+    display: none;
+  }
+  .medium-screen {
+    display: block;
+  }
+  .small-screen {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  /* Pantallas grandes */
+  .large-screen {
+    display: block;
+  }
+  .medium-screen {
+    display: none;
+  }
+  .small-screen {
+    display: none;
+  }
 }

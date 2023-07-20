@@ -1,5 +1,12 @@
-// publicacion.interface.ts
+// publicacion.inteface.ts
+
 export interface Publicacion {
+  _id: string;
+  actived: boolean;
+  fechaCreacion: string;
+  __v: number;
   iframeLink: string;
-  // Puedes agregar más propiedades aquí según los campos de tus publicaciones
+  iframeLink300?: string; // Agrega la propiedad opcional iframeLink300
+  iframeLink400?: string; // Agrega la propiedad opcional iframeLink400
+  iframeLink500?: string; // Agrega la propiedad opcional iframeLink500
 }
