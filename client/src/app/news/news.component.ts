@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../Services/Post.service';
 import { Publicacion } from '../Services/publicacion.inteface';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer  } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news',
@@ -10,6 +10,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class NewsComponent implements OnInit {
   publicaciones: Publicacion[] = [];
+  iframeWidth: number = 500; // Valor inicial del ancho del iframe
 
   constructor(private postService: PostService, private sanitizer: DomSanitizer) { }
 
@@ -21,6 +22,7 @@ export class NewsComponent implements OnInit {
     this.postService.obtenerPublicaciones().subscribe(
       (publicaciones: Publicacion[]) => {
         this.publicaciones = publicaciones;
+
       },
       (error) => {
         console.error('Error al obtener las publicaciones:', error);
@@ -28,8 +30,4 @@ export class NewsComponent implements OnInit {
     );
   }
 
-  // Método para marcar el contenido del iframe como seguro
-  sanitizeIframe(iframeLink: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(iframeLink);
-  }
 }

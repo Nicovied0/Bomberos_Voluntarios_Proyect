@@ -2,8 +2,7 @@
   <h2>Publicaciones</h2>
   <div *ngFor="let publicacion of publicaciones">
     <div class="responsive-iframe-container">
-      {{publicacion.iframeLink}}
-      <!-- <div [innerHtml]="publicacion.iframeLinkAjustado" class="responsive-iframe" allowfullscreen></div> -->
+      {{ this.publicacion }}
     </div>
   </div>
 </div>
