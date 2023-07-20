@@ -36,7 +36,7 @@ export class NewsComponent implements OnInit {
           this.iframeLink400 = '';
           this.iframeLink500 = '';
         }
-        console.log(publicaciones[1]);
+        console.log(publicaciones);
       },
       (error) => {
         console.error('Error al obtener las publicaciones:', error);
