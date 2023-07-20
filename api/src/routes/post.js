@@ -12,6 +12,22 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Ruta para obtener una publicación por su ID
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const publicacion = await Post.findById(id);
+    if (!publicacion) {
+      return res.status(404).json({ error: "Publicación no encontrada" });
+    }
+    res.json(publicacion);
+  } catch (error) {
+    console.error("Error al obtener la publicación:", error);
+    res.status(500).json({ error: "Error al obtener la publicación" });
+  }
+});
+
+
 router.post("/", async (req, res) => {
   try {
     const { iframeLink } = req.body; // Obtiene el enlace del iframe desde el cuerpo de la solicitud
@@ -56,20 +72,6 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// Ruta para obtener una publicación por su ID
-router.get("/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const publicacion = await Post.findById(id);
-    if (!publicacion) {
-      return res.status(404).json({ error: "Publicación no encontrada" });
-    }
-    res.json(publicacion);
-  } catch (error) {
-    console.error("Error al obtener la publicación:", error);
-    res.status(500).json({ error: "Error al obtener la publicación" });
-  }
-});
 
 
 module.exports = router;
