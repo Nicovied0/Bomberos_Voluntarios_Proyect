@@ -22,8 +22,8 @@ export class PostService {
     return newIframeLink.replace(/\\/g, ''); // Eliminar todas las barras invertidas
   }
 
-  guardarPublicacion(iframeLink500: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl, { iframeLink500 });
+  guardarPublicacion(iframeLink: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl, { iframeLink });
   }
 
 
