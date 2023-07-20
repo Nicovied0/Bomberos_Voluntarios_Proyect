@@ -4,14 +4,14 @@ const Post = require("../models/post");
 
 router.get("/", async (req, res) => {
   try {
-    const todos = await Post.find();
-    console.log("Se llamó a la ruta /post");
-    res.json(todos);
+    const publicaciones = await Post.find();
+    res.json(publicaciones);
   } catch (error) {
-    console.error("Error al obtener los post", error);
-    res.status(500).json({ error: "Error al obtener los post" });
+    console.error("Error al obtener las publicaciones:", error);
+    res.status(500).json({ error: "Error al obtener las publicaciones" });
   }
 });
+
 router.post("/", async (req, res) => {
   try {
     const { iframeLink } = req.body; // Obtiene el enlace del iframe desde el cuerpo de la solicitud
@@ -20,7 +20,6 @@ router.post("/", async (req, res) => {
     function adjustIframeWidth(iframeLink, width) {
       return iframeLink.replace(/width="\d+"/, `width="${width}"`);
     }
-    
 
     // Ajustar el ancho del iframe manteniendo el resto de la cadena sin cambios
     const adjustedIframeLink300 = adjustIframeWidth(iframeLink, 300);
@@ -31,7 +30,7 @@ router.post("/", async (req, res) => {
     const nuevaPublicacion = new Post({
       iframeLink300: adjustedIframeLink300,
       iframeLink400: adjustedIframeLink400,
-      iframeLink500: adjustedIframeLink500
+      iframeLink500: adjustedIframeLink500,
     });
 
     // Guardar en la base de datos
