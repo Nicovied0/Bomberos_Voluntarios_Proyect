@@ -56,4 +56,20 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// Ruta para obtener una publicación por su ID
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const publicacion = await Post.findById(id);
+    if (!publicacion) {
+      return res.status(404).json({ error: "Publicación no encontrada" });
+    }
+    res.json(publicacion);
+  } catch (error) {
+    console.error("Error al obtener la publicación:", error);
+    res.status(500).json({ error: "Error al obtener la publicación" });
+  }
+});
+
+
 module.exports = router;
