@@ -14,5 +14,9 @@ export class PanelComponent {
   goUsers() {
     this.router.navigate(['/panelAdmin/Users'])
   }
+  goMovil() {
+    this.router.navigate(['/panelAdmin/Users'])
+  }
+
 
 }

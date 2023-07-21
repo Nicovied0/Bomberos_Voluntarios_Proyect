@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { PostService } from '../Services/Post.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-post',
   templateUrl: './admin-post.component.html',
@@ -9,19 +10,7 @@ export class AdminPostComponent {
 
   iframeLink: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private postService: PostService) { }
+  
 
-  guardarPublicacion() {
-    this.http.post('http://localhost:3001/post', { iframeLink: this.iframeLink }).subscribe(
-      (res) => {
-        console.log(res);
-        this.iframeLink = '';
-        // Agregar aquí una notificación o mensaje de éxito al usuario
-      },
-      (error) => {
-        console.error('Error al guardar la publicación:', error);
-        // Agregar aquí una notificación o mensaje de error al usuario
-      }
-    );
-  }
 }
