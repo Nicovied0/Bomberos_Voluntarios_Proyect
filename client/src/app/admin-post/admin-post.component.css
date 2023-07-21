@@ -6,3 +6,51 @@
   min-height: 80vh;
   padding-top: 5rem;
 }
+
+
+.divNgFor {
+  padding: 1rem 0;
+}
+
+
+/* Estilos para el div en pantallas grandes */
+.large-screen {
+  display: block;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* Estilos para el div en pantallas medianas */
+.medium-screen {
+  display: none;
+}
+
+/* Estilos para el div en pantallas pequeñas */
+.small-screen {
+  display: none;
+
+}
+
+/* Media queries para controlar la visualización en diferentes tamaños de pantalla */
+@media screen and (max-width: 550px) {
+
+  /* Pantallas pequeñas */
+  .large-screen {
+    display: none;
+  }
+
+  .medium-screen {
+    display: none;
+  }
+
+  .small-screen {
+    display: block;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  }
+}
