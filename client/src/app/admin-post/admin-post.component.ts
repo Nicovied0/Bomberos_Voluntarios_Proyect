@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostService } from '../Services/Post.service';
 import { Router } from '@angular/router';
 @Component({
@@ -6,11 +6,25 @@ import { Router } from '@angular/router';
   templateUrl: './admin-post.component.html',
   styleUrls: ['./admin-post.component.css']
 })
-export class AdminPostComponent {
-
-  iframeLink: string = '';
+export class AdminPostComponent implements OnInit {
 
   constructor(private router: Router, private postService: PostService) { }
-  
+  posts: any[] = [];
+
+  ngOnInit() {
+    this.getPosts();
+  }
+
+  getPosts() {
+    this.postService.obtenerPublicaciones().subscribe(
+      (postResponse: any[]) => {
+        this.posts = postResponse;
+        console.log(this.posts);
+      },
+      (error) => {
+        console.error('Error al obtener las publicaciones:', error);
+      }
+    );
+  }
 
 }
