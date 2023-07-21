@@ -39,3 +39,10 @@
   color: var(--text-color-secondary);
   cursor: pointer;
 }
+
+@media screen and (min-width: 560px) {
+  .divInterno {
+    display: flex;
+    flex-direction: row;
+  }
+}
