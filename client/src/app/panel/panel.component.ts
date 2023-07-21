@@ -9,7 +9,7 @@ export class PanelComponent {
   constructor(private router: Router) { }
 
   goNewPost() {
-    this.router.navigate(['/panelAdmin/NewPost'])
+    this.router.navigate(['/panelAdmin/Post'])
   }
   goUsers() {
     this.router.navigate(['/panelAdmin/Users'])

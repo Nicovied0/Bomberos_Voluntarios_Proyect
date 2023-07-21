@@ -16,13 +16,15 @@ import { PanelComponent } from './panel/panel.component';
 import { AdminPostComponent } from './admin-post/admin-post.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminUsersEditComponent } from './admin-users-edit/admin-users-edit.component';
+import { AdminNewPostComponent } from './admin-new-post/admin-new-post.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'noticias', component: NewsComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'panelAdmin', component: PanelComponent },
-  { path: 'panelAdmin/NewPost', component: AdminPostComponent },
+  { path: 'panelAdmin/Post', component: AdminPostComponent },
+  { path: 'panelAdmin/NewPost', component: AdminNewPostComponent },
   { path: 'panelAdmin/Users', component: AdminUsersComponent },
   { path: 'panelAdmin/Users/:id', component: AdminUsersEditComponent },
   { path: 'perfil/editar', component: EditProfileComponent },
