@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'noticias', component: NewsComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'panelAdmin', component: PanelComponent },
-  { path: 'panelAdmin/Post', component: AdminPostComponent },
+  { path: 'panelAdmin/Posts', component: AdminPostComponent },
   { path: 'panelAdmin/NewPost', component: AdminNewPostComponent },
   { path: 'panelAdmin/Users', component: AdminUsersComponent },
   { path: 'panelAdmin/Vehicles', component: AdminMovilComponent },

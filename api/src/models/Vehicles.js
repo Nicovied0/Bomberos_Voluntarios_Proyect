@@ -1,5 +1,16 @@
 const mongoose = require("mongoose");
 
+const MaintenanceSchema = new mongoose.Schema({
+  fecha: {
+    type: Date,
+    default: Date.now,
+  },
+  descripcion: {
+    type: String,
+    default: "No se Ingresó Descripción",
+  },
+});
+
 const VehiclesSchema = new mongoose.Schema({
   type: {
     type: String,
@@ -49,22 +60,10 @@ const VehiclesSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  lastRecharge: {
-    type: String,
-    default: "No se Ingreso Dato",
-  },
-  lastMaintenance: {
-    type: String,
-    default: "No se Ingreso Dato",
-  },
-  lastServiceProgramed: {
-    type: String,
-    default: "No se Ingreso Dato",
-  },
-  lastBateryChange: {
-    type: String,
-    default: "No se Ingreso Dato",
-  },
+  lastRecharge: [MaintenanceSchema],
+  lastMaintenance: [MaintenanceSchema],
+  lastServiceProgramed: [MaintenanceSchema],
+  lastBatteryChange: [MaintenanceSchema],
   waterCapacity: {
     type: Number,
     default: 0,
