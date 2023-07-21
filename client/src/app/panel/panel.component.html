@@ -1,8 +1,14 @@
 <div class="contenedor">
-  <h2>soy panel</h2>
-  <div>
-    <h2 (click)="goUsers()">Usuarios</h2>
-    <h2 (click)="goNewPost()">Publicaciones</h2>
-    <h2 (click)="goMovil()">Actualizar informacion de moviles</h2>
+  <h2>Este es el panel, puedes acceder a realizar modificaciones</h2>
+  <div class="div">
+    <button (click)="goUsers()" class="btn btn-primary btn-large m-2 p-2">
+      Usuarios
+    </button>
+    <button (click)="goNewPost()" class="btn btn-primary btn-large m-2 p-2">
+      Publicaciones
+    </button>
+    <button (click)="goMovil()" class="btn btn-primary btn-large m-2 p-2">
+      Moviles
+    </button>
   </div>
 </div>
