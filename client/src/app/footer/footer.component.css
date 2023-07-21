@@ -62,3 +62,8 @@
   color: var(--text-color-secondary);
 }
 
+
+.ondev{
+  cursor: pointer;
+  color: var(--text-color-secondary);
+}
