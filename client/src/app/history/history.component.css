@@ -3,3 +3,39 @@
   padding: 2rem;
   padding-top: 7rem;
 }
+
+.divInterno {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+
+  height: 7rem;
+  width: 7rem;
+  margin: 0px 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+}
+
+.divInterno2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.h2 {
+  margin-top: 3rem;
+}
+
+.divInterno2:hover {
+  color: var(--text-color-secondary);
+  cursor: pointer;
+}
