@@ -21,7 +21,6 @@
   display: flex;
   z-index: 5;
   position: absolute;
-  top: 30%;
   width: 80%;
   align-items: center;
   flex-direction: column;
@@ -59,8 +58,9 @@
 .title {
   font: 1.5rem "raleway-bold", sans-serif;
   letter-spacing: -1px;
-  color: white;
+  color: var(--text-color-secondary);
   text-shadow: 0 1px 20px rgba(0, 0, 0, 0.6);
+
 }
 
 
