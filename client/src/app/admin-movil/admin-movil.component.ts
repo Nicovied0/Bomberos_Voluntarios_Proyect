@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'; // Importa sweetalert2
 })
 export class AdminMovilComponent implements OnInit {
   constructor(private router: Router, private vehicleService: VehicleService) { }
-  
+
   vehicles: any[] = [];
 
   ngOnInit() {

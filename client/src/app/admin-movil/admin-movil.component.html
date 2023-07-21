@@ -1,1 +1,17 @@
-<p>admin-movil works!</p>
+<div class="contenedor">
+  <div class="contenedor2">
+    <h2>Vehiculos</h2>
+
+    <div *ngIf="vehicles.length != 0">
+      <div *ngFor="let vehicle of vehicles" class="divNgFor">
+        <div>
+          <img src="{{ vehicle.image }}" class="img"/>
+          <p>Movil {{ vehicle.movilNumber }}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="vehicles.length == 0">
+      <p>Actulmente no hay ninguna publicacion cargada</p>
+    </div>
+  </div>
+</div>
