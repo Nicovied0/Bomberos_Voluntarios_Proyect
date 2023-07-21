@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { PostService } from '../Services/Post.service';
 
-import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-admin-new-post',
   templateUrl: './admin-new-post.component.html',
@@ -9,9 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class AdminNewPostComponent {
   iframeLink: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private postService: PostService) { }
+
   guardarPublicacion() {
-    this.http.post('http://localhost:3001/post', { iframeLink: this.iframeLink }).subscribe(
+    const iframeLinkAdjusted = this.postService.ajustarAnchoIframe(this.iframeLink, 500); // Ajustar el ancho a 500
+    this.postService.guardarPublicacion(iframeLinkAdjusted).subscribe(
       (res) => {
         console.log(res);
         this.iframeLink = '';
