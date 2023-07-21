@@ -46,3 +46,11 @@
   height: 70vh;
   flex-direction: column;
 }
+
+.divProfile {
+
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  padding: 1rem;
+}
