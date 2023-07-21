@@ -10,8 +10,9 @@
       [(ngModel)]="iframeLink"
       required
       class="form-control ax"
+      (input)="validarIframe()"
     />
-    <button type="submit" class="btn btn-primary btn-lg btn-block ax">
+    <button type="submit" class="btn btn-primary btn-lg btn-block ax" [disabled]="!iframeValido">
       Guardar
     </button>
   </form>
