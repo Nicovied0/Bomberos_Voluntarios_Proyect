@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Publicacion } from './publicacion.inteface';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,12 @@ export class PostService {
 
 
   obtenerPublicaciones(): Observable<Publicacion[]> {
-    return this.http.get<Publicacion[]>(this.apiUrl);
+    return this.http.get<Publicacion[]>(this.apiUrl).pipe(
+      map((publicaciones: Publicacion[]) => {
+        // Ordenar las publicaciones de la más nueva a la más vieja según la fecha de creación
+        return publicaciones.sort((a, b) => new Date(b.fechaCreacion).getTime() - new Date(a.fechaCreacion).getTime());
+      })
+    );
   }
 
   // Método para ajustar el ancho del iframe en el enlace proporcionado y eliminar las barras invertidas
@@ -34,7 +40,7 @@ export class PostService {
 
     return this.http.post<any>(this.apiUrl, { iframeLink });
   }
-  
+
   eliminarPublicacion(publicacionId: string): Observable<any> {
     const url = `${this.apiUrl}/${publicacionId}`;
     return this.http.delete<any>(url);
