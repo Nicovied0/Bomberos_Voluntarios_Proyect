@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'; // Importa sweetalert2
 })
 export class AdminMovilComponent implements OnInit {
   constructor(private router: Router, private vehicleService: VehicleService) { }
+  
   vehicles: any[] = [];
 
   ngOnInit() {
@@ -22,7 +23,7 @@ export class AdminMovilComponent implements OnInit {
       this.vehicles = usersResponse as any[];
       console.log(this.vehicles);
     } catch (error) {
-      console.error('Error al obtener los usuarios:', error);
+      console.error('Error al obtener los vehicles:', error);
     }
   }
 

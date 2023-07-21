@@ -17,6 +17,7 @@ import { AdminPostComponent } from './admin-post/admin-post.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminUsersEditComponent } from './admin-users-edit/admin-users-edit.component';
 import { AdminNewPostComponent } from './admin-new-post/admin-new-post.component';
+import { AdminMovilComponent } from './admin-movil/admin-movil.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'panelAdmin/Post', component: AdminPostComponent },
   { path: 'panelAdmin/NewPost', component: AdminNewPostComponent },
   { path: 'panelAdmin/Users', component: AdminUsersComponent },
+  { path: 'panelAdmin/Vehicles', component: AdminMovilComponent },
   { path: 'panelAdmin/Users/:id', component: AdminUsersEditComponent },
   { path: 'perfil/editar', component: EditProfileComponent },
   { path: 'perfil/detalles', component: ProfiledetailComponent },
