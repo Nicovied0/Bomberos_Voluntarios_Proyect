@@ -7,3 +7,9 @@
   padding-top: 5rem;
   justify-content: center;
 }
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
