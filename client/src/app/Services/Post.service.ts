@@ -34,5 +34,19 @@ export class PostService {
 
     return this.http.post<any>(this.apiUrl, { iframeLink });
   }
-
+  eliminarPublicacion(publicacionId: string) {
+    // Aquí llamas al servicio para eliminar la publicación por su ID
+    this.postService.eliminarPublicacion(publicacionId).subscribe(
+      (res) => {
+        console.log(res);
+        // Actualizar la lista de publicaciones después de eliminar la publicación
+        this.getPublicaciones();
+        Swal.fire('Éxito', 'La publicación ha sido eliminada exitosamente.', 'success');
+      },
+      (error) => {
+        console.error('Error al eliminar la publicación:', error);
+        Swal.fire('Error', 'Ha ocurrido un error al eliminar la publicación.', 'error');
+      }
+    );
+  }
 }
