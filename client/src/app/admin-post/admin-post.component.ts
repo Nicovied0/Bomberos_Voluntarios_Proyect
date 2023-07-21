@@ -3,6 +3,7 @@ import { PostService } from '../Services/Post.service';
 import { Publicacion } from '../Services/publicacion.inteface';
 import { DomSanitizer,SafeHtml  } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-admin-post',
   templateUrl: './admin-post.component.html',
@@ -53,5 +54,21 @@ export class AdminPostComponent implements OnInit {
 
   goNew(){
     this.router.navigate(['/panelAdmin/NewPost'])
+  }
+
+  eliminarPublicacion(publicacionId: string) {
+    // Aquí llamas al servicio para eliminar la publicación por su ID
+    this.postService.eliminarPublicacion(publicacionId).subscribe(
+      (res) => {
+        console.log(res);
+        // Actualizar la lista de publicaciones después de eliminar la publicación
+        this.getPublicaciones();
+        Swal.fire('Éxito', 'La publicación ha sido eliminada exitosamente.', 'success');
+      },
+      (error) => {
+        console.error('Error al eliminar la publicación:', error);
+        Swal.fire('Error', 'Ha ocurrido un error al eliminar la publicación.', 'error');
+      }
+    );
   }
 }
