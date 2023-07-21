@@ -8,6 +8,8 @@ import { Publicacion } from './publicacion.inteface';
 })
 export class PostService {
   private apiUrl = 'http://localhost:3001/post';
+  private iframeRegex = /<iframe.*src=/i;
+
 
   constructor(private http: HttpClient) { }
 
@@ -23,8 +25,14 @@ export class PostService {
   }
 
   guardarPublicacion(iframeLink: string): Observable<any> {
+    if (!this.iframeRegex.test(iframeLink)) {
+      // Si el enlace de iframe no contiene el patrón adecuado, devolver un error
+      return new Observable((observer) => {
+        observer.error('El enlace no es un iframe válido');
+      });
+    }
+
     return this.http.post<any>(this.apiUrl, { iframeLink });
   }
-
 
 }
