@@ -27,4 +27,7 @@ export class AdminPostComponent implements OnInit {
     );
   }
 
+  goNew(){
+    this.router.navigate(['/panelAdmin/NewPost'])
+  }
 }
