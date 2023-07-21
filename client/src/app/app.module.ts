@@ -39,6 +39,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminPostComponent } from './admin-post/admin-post.component';
 import { AdminUsersEditComponent } from './admin-users-edit/admin-users-edit.component';
 import { AdminNewPostComponent } from './admin-new-post/admin-new-post.component';
+import { AdminMovilComponent } from './admin-movil/admin-movil.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { AdminNewPostComponent } from './admin-new-post/admin-new-post.component
     AdminPostComponent,
     AdminUsersEditComponent,
     AdminNewPostComponent,
+    AdminMovilComponent,
   ],
   imports: [
     BrowserModule,
