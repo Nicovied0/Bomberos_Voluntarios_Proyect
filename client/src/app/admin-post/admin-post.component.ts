@@ -1,68 +1,69 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { PostService } from '../Services/Post.service';
 import { Publicacion } from '../Services/publicacion.inteface';
-import { DomSanitizer,SafeHtml  } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-admin-post',
   templateUrl: './admin-post.component.html',
   styleUrls: ['./admin-post.component.css']
 })
 export class AdminPostComponent implements OnInit {
+  constructor(private router: Router, private postService: PostService, private sanitizer: DomSanitizer) { }
 
-  constructor(private router: Router ,private postService: PostService, private sanitizer: DomSanitizer) { }
   publicaciones: Publicacion[] = [];
-  iframeLink300 = "";
-  iframeLink400 = "";
-  iframeLink500 = "";
+  private desplazamiento = 0;
+  private publicacionesPorPagina = 3; // Cantidad de publicaciones a obtener por página
 
   ngOnInit() {
-    this.getPublicaciones();
+    this.getMorePublicaciones();
   }
 
-  getPublicaciones() {
-    this.postService.obtenerPublicaciones().subscribe(
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    // Calcula la posición del marcador de scroll
+    const scrollMarkerPosition = document.querySelector('.scroll-marker')?.getBoundingClientRect().top || 0;
+    const windowHeight = window.innerHeight;
+
+    // Si el marcador de scroll está visible en la ventana actual, carga más publicaciones
+    if (scrollMarkerPosition <= windowHeight) {
+      this.getMorePublicaciones();
+    }
+  }
+
+  getMorePublicaciones() {
+    // Llama al servicio para obtener las siguientes publicaciones con el desplazamiento actual
+    this.postService.obtenerPublicaciones(this.desplazamiento, this.publicacionesPorPagina).subscribe(
       (publicaciones: Publicacion[]) => {
-        this.publicaciones = publicaciones;
         if (publicaciones.length > 0) {
-          // Asignar los valores según los objetos en el arreglo publicaciones
-          this.iframeLink300 = this.removeBackslashes(publicaciones[0]?.iframeLink300 || '');
-          this.iframeLink400 = this.removeBackslashes(publicaciones[0]?.iframeLink400 || '');
-          this.iframeLink500 = this.removeBackslashes(publicaciones[0]?.iframeLink500 || '');
-        } else {
-          // Si no hay publicaciones, establecer los enlaces en vacío
-          this.iframeLink300 = '';
-          this.iframeLink400 = '';
-          this.iframeLink500 = '';
+          // Si se obtuvieron nuevas publicaciones, actualiza el desplazamiento para la próxima llamada
+          this.desplazamiento += publicaciones.length;
+
+          // Agrega las nuevas publicaciones al arreglo existente
+          this.publicaciones.push(...publicaciones);
         }
-        console.log(publicaciones);
       },
       (error) => {
-        console.error('Error al obtener las publicaciones:', error);
+        console.error('Error al obtener las siguientes publicaciones:', error);
       }
     );
-  }
-
-  removeBackslashes(text: string): string {
-    return text.replace(/\\/g, '');
   }
 
   getSafeIframeUrl(iframeLink: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(iframeLink);
   }
 
-  goNew(){
-    this.router.navigate(['/panelAdmin/NewPost'])
+  goNew() {
+    this.router.navigate(['/panelAdmin/NewPost']);
   }
 
   eliminarPublicacion(publicacionId: string) {
-    // Aquí llamas al servicio para eliminar la publicación por su ID
     this.postService.eliminarPublicacion(publicacionId).subscribe(
-      (res) => {
-        console.log(res);
-        // Actualizar la lista de publicaciones después de eliminar la publicación
-        this.getPublicaciones();
+      () => {
+        // Eliminar la publicación del array de publicaciones
+        this.publicaciones = this.publicaciones.filter((publicacion) => publicacion._id !== publicacionId);
         Swal.fire('Éxito', 'La publicación ha sido eliminada exitosamente.', 'success');
       },
       (error) => {
