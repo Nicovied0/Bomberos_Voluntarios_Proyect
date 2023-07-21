@@ -25,17 +25,17 @@ export class AdminMovilComponent implements OnInit {
   }
 
   sortVehiclesByMobileNumber() {
-    this.vehicles.sort((a:any, b:any) => {
+    this.vehicles.sort((a: any, b: any) => {
       return a.movilNumber - b.movilNumber; // Orden ascendente
       // Si deseas orden descendente, cambia la línea anterior por:
       // return b.movilNumber - a.movilNumber;
     });
   }
-  goEdit(){
-    this.router.navigate([''])
+  goEdit(_id: any) {
+    this.router.navigate(['panelAdmin/Vehicles', _id])
   }
-  goUpload(){
-    this.router.navigate([''])
+  goUpload(_id: any) {
+    this.router.navigate(['panelAdmin/Vehicles', _id])
   }
 
 }

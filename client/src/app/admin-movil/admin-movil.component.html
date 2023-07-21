@@ -7,8 +7,8 @@
         <div class="divInterno">
           <img src="{{ vehicle.image }}" class="img" />
           <p class="p">Movil {{ vehicle.movilNumber }}</p>
-          <p class="p" (click)="goEdit()">Editar</p>
-          <p class="p" (click)="goUpload()">Cargar Datos</p>
+          <p class="p" (click)="goEdit(vehicle._id)">Editar</p>
+          <p class="p" (click)="goUpload(vehicle._id)">Cargar Datos</p>
         </div>
       </div>
     </div>
