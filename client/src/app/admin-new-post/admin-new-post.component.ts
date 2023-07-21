@@ -12,7 +12,7 @@ export class AdminNewPostComponent {
   iframeLink: string = '';
   iframeValido: boolean = true;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private router: Router) { }
 
   guardarPublicacion() {
     if (this.iframeValido) {
@@ -22,7 +22,7 @@ export class AdminNewPostComponent {
           console.log(res);
           this.iframeLink = '';
           Swal.fire('Éxito', 'La publicación ha sido guardada exitosamente.', 'success');
-
+          this.router.navigate(['/noticias'])
         },
         (error) => {
           console.error('Error al guardar la publicación:', error);
