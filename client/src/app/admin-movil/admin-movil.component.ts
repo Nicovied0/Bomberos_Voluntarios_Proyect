@@ -14,17 +14,22 @@ export class AdminMovilComponent implements OnInit {
   vehicles: any[] = [];
 
   ngOnInit() {
-    this.getVehicles();
+    this.vehicleService.getVehicles().then((results) => {
+      this.vehicles = results;
+      console.log(this.vehicles);
+
+      this.sortVehiclesByMobileNumber(); // Llamada al método para ordenar los vehículos
+    }).catch((error) => {
+      console.error('Error al obtener los repositorios', error);
+    });
   }
 
-  async getVehicles() {
-    try {
-      const usersResponse = await this.vehicleService.getVehicles();
-      this.vehicles = usersResponse as any[];
-      console.log(this.vehicles);
-    } catch (error) {
-      console.error('Error al obtener los vehicles:', error);
-    }
+  sortVehiclesByMobileNumber() {
+    this.vehicles.sort((a:any, b:any) => {
+      return a.movilNumber - b.movilNumber; // Orden ascendente
+      // Si deseas orden descendente, cambia la línea anterior por:
+      // return b.movilNumber - a.movilNumber;
+    });
   }
 
 }
