@@ -57,10 +57,8 @@ router.post("/login", (req, res) => {
           .json({ message: "Email o contraseña incorrectos" });
       }
 
-      // Generar el token de acceso JWT
-      const token = jwt.sign({ userId: user._id }, "secreto", {
-        expiresIn: "2h",
-      });
+      // Generar el token de acceso JWT sin fecha de expiración
+      const token = jwt.sign({ userId: user._id }, "secreto");
 
       res.status(200).json({ token: token });
     })
