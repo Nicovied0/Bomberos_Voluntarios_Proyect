@@ -18,6 +18,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminUsersEditComponent } from './admin-users-edit/admin-users-edit.component';
 import { AdminNewPostComponent } from './admin-new-post/admin-new-post.component';
 import { AdminMovilComponent } from './admin-movil/admin-movil.component';
+import { AdminMovilEditComponent } from './admin-movil-edit/admin-movil-edit.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'panelAdmin/Users', component: AdminUsersComponent },
   { path: 'panelAdmin/Vehicles', component: AdminMovilComponent },
   { path: 'panelAdmin/Users/:id', component: AdminUsersEditComponent },
+  { path: ' panelAdmin/Vehicles/:id', component: AdminMovilEditComponent },
   { path: 'perfil/editar', component: EditProfileComponent },
   { path: 'perfil/detalles', component: ProfiledetailComponent },
   { path: 'historia', component: HistoryComponent },
