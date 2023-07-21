@@ -31,5 +31,11 @@ export class AdminMovilComponent implements OnInit {
       // return b.movilNumber - a.movilNumber;
     });
   }
+  goEdit(){
+    this.router.navigate([''])
+  }
+  goUpload(){
+    this.router.navigate([''])
+  }
 
 }

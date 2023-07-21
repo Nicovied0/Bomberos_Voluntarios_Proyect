@@ -1,14 +1,14 @@
 <div class="contenedor">
   <div class="contenedor2">
-    <h2 style="text-align: center;">Vehiculos</h2>
+    <h2 style="text-align: center">Vehiculos</h2>
 
     <div *ngIf="vehicles.length != 0">
       <div *ngFor="let vehicle of vehicles" class="divNgFor">
         <div class="divInterno">
           <img src="{{ vehicle.image }}" class="img" />
           <p class="p">Movil {{ vehicle.movilNumber }}</p>
-          <p class="p">Editar</p>
-          <p class="p">Cargar Datos</p>
+          <p class="p" (click)="goEdit()">Editar</p>
+          <p class="p" (click)="goUpload()">Cargar Datos</p>
         </div>
       </div>
     </div>
