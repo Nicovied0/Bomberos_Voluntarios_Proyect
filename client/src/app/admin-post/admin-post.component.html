@@ -4,28 +4,30 @@
     <button class="btn btn-primary" (click)="goNew()">
       Cargar Nuevas publicaciones
     </button>
-    <div *ngFor="let publicacion of publicaciones" class="divNgFor">
-      <div>
-        <div class="responsive-iframe-container large-screen">
-          <div
-            [innerHTML]="getSafeIframeUrl(publicacion.iframeLink500 ?? '')"
-            class="divInterno"
-          ></div>
+    <div *ngIf="publicaciones.length != 0">
+      <div *ngFor="let publicacion of publicaciones" class="divNgFor">
+        <div>
+          <div class="responsive-iframe-container large-screen">
+            <div
+              [innerHTML]="getSafeIframeUrl(publicacion.iframeLink500 ?? '')"
+              class="divInterno"
+            ></div>
+          </div>
+          <div class="responsive-iframe-container medium-screen">
+            <div
+              [innerHTML]="getSafeIframeUrl(publicacion.iframeLink400 ?? '')"
+              class="divInterno"
+            ></div>
+          </div>
+          <div class="responsive-iframe-container small-screen">
+            <div
+              [innerHTML]="getSafeIframeUrl(publicacion.iframeLink300 ?? '')"
+              class="divInterno"
+            ></div>
+          </div>
         </div>
-        <div class="responsive-iframe-container medium-screen">
-          <div
-            [innerHTML]="getSafeIframeUrl(publicacion.iframeLink400 ?? '')"
-            class="divInterno"
-          ></div>
-        </div>
-        <div class="responsive-iframe-container small-screen">
-          <div
-            [innerHTML]="getSafeIframeUrl(publicacion.iframeLink300 ?? '')"
-            class="divInterno"
-          ></div>
-        </div>
+        <button>Borrar</button>
       </div>
-      <button>Borrar</button>
     </div>
   </div>
 </div>
