@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from '../Services/Post.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-new-post',
@@ -17,11 +18,11 @@ export class AdminNewPostComponent {
       (res) => {
         console.log(res);
         this.iframeLink = '';
-        // Agregar aquí una notificación o mensaje de éxito al usuario
+        Swal.fire('Éxito', 'La publicación ha sido guardada exitosamente.', 'success');
       },
       (error) => {
         console.error('Error al guardar la publicación:', error);
-        // Agregar aquí una notificación o mensaje de error al usuario
+        Swal.fire('Error', 'Ha ocurrido un error al guardar la publicación.', 'error');
       }
     );
   }
