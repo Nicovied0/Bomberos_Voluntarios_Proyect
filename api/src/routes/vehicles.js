@@ -129,4 +129,60 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+
+// Ruta para agregar un nuevo mantenimiento a un vehículo específico/////
+router.post("/:id/maintenance", async (req, res) => {
+  try {
+    const { fecha, descripcion } = req.body;
+    const maintenance = { fecha, descripcion };
+
+    const vehicle = await Vehicles.findById(req.params.id);
+
+    if (!vehicle) {
+      return res.status(404).json({ error: "Vehículo no encontrado" });
+    }
+
+    vehicle.lastMaintenance.push(maintenance);
+    const updatedVehicle = await vehicle.save();
+
+    console.log(`Se llamó a la ruta POST /vehicles/${req.params.id}/maintenance`);
+    res.status(201).json(updatedVehicle);
+  } catch (error) {
+    console.error("Error al agregar el mantenimiento", error);
+    res.status(500).json({ error: "Error al agregar el mantenimiento" });
+  }
+});
+
+// Ruta para editar un mantenimiento específico de un vehículo
+router.put("/:id/maintenance/:maintenanceId", async (req, res) => {
+  try {
+    const { fecha, descripcion } = req.body;
+
+    const vehicle = await Vehicles.findById(req.params.id);
+
+    if (!vehicle) {
+      return res.status(404).json({ error: "Vehículo no encontrado" });
+    }
+
+    const maintenanceIndex = vehicle.lastMaintenance.findIndex(
+      (maintenance) => maintenance._id.toString() === req.params.maintenanceId
+    );
+
+    if (maintenanceIndex === -1) {
+      return res.status(404).json({ error: "Mantenimiento no encontrado" });
+    }
+
+    vehicle.lastMaintenance[maintenanceIndex].fecha = fecha;
+    vehicle.lastMaintenance[maintenanceIndex].descripcion = descripcion;
+
+    const updatedVehicle = await vehicle.save();
+
+    console.log(`Se llamó a la ruta PUT /vehicles/${req.params.id}/maintenance/${req.params.maintenanceId}`);
+    res.json(updatedVehicle);
+  } catch (error) {
+    console.error("Error al editar el mantenimiento", error);
+    res.status(500).json({ error: "Error al editar el mantenimiento" });
+  }
+});
+
 module.exports = router;

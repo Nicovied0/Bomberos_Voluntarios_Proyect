@@ -8,14 +8,17 @@ import { VehicleService } from '../Services/Vehicles.service';
   styleUrls: ['./vehicle-information.component.css']
 })
 export class VehicleInformationComponent {
+  constructor(
+    private route: ActivatedRoute,
+    private vehicleService: VehicleService,
+    private router: Router
+  ) {}
 
-  constructor(private route: ActivatedRoute, private vehicleService: VehicleService, private router: Router) { }
   @Input() vehicle: any;
-  public vehicleId: any;
-
+  public vehicleId: any = {};
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const vehicleId = params.get('id');
       if (vehicleId) {
         this.getVehicle(vehicleId);
@@ -24,14 +27,24 @@ export class VehicleInformationComponent {
   }
 
   getVehicle(id: any) {
-    this.vehicleService.getVehiclesById(id)
-      .then(vehicle => {
+    this.vehicleService
+      .getVehiclesById(id)
+      .then((vehicle) => {
         console.log(vehicle);
         this.vehicleId = vehicle;
-
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
+  }
+
+  isAllMantenimientosEmpty(): boolean {
+    // Verificar si todas las listas de mantenimientos están vacías
+    return (
+      this.vehicleId.lastBatteryChange.length === 0 &&
+      this.vehicleId.lastMaintenance.length === 0 &&
+      this.vehicleId.lastRecharge.length === 0 &&
+      this.vehicleId.lastServiceProgramed.length === 0
+    );
   }
 }

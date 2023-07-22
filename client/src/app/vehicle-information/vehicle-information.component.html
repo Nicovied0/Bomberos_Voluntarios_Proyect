@@ -1,3 +1,42 @@
 <div class="contenedor">
+  <div class="divSuperior">
+    <img class="img" src="{{vehicleId.image}}" />
+    <h2 style="margin-bottom: 0">Movil N° {{ vehicleId.movilNumber }}</h2>
+  </div>
+  <div>
+    <h3>Mantenimientos</h3>
+    <div>
+      <!-- Verificar si hay mantenimientos y mostrar la lista desplegable si existen -->
+      <ul *ngIf="vehicleId">
+        <ng-container *ngIf="vehicleId.lastBatteryChange.length > 0">
+          <li>
+            <details>
+              <summary>Último cambio de batería</summary>
+              <ul>
+                <li *ngFor="let item of vehicleId.lastBatteryChange">{{ item }}</li>
+              </ul>
+            </details>
+          </li>
+        </ng-container>
 
+        <ng-container *ngIf="vehicleId.lastMaintenance.length > 0">
+          <li>
+            <details>
+              <summary>Último mantenimiento</summary>
+              <ul>
+                <li *ngFor="let item of vehicleId.lastMaintenance">{{ item }}</li>
+              </ul>
+            </details>
+          </li>
+        </ng-container>
+
+        <!-- Repite el mismo patrón para lastRecharge y lastServiceProgramed -->
+
+        <!-- Si todas las listas de mantenimientos están vacías, mostrar "Ningún mantenimiento" -->
+        <!-- <li *ngIf="isAllMantenimientosEmpty()">
+          Ningún mantenimiento
+        </li> -->
+      </ul>
+    </div>
+  </div>
 </div>

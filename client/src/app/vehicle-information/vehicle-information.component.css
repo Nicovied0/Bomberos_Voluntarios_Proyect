@@ -1,11 +1,23 @@
 .contenedor {
-  min-height: 80vh;
-  padding: 1rem;
-  padding-top: 7rem;
-  padding-bottom: 3rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
+  padding: 0rem;
+  min-height: 80vh;
+  padding-top: 5rem;
+}
 
-  justify-content: space-evenly;
+.img {
+  height: 5rem;
+  width: 5rem;
+  margin: 0px 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+}
+
+.divSuperior {
+  display: flex;
+  align-items: center;
 }
