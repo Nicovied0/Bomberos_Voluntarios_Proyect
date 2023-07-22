@@ -38,7 +38,9 @@ export class VehicleInformationComponent {
       }
     });
   }
-
+  goBack(id:any) {
+    this.router.navigate(['moviles/',id])
+  }
   getVehicle(id: any) {
     this.vehicleService
       .getVehiclesById(id)
