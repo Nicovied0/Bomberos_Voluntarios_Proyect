@@ -28,9 +28,18 @@
   color: var(--text-color-secondary);
   cursor: pointer;
 }
-.divsuperior2{
+.divSuperior2{
+  margin: 2rem 0;
+}
+.icon2{
+  font-weight: bolder;
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  margin: 1rem;
+}
+.divInfo{
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 @media (min-width: 500px) {
@@ -39,6 +48,14 @@
   }
   .contenedor{
     padding: 2rem;
+  }
+  .div2 .icon2 {
+    display: none;
+  }
+
+  .div2 .ver-mas,
+  .div2 .ver-menos {
+    display: inline;
   }
 }
 
@@ -51,3 +68,5 @@
     padding: 5rem;
   }
 }
+
+

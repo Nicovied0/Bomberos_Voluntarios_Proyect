@@ -37,7 +37,7 @@
         <div *ngIf="profile.role === 'editor'">
           <h2>Tu rol es de: Editor</h2>
           <p>
-            Tienes permiso para cargar datos, editar datos, bloquar usuarios,
+            Tienes permiso para cargar datos, editarlos, administrar usuarios,
             etc.
           </p>
         </div>
@@ -57,7 +57,7 @@
           Ir al penel
         </button>
       </div>
-      <button (click)="getUser()" *ngIf="goProfile && !profile.name">
+      <button (click)="getUser()" *ngIf="goProfile && !profile.name" class="btn btn-primary">
         Continuar
       </button>
     </div>
