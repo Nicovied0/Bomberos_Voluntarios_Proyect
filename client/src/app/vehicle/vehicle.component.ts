@@ -35,4 +35,8 @@ export class VehicleComponent {
       });
   }
 
+  goUpdate(id:any){
+    this.router.navigate(['/panelAdmin/Vehicles/maintenance',id])
+  }
+
 }
