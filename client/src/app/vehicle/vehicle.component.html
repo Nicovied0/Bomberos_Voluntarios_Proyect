@@ -18,9 +18,11 @@
         <p>
           Fecha:
           {{
-            vehicleId.lastServiceProgramed[
-              vehicleId.lastServiceProgramed.length - 1
-            ].fecha
+            formatFecha(
+              vehicleId.lastServiceProgramed[
+                vehicleId.lastServiceProgramed.length - 1
+              ].fecha
+            )
           }}
         </p>
         <p>
@@ -42,8 +44,8 @@
         <p>
           Fecha:
           {{
-            vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
-              .fecha
+            formatFecha(vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
+              .fecha)
           }}
         </p>
         <p>
@@ -63,7 +65,7 @@
       <div *ngIf="vehicleId.lastRecharge.length">
         <p>
           Fecha:
-          {{ vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1].fecha }}
+          {{ formatFecha(vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1].fecha) }}
         </p>
         <p>
           Descripción:
@@ -81,8 +83,8 @@
         <p>
           Fecha:
           {{
-            vehicleId.lastBatteryChange[vehicleId.lastBatteryChange.length - 1]
-              .fecha
+            formatFecha(vehicleId.lastBatteryChange[vehicleId.lastBatteryChange.length - 1]
+              .fecha)
           }}
         </p>
         <p>
@@ -98,8 +100,12 @@
       </p>
     </div>
     <div>
-      <button (click)="goInfo(vehicleId._id)" class="button">Ver mas información</button>
-      <button (click)="goUpdate(vehicleId._id)" class="button">Cargar Datos</button>
+      <button (click)="goInfo(vehicleId._id)" class="button">
+        Ver mas información
+      </button>
+      <button (click)="goUpdate(vehicleId._id)" class="button">
+        Cargar Datos
+      </button>
     </div>
   </div>
 </div>

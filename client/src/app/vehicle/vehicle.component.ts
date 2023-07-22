@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { VehicleService } from '../Services/Vehicles.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-vehicle',
   templateUrl: './vehicle.component.html',
@@ -34,7 +35,14 @@ export class VehicleComponent {
         console.error(error);
       });
   }
-
+  formatFecha(fecha: string): string {
+    const date = new Date(fecha);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
+  }
+  
   goUpdate(id:any){
     this.router.navigate(['/panelAdmin/Vehicles/maintenance',id])
   }
