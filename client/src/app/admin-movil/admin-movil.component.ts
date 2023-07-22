@@ -35,7 +35,7 @@ export class AdminMovilComponent implements OnInit {
     this.router.navigate(['panelAdmin/Vehicles', _id])
   }
   goUpload(_id: any) {
-    this.router.navigate(['panelAdmin/Vehicles', _id])
+    this.router.navigate(['panelAdmin/Vehicles/maintenance', _id])
   }
 
 }
