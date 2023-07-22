@@ -1,0 +1,11 @@
+.contenedor {
+  min-height: 80vh;
+  padding: 1rem;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  justify-content: space-evenly;
+}
