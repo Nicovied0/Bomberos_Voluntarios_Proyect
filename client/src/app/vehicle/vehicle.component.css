@@ -29,6 +29,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+  margin: 1rem;
 }
 
 .button {
@@ -41,10 +42,24 @@
   cursor: pointer;
   font-size: 18px;
   transition: background-color 0.2s ease-in-out;
-  margin:  1rem
+  margin: 1rem
 }
 
 .button:hover {
   transition: background-color 0.2s ease-in-out;
   filter: opacity(0.8)
+}
+
+.info {
+  margin-top: 2rem;
+}
+@media (min-width: 500px) {
+  .info{
+    font-size: 2rem;
+  }
+}
+@media (min-width: 750px) {
+  .info{
+    font-size: 2.5rem;
+  }
 }

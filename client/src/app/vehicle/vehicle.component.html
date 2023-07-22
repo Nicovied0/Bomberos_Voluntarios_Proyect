@@ -1,22 +1,22 @@
 <div class="contenedor">
   <div class="contenedorDiv">
     <div>
+      <h2 style="text-align: center;">Movil {{ vehicleId.movilNumber }}</h2>
       <img src="{{ vehicleId.image }}" alt="a" class="img" />
     </div>
     <div>
-      <h2>{{ vehicleId.type }}</h2>
       <h3>{{ vehicleId.brand }}</h3>
       <h3>{{ vehicleId.model }}</h3>
       <h5>Modelo: {{ vehicleId.year }}</h5>
     </div>
   </div>
   <div class="contenedorDiv2">
-    <h2>Información adicional</h2>
+    <h2  class="info">Información adicional</h2>
     <div>
       <h5>Último Manteniemiento Programado:</h5>
-      <div *ngIf="vehicleId.lastServiceProgramed.length">
+      <div *ngIf="vehicleId.lastServiceProgramed.length" class="divData">
         <p>
-          Fecha:
+          <strong>Fecha: </strong>
           {{
             formatFecha(
               vehicleId.lastServiceProgramed[
@@ -26,7 +26,7 @@
           }}
         </p>
         <p>
-          Descripción:
+          <strong>Descripción: </strong>
           {{
             vehicleId.lastServiceProgramed[
               vehicleId.lastServiceProgramed.length - 1
@@ -40,16 +40,16 @@
     </div>
     <div>
       <h5>Último Manteniemiento:</h5>
-      <div *ngIf="vehicleId.lastMaintenance.length">
+      <div *ngIf="vehicleId.lastMaintenance.length"  class="divData">
         <p>
-          Fecha:
+          <strong>Fecha: </strong>
           {{
             formatFecha(vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
               .fecha)
           }}
         </p>
         <p>
-          Descripción:
+          <strong>Descripción: </strong>
           {{
             vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
               .descripcion
@@ -62,13 +62,13 @@
     </div>
     <div>
       <h5>Última Recarga de combustible:</h5>
-      <div *ngIf="vehicleId.lastRecharge.length">
+      <div *ngIf="vehicleId.lastRecharge.length"  class="divData">
         <p>
-          Fecha:
+          <strong>Fecha: </strong>
           {{ formatFecha(vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1].fecha) }}
         </p>
         <p>
-          Descripción:
+          <strong>Descripción: </strong>
           {{
             vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1]
               .descripcion
@@ -79,16 +79,16 @@
     </div>
     <div>
       <h5>Último cambio de batería:</h5>
-      <div *ngIf="vehicleId.lastBatteryChange.length">
+      <div *ngIf="vehicleId.lastBatteryChange.length"  class="divData">
         <p>
-          Fecha:
+          <strong>Fecha: </strong>
           {{
             formatFecha(vehicleId.lastBatteryChange[vehicleId.lastBatteryChange.length - 1]
               .fecha)
           }}
         </p>
         <p>
-          Descripción:
+          <strong>Descripción: </strong>
           {{
             vehicleId.lastBatteryChange[vehicleId.lastBatteryChange.length - 1]
               .descripcion
