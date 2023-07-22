@@ -1,8 +1,7 @@
 .contenedor {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0rem;
+  padding: 1rem;
   min-height: 80vh;
   padding-top: 5rem;
 }
@@ -19,5 +18,36 @@
 
 .divSuperior {
   display: flex;
+  width: 100%;
   align-items: center;
+}
+
+.icon {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  color: var(--text-color-secondary);
+  cursor: pointer;
+}
+.divsuperior2{
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 500px) {
+  .divSuperior {
+    width: 80%;
+  }
+  .contenedor{
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 750px) {
+  .divSuperior {
+    width: 60%;
+
+  }
+  .contenedor{
+    padding: 5rem;
+  }
 }
