@@ -55,6 +55,8 @@ export class VehicleInformationComponent {
       .catch((error) => {
         console.error(error);
       });
+
+
   }
 
   isAllMantenimientosEmpty(): boolean {
@@ -120,4 +122,6 @@ export class VehicleInformationComponent {
       new Date(b.fecha).getTime() - new Date(a.fecha).getTime()
     );
   }
+
+
 }
