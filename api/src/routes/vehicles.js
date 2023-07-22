@@ -130,7 +130,8 @@ router.put("/:id", async (req, res) => {
 });
 
 
-// Ruta para agregar un nuevo mantenimiento a un vehículo específico/////
+
+/// Ruta para agregar un nuevo mantenimiento a un vehículo específico
 router.post("/:id/maintenance", async (req, res) => {
   try {
     const { fecha, descripcion } = req.body;
@@ -145,7 +146,9 @@ router.post("/:id/maintenance", async (req, res) => {
     vehicle.lastMaintenance.push(maintenance);
     const updatedVehicle = await vehicle.save();
 
-    console.log(`Se llamó a la ruta POST /vehicles/${req.params.id}/maintenance`);
+    console.log(
+      `Se llamó a la ruta POST /vehicles/${req.params.id}/maintenance`
+    );
     res.status(201).json(updatedVehicle);
   } catch (error) {
     console.error("Error al agregar el mantenimiento", error);
@@ -177,7 +180,9 @@ router.put("/:id/maintenance/:maintenanceId", async (req, res) => {
 
     const updatedVehicle = await vehicle.save();
 
-    console.log(`Se llamó a la ruta PUT /vehicles/${req.params.id}/maintenance/${req.params.maintenanceId}`);
+    console.log(
+      `Se llamó a la ruta PUT /vehicles/${req.params.id}/maintenance/${req.params.maintenanceId}`
+    );
     res.json(updatedVehicle);
   } catch (error) {
     console.error("Error al editar el mantenimiento", error);
@@ -185,4 +190,78 @@ router.put("/:id/maintenance/:maintenanceId", async (req, res) => {
   }
 });
 
+// Ruta para agregar un nuevo mantenimiento de cambio de batería a un vehículo específico
+router.post("/:id/battery-change", async (req, res) => {
+  try {
+    const { fecha, descripcion } = req.body;
+    const batteryChange = { fecha, descripcion };
+
+    const vehicle = await Vehicles.findById(req.params.id);
+
+    if (!vehicle) {
+      return res.status(404).json({ error: "Vehículo no encontrado" });
+    }
+
+    vehicle.lastBatteryChange.push(batteryChange);
+    const updatedVehicle = await vehicle.save();
+
+    console.log(
+      `Se llamó a la ruta POST /vehicles/${req.params.id}/battery-change`
+    );
+    res.status(201).json(updatedVehicle);
+  } catch (error) {
+    console.error("Error al agregar el cambio de batería", error);
+    res.status(500).json({ error: "Error al agregar el cambio de batería" });
+  }
+});
+
+// Ruta para agregar un nuevo mantenimiento de recarga a un vehículo específico
+router.post("/:id/recharge", async (req, res) => {
+  try {
+    const { fecha, descripcion } = req.body;
+    const recharge = { fecha, descripcion };
+
+    const vehicle = await Vehicles.findById(req.params.id);
+
+    if (!vehicle) {
+      return res.status(404).json({ error: "Vehículo no encontrado" });
+    }
+
+    vehicle.lastRecharge.push(recharge);
+    const updatedVehicle = await vehicle.save();
+
+    console.log(`Se llamó a la ruta POST /vehicles/${req.params.id}/recharge`);
+    res.status(201).json(updatedVehicle);
+  } catch (error) {
+    console.error("Error al agregar la recarga", error);
+    res.status(500).json({ error: "Error al agregar la recarga" });
+  }
+});
+
+// Ruta para agregar un nuevo mantenimiento programado a un vehículo específico
+router.post("/:id/service-programed", async (req, res) => {
+  try {
+    const { fecha, descripcion } = req.body;
+    const serviceProgramed = { fecha, descripcion };
+
+    const vehicle = await Vehicles.findById(req.params.id);
+
+    if (!vehicle) {
+      return res.status(404).json({ error: "Vehículo no encontrado" });
+    }
+
+    vehicle.lastServiceProgramed.push(serviceProgramed);
+    const updatedVehicle = await vehicle.save();
+
+    console.log(
+      `Se llamó a la ruta POST /vehicles/${req.params.id}/service-programed`
+    );
+    res.status(201).json(updatedVehicle);
+  } catch (error) {
+    console.error("Error al agregar el mantenimiento programado", error);
+    res
+      .status(500)
+      .json({ error: "Error al agregar el mantenimiento programado" });
+  }
+});
 module.exports = router;

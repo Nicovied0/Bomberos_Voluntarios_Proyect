@@ -3,40 +3,54 @@
     <img class="img" src="{{vehicleId.image}}" />
     <h2 style="margin-bottom: 0">Movil N° {{ vehicleId.movilNumber }}</h2>
   </div>
-  <div>
-    <h3>Mantenimientos</h3>
+  <div class="contenedor">
+    <!-- Resto del contenido del contenedor -->
     <div>
-      <!-- Verificar si hay mantenimientos y mostrar la lista desplegable si existen -->
-      <ul *ngIf="vehicleId">
-        <ng-container *ngIf="vehicleId.lastBatteryChange.length > 0">
-          <li>
-            <details>
-              <summary>Último cambio de batería</summary>
-              <ul>
-                <li *ngFor="let item of vehicleId.lastBatteryChange">{{ item }}</li>
-              </ul>
-            </details>
+      <h3>Mantenimientos</h3>
+      <div>
+        <h4>Últimos Mantenimientos</h4>
+        <ul>
+          <li *ngFor="let maintenance of sortedMaintenances.slice(0, showAllMaintenances ? sortedMaintenances.length : 1)">
+            <p>Fecha: {{ maintenance.fecha | date:'medium' }}</p>
+            <p>Descripción: {{ maintenance.descripcion }}</p>
           </li>
-        </ng-container>
-
-        <ng-container *ngIf="vehicleId.lastMaintenance.length > 0">
-          <li>
-            <details>
-              <summary>Último mantenimiento</summary>
-              <ul>
-                <li *ngFor="let item of vehicleId.lastMaintenance">{{ item }}</li>
-              </ul>
-            </details>
+        </ul>
+        <button *ngIf="sortedMaintenances.length > 1"  (click)="toggleLastMaintenance()">Ver {{ showAllMaintenances ? 'menos' : 'más' }}</button>
+        <p *ngIf="!sortedMaintenances.length">No hay información de mantenimientos.</p>
+      </div>
+      <div>
+        <h4>Últimos Cambios de Batería</h4>
+        <ul>
+          <li *ngFor="let batteryChange of sortedBatteryChanges.slice(0, showAllBatteryChanges ? sortedBatteryChanges.length : 1)">
+            <p>Fecha: {{ batteryChange.fecha | date:'medium' }}</p>
+            <p>Descripción: {{ batteryChange.descripcion }}</p>
           </li>
-        </ng-container>
-
-        <!-- Repite el mismo patrón para lastRecharge y lastServiceProgramed -->
-
-        <!-- Si todas las listas de mantenimientos están vacías, mostrar "Ningún mantenimiento" -->
-        <!-- <li *ngIf="isAllMantenimientosEmpty()">
-          Ningún mantenimiento
-        </li> -->
-      </ul>
+        </ul>
+        <button *ngIf="sortedBatteryChanges.length > 1"  (click)="toggleLastBatteryChange()">Ver {{ showAllBatteryChanges ? 'menos' : 'más' }}</button>
+        <p *ngIf="!sortedBatteryChanges.length">No hay información de cambios de batería.</p>
+      </div>
+      <div>
+        <h4>Últimas Recargas</h4>
+        <ul>
+          <li *ngFor="let recharge of sortedRecharges.slice(0, showAllRecharges ? sortedRecharges.length : 1)">
+            <p>Fecha: {{ recharge.fecha | date:'medium' }}</p>
+            <p>Descripción: {{ recharge.descripcion }}</p>
+          </li>
+        </ul>
+        <button *ngIf="sortedRecharges.length > 1" (click)="toggleLastRecharge()">Ver {{ showAllRecharges ? 'menos' : 'más' }}</button>
+        <p *ngIf="!sortedRecharges.length">No hay información de recargas.</p>
+      </div>
+      <div>
+        <h4>Últimos Servicios Programados</h4>
+        <ul>
+          <li *ngFor="let service of sortedServiceProgramed.slice(0, showAllServiceProgramed ? sortedServiceProgramed.length : 1)">
+            <p>Fecha: {{ service.fecha | date:'medium' }}</p>
+            <p>Descripción: {{ service.descripcion }}</p>
+          </li>
+        </ul>
+        <button *ngIf="sortedServiceProgramed.length > 1" (click)="toggleLastServiceProgramed()">Ver {{ showAllServiceProgramed ? 'menos' : 'más' }}</button>
+        <p *ngIf="!sortedServiceProgramed.length">No hay información de servicios programados.</p>
+      </div>
     </div>
   </div>
 </div>
