@@ -20,6 +20,7 @@ import { AdminNewPostComponent } from './admin-new-post/admin-new-post.component
 import { AdminMovilComponent } from './admin-movil/admin-movil.component';
 import { AdminMovilEditComponent } from './admin-movil-edit/admin-movil-edit.component';
 import { AdminMovilEditMaintenanceComponent } from './admin-movil-edit-maintenance/admin-movil-edit-maintenance.component';
+import { VehicleInformationComponent } from './vehicle-information/vehicle-information.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
@@ -37,9 +38,10 @@ const routes: Routes = [
   { path: 'perfil/detalles', component: ProfiledetailComponent },
   { path: 'historia', component: HistoryComponent },
   { path: 'moviles', component: MovilesComponent },
+  { path: 'moviles/:id', component: VehicleComponent },
+  { path: 'moviles/Adicional/:id', component: VehicleInformationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'moviles/:id', component: VehicleComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: NoFoundComponent },
 
