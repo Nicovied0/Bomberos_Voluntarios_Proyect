@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class CarruselComponent {
   images = [
-    { url: '../../assets/CARTEL.png', title: 'Bomberos Santa Catalina', description: '' },
-    { url: '../../assets/CARTEL3.jpg', title: 'Correo Para Aspirantes', description: 'email.ejemplo@gmail.com' },
-    { url: '../../assets/CARTEL4.jpg', title: 'Nuestras redes sociales', description: `Si querés enterarte de las últimas noticias al instante, puedes seguirnos o darle 'Me Gusta' a nuestra página de  Facebook . También, si quieres ver más contenido fotográfico, nos puedes buscar en   Instagram` },
+    { url: 'https://i.imgur.com/rKlPmiK.png', title: 'Bomberos Santa Catalina', description: '' },
+    { url: 'https://i.imgur.com/8WTw18h.jpeg', title: 'Correo Para Aspirantes', description: 'email.ejemplo@gmail.com' },
+    { url: 'https://i.imgur.com/dWnVck5.jpeg', title: 'Nuestras redes sociales', description: `Si querés enterarte de las últimas noticias al instante, puedes seguirnos o darle 'Me Gusta' a nuestra página de  Facebook . También, si quieres ver más contenido fotográfico, nos puedes buscar en   Instagram` },
   ];
 }
