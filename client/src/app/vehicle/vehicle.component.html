@@ -11,21 +11,94 @@
     </div>
   </div>
   <div class="contenedorDiv2">
-    <h2>Informacion adicional</h2>
+    <h2>Información adicional</h2>
     <div>
-      <label>Ultimo Manteniemiento Programado:</label>
-      <p>{{ vehicleId.lastServiceProgramed }}</p>
+      <h5>Último Manteniemiento Programado:</h5>
+      <div *ngIf="vehicleId.lastServiceProgramed.length">
+        <p>
+          Fecha:
+          {{
+            vehicleId.lastServiceProgramed[
+              vehicleId.lastServiceProgramed.length - 1
+            ].fecha
+          }}
+        </p>
+        <p>
+          Descripción:
+          {{
+            vehicleId.lastServiceProgramed[
+              vehicleId.lastServiceProgramed.length - 1
+            ].descripcion
+          }}
+        </p>
+      </div>
+      <p *ngIf="!vehicleId.lastServiceProgramed.length">
+        No se ingreso información.
+      </p>
     </div>
     <div>
-      <label>Ultimo Manteniemiento:</label>
-      <p>{{ vehicleId.lastMaintenance }}</p>
+      <h5>Último Manteniemiento:</h5>
+      <div *ngIf="vehicleId.lastMaintenance.length">
+        <p>
+          Fecha:
+          {{
+            vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
+              .fecha
+          }}
+        </p>
+        <p>
+          Descripción:
+          {{
+            vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
+              .descripcion
+          }}
+        </p>
+      </div>
+      <p *ngIf="!vehicleId.lastMaintenance.length">
+        No se ingreso información.
+      </p>
     </div>
     <div>
-      <label>Ultima Recarga de combustible:</label>
-      <p>{{ vehicleId.lastRecharge }}</p>
+      <h5>Última Recarga de combustible:</h5>
+      <div *ngIf="vehicleId.lastRecharge.length">
+        <p>
+          Fecha:
+          {{ vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1].fecha }}
+        </p>
+        <p>
+          Descripción:
+          {{
+            vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1]
+              .descripcion
+          }}
+        </p>
+      </div>
+      <p *ngIf="!vehicleId.lastRecharge.length">No se ingreso información.</p>
     </div>
     <div>
-      <button (click)="goInfo(vehicleId._id)" >Ver mas Informacion</button>
+      <h5>Último cambio de batería:</h5>
+      <div *ngIf="vehicleId.lastBatteryChange.length">
+        <p>
+          Fecha:
+          {{
+            vehicleId.lastBatteryChange[vehicleId.lastBatteryChange.length - 1]
+              .fecha
+          }}
+        </p>
+        <p>
+          Descripción:
+          {{
+            vehicleId.lastBatteryChange[vehicleId.lastBatteryChange.length - 1]
+              .descripcion
+          }}
+        </p>
+      </div>
+      <p *ngIf="!vehicleId.lastBatteryChange.length">
+        No se ingreso información.
+      </p>
+    </div>
+    <div>
+      <button (click)="goInfo(vehicleId._id)">Ver mas Informacion</button>
       <button (click)="goUpdate(vehicleId._id)">Cargar Datos</button>
     </div>
   </div>
