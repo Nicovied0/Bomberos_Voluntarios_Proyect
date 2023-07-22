@@ -38,5 +38,8 @@ export class VehicleComponent {
   goUpdate(id:any){
     this.router.navigate(['/panelAdmin/Vehicles/maintenance',id])
   }
+  goInfo(id:any){
+    this.router.navigate(['moviles/Adicional',id])
+  }
 
 }
