@@ -129,13 +129,11 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-
-
 /// Ruta para agregar un nuevo mantenimiento a un vehículo específico
 router.post("/:id/maintenance", async (req, res) => {
   try {
     const { fecha, descripcion } = req.body;
-    const maintenance = { fecha, descripcion };
+    const maintenance = { fecha, descripcion, userUpdate: req.body.userUpdate }; // Agregamos el nombre de usuario
 
     const vehicle = await Vehicles.findById(req.params.id);
 
@@ -146,9 +144,7 @@ router.post("/:id/maintenance", async (req, res) => {
     vehicle.lastMaintenance.push(maintenance);
     const updatedVehicle = await vehicle.save();
 
-    console.log(
-      `Se llamó a la ruta POST /vehicles/${req.params.id}/maintenance`
-    );
+    console.log(`Se llamó a la ruta POST /vehicles/${req.params.id}/maintenance`);
     res.status(201).json(updatedVehicle);
   } catch (error) {
     console.error("Error al agregar el mantenimiento", error);
@@ -156,12 +152,11 @@ router.post("/:id/maintenance", async (req, res) => {
   }
 });
 
-
 // Ruta para agregar un nuevo mantenimiento de cambio de batería a un vehículo específico
 router.post("/:id/battery-change", async (req, res) => {
   try {
     const { fecha, descripcion } = req.body;
-    const batteryChange = { fecha, descripcion };
+    const batteryChange = { fecha, descripcion, userUpdate: req.body.userUpdate }; // Agregamos el nombre de usuario
 
     const vehicle = await Vehicles.findById(req.params.id);
 
@@ -172,9 +167,7 @@ router.post("/:id/battery-change", async (req, res) => {
     vehicle.lastBatteryChange.push(batteryChange);
     const updatedVehicle = await vehicle.save();
 
-    console.log(
-      `Se llamó a la ruta POST /vehicles/${req.params.id}/battery-change`
-    );
+    console.log(`Se llamó a la ruta POST /vehicles/${req.params.id}/battery-change`);
     res.status(201).json(updatedVehicle);
   } catch (error) {
     console.error("Error al agregar el cambio de batería", error);
@@ -186,7 +179,7 @@ router.post("/:id/battery-change", async (req, res) => {
 router.post("/:id/recharge", async (req, res) => {
   try {
     const { fecha, descripcion } = req.body;
-    const recharge = { fecha, descripcion };
+    const recharge = { fecha, descripcion, userUpdate: req.body.userUpdate }; // Agregamos el nombre de usuario
 
     const vehicle = await Vehicles.findById(req.params.id);
 
@@ -209,7 +202,7 @@ router.post("/:id/recharge", async (req, res) => {
 router.post("/:id/service-programed", async (req, res) => {
   try {
     const { fecha, descripcion } = req.body;
-    const serviceProgramed = { fecha, descripcion };
+    const serviceProgramed = { fecha, descripcion, userUpdate: req.body.userUpdate }; // Agregamos el nombre de usuario
 
     const vehicle = await Vehicles.findById(req.params.id);
 
@@ -220,15 +213,12 @@ router.post("/:id/service-programed", async (req, res) => {
     vehicle.lastServiceProgramed.push(serviceProgramed);
     const updatedVehicle = await vehicle.save();
 
-    console.log(
-      `Se llamó a la ruta POST /vehicles/${req.params.id}/service-programed`
-    );
+    console.log(`Se llamó a la ruta POST /vehicles/${req.params.id}/service-programed`);
     res.status(201).json(updatedVehicle);
   } catch (error) {
     console.error("Error al agregar el mantenimiento programado", error);
-    res
-      .status(500)
-      .json({ error: "Error al agregar el mantenimiento programado" });
+    res.status(500).json({ error: "Error al agregar el mantenimiento programado" });
   }
 });
+
 module.exports = router;
