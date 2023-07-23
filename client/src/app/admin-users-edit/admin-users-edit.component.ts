@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../Services/User.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-admin-users-edit',
   templateUrl: './admin-users-edit.component.html',
@@ -20,9 +20,7 @@ export class AdminUsersEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // Obtener el ID del usuario desde el parámetro de la ruta
     this.userId = this.route.snapshot.paramMap.get('id');
-    // Obtener la información del usuario específico
     this.getUserDetails();
     this.getMyUser()
   }
@@ -35,7 +33,6 @@ export class AdminUsersEditComponent implements OnInit {
     try {
       const userResponse = await this.userService.getUsersId(this.userId!);
       this.user = userResponse as any;
-      console.log(this.user)
     } catch (error) {
       console.error('Error al obtener los detalles del usuario:', error);
     }
@@ -46,6 +43,13 @@ export class AdminUsersEditComponent implements OnInit {
       // Aquí implementa la lógica para guardar los cambios del usuario
       await this.userService.updateUser(this.userId!, this.user);
       console.log('Cambios guardados correctamente.');
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Tu actualizacion fue cargada',
+        showConfirmButton: false,
+        timer: 1300
+      })
       // Después de guardar los cambios, puedes redirigir al usuario a la página de lista de usuarios
       this.router.navigate(['/panelAdmin/Users']);
     } catch (error) {
