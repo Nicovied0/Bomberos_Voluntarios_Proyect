@@ -4,8 +4,9 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors());
 app.use(express.json());
+
+// Configuración de CORS para permitir solicitudes desde "http://localhost:4200"
 app.use(
   cors({
     origin: "http://localhost:4200",

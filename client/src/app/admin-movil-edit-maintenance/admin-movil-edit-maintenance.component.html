@@ -1,23 +1,24 @@
 <div class="contenedor">
   <div class="divSuperior">
-    <img class="img" src="{{ movil.image }}" />
-    <p style="margin-bottom: 0">Movil N° {{ movil.movilNumber }}</p>
+    <img class="img" src="{{ movil?.image }}" />
+    <p style="margin-bottom: 0">Movil N° {{ movil?.movilNumber }}</p>
   </div>
   <div>
-    <h5>Elige que mantenimiento se quiere cargar</h5>
+    <h5>Elige qué mantenimiento se quiere cargar</h5>
     <div>
-      <select>
-        <option>Service</option>
-        <option>Mantenimiento espontaneo</option>
-        <option>Cambio de bateria</option>
-        <option>Cargar de combustible</option>
+      <select [(ngModel)]="selectedMaintenanceType">
+        <option value="maintenance">Mantenimiento espontaneo</option>
+        <option value="battery-change">Cambio de bateria</option>
+        <option value="recharge">Cargar de combustible</option>
+        <option value="service-programed">Service</option>
       </select>
     </div>
     <div>
       <label>Fecha</label>
-      <input type="date"  />
-      <label>Descripcion</label>
-      <textarea></textarea>
+      <input type="date" [(ngModel)]="fecha" />
+      <label>Descripción</label>
+      <textarea [(ngModel)]="descripcion"></textarea>
     </div>
+    <button (click)="addMaintenance()">Agregar Mantenimiento</button>
   </div>
 </div>
