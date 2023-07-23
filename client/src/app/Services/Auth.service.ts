@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 export interface LoginResponse {
   token: string;
@@ -28,10 +29,29 @@ export class AuthService {
     const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
 
     if (usuarioLogeado.role === 'administrador' || usuarioLogeado.role === 'editor') {
-      return true
+      return true;
     }
-    return false
+    return false;
   }
 
+  // Agrega los siguientes métodos para mostrar mensajes de SweetAlert
+  mostrarMensajeExito(titulo: string, mensaje: string) {
+    Swal.fire({
+      title: titulo,
+      text: mensaje,
+      icon: 'success',
+      timer: 3000,
+      showConfirmButton: false
+    });
+  }
 
+  mostrarMensajeError(titulo: string, mensaje: string) {
+    Swal.fire({
+      title: titulo,
+      text: mensaje,
+      icon: 'error',
+      showConfirmButton: true
+    });
+  }
 }
+
