@@ -14,6 +14,7 @@
   object-fit: cover;
   object-position: center center;
   cursor: pointer;
+  background: white;
 }
 
 .divInterno {
@@ -47,4 +48,8 @@
 }
 .name{
   font-size: 0.8rem;
+}
+
+.icons:hover{
+  cursor: pointer;
 }
