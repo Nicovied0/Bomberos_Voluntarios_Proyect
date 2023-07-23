@@ -33,10 +33,16 @@
   margin: 2rem 0;
 
 }
-.divInputs{
+
+.divInputs2 {
   display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  flex-direction: column;
+}
+
+.divInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .divSuperior3 {
@@ -53,12 +59,20 @@
   align-items: center;
   cursor: pointer;
 }
-
+.inputs{
+  width: 20rem;
+  margin:0 0 3rem;
+}
+.textarea{
+  min-height: 8rem;
+}
 .divInfo {
   display: flex;
   align-items: baseline;
 }
-
+.divInferior{
+  margin-top: 3rem;
+}
 
 
 @media (min-width: 500px) {

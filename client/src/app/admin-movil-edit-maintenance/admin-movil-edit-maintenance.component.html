@@ -10,18 +10,21 @@
     <h5>Elige qué mantenimiento se quiere cargar</h5>
     <div class="divInputs">
       <div class="divInputs2">
-        <select [(ngModel)]="selectedMaintenanceType">
+        <select class="form-select form-select mb-3 inputs" aria-label=".form-select-lg example" [(ngModel)]="selectedMaintenanceType">
+          <!-- <option value="sdasd"  >Eliga el dato</option> -->
+          <option value="maintenance" selected disabled>Eliga el dato</option>
           <option value="maintenance">Mantenimiento espontaneo</option>
-          <option value="battery-change">Cambio de bateria</option>
+          <option value="battery-change" >Cambio de bateria</option>
           <option value="recharge">Cargar de combustible</option>
           <option value="service-programed">Service</option>
         </select>
       </div>
       <div class="divInputs2">
         <label>Fecha</label>
-        <input type="date" [(ngModel)]="fecha" />
+        <input type="date" [(ngModel)]="fecha" class="form-control inputs"/>
+        <!-- <input size="16" type="text" class="form-control" id="datetime" >   -->
         <label>Descripción</label>
-        <textarea [(ngModel)]="descripcion"></textarea>
+        <textarea [(ngModel)]="descripcion" class="form-control inputs textarea"></textarea>
       </div>
       <button (click)="addMaintenance()">Agregar Mantenimiento</button>
     </div>
