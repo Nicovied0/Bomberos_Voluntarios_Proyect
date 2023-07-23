@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VehicleService } from '../Services/Vehicles.service';
 import { UpdatesService } from '../Services/Updates.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-admin-movil-edit-maintenance',
   templateUrl: './admin-movil-edit-maintenance.component.html',
@@ -27,8 +27,9 @@ export class AdminMovilEditMaintenanceComponent implements OnInit {
     this.movilId = this.route.snapshot.paramMap.get('id');
     this.getVehicleDetails();
   }
-  goBack(id:any) {
-    this.router.navigate(['moviles/',id])
+
+  goBack(id: any) {
+    this.router.navigate(['moviles/', id])
   }
 
   async getVehicleDetails() {
@@ -58,6 +59,14 @@ export class AdminMovilEditMaintenanceComponent implements OnInit {
     try {
       await this.updatesService.postUpdate(data, updateType, this.movilId!);
       console.log('Mantenimiento agregado exitosamente');
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Tu actualizacion fue cargada',
+        showConfirmButton: false,
+        timer: 1300
+      })
+      this.router.navigate(['/moviles', this.movilId])
     } catch (error) {
       console.error('Error al agregar el mantenimiento:', error);
     }
