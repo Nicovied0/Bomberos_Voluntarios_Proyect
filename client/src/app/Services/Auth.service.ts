@@ -23,5 +23,15 @@ export class AuthService {
     const body = { email, password };
     return this.http.post<LoginResponse>(`${this.baseUrl}/login`, body);
   }
+
+  adminUser() {
+    const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
+
+    if (usuarioLogeado.role === 'administrador') {
+      return true
+    }
+    return false
+  }
   
+
 }
