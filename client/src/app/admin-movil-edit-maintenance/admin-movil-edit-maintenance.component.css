@@ -59,18 +59,40 @@
   align-items: center;
   cursor: pointer;
 }
-.inputs{
+
+.inputs {
   width: 20rem;
-  margin:0 0 3rem;
+  margin: 0 0 3rem;
 }
-.textarea{
+
+.buttonMoviles {
+  padding: 10px;
+  background-color: var(--text-seguirLeyendo);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.2s ease-in-out;
+  margin: 1rem
+}
+
+.buttonMoviles:hover {
+  transition: background-color 0.2s ease-in-out;
+  filter: opacity(0.8)
+}
+
+.textarea {
   min-height: 8rem;
 }
+
 .divInfo {
   display: flex;
   align-items: baseline;
 }
-.divInferior{
+
+.divInferior {
   margin-top: 3rem;
 }
 
