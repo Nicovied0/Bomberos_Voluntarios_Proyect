@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 1rem;
   min-height: 80vh;
-  padding-top: 5rem;
+  padding-top: 7rem;
 }
 
 .img {
@@ -61,6 +61,7 @@
 ul {
   text-decoration: none;
   list-style: none;
+  padding: 0;
 }
 
 @media (min-width: 500px) {
@@ -70,6 +71,7 @@ ul {
 
   .contenedor {
     padding: 2rem;
+    padding-top: 7rem;
   }
 
   .span {
@@ -85,6 +87,7 @@ ul {
 
   .contenedor {
     padding: 5rem;
+    padding-top: 7rem;
   }
 }
 

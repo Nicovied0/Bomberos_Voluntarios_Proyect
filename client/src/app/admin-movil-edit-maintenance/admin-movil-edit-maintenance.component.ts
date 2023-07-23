@@ -27,6 +27,9 @@ export class AdminMovilEditMaintenanceComponent implements OnInit {
     this.movilId = this.route.snapshot.paramMap.get('id');
     this.getVehicleDetails();
   }
+  goBack(id:any) {
+    this.router.navigate(['moviles/',id])
+  }
 
   async getVehicleDetails() {
     try {
@@ -59,4 +62,4 @@ export class AdminMovilEditMaintenanceComponent implements OnInit {
       console.error('Error al agregar el mantenimiento:', error);
     }
   }
-} 
+}

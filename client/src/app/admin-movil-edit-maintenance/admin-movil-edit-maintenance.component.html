@@ -1,7 +1,10 @@
 <div class="contenedor">
   <div class="divSuperior">
-    <img class="img" src="{{ movil?.image }}" />
-    <p style="margin-bottom: 0">Movil N° {{ movil?.movilNumber }}</p>
+    <i class="bi bi-arrow-left icon" (click)="goBack(movil._id)"></i>
+    <div class="divSuperior3">
+      <img class="img" src="{{ movil?.image }}" />
+      <p style="margin-bottom: 0">Movil N° {{ movil?.movilNumber }}</p>
+    </div>
   </div>
   <div>
     <h5>Elige qué mantenimiento se quiere cargar</h5>
