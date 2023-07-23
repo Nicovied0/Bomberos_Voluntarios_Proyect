@@ -103,7 +103,7 @@
       <button (click)="goInfo(vehicleId._id)" class="button">
         Ver mas información
       </button>
-      <button (click)="goUpdate(vehicleId._id)" class="button">
+      <button (click)="goUpdate(vehicleId._id)" class="button" *ngIf="userLoged">
         Cargar Datos
       </button>
     </div>
