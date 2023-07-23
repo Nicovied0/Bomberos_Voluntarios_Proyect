@@ -9,6 +9,9 @@ const MaintenanceSchema = new mongoose.Schema({
     type: String,
     default: "No se Ingresó Descripción",
   },
+  userUpdate:{
+    type: String
+  }
 });
 
 const VehiclesSchema = new mongoose.Schema({

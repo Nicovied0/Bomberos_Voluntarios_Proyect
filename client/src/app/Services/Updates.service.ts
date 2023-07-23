@@ -30,6 +30,11 @@ export class UpdatesService {
     console.log(url, data);
 
     try {
+      const username = this.getUsernameFromLocalStorage(); // Obtener el nombre de usuario desde Local Storage
+      if (username) {
+        data.userUpdate = username; // Agregar el nombre de usuario al objeto de datos
+      }
+
       const response = await this.http.post<any>(url, data).toPromise();
       console.log('Respuesta del servidor:', response);
       return response;
@@ -38,5 +43,13 @@ export class UpdatesService {
     }
   }
 
-
+  // Método para obtener el nombre de usuario desde Local Storage
+  private getUsernameFromLocalStorage(): string | null {
+    const profile = localStorage.getItem('profile');
+    if (profile) {
+      const parsedProfile = JSON.parse(profile);
+      return parsedProfile.name || null;
+    }
+    return null;
+  }
 }
