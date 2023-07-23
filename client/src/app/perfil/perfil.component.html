@@ -37,13 +37,12 @@
         <div *ngIf="profile.role === 'editor'">
           <h2>Tu rol es de: Editor</h2>
           <p>
-            Tienes permiso para cargar datos, editarlos, administrar usuarios,
-            etc.
+            Tienes permiso para cargar datos de moviles y noticias.
           </p>
         </div>
-        <div *ngIf="profile.role === 'editor'">
+        <div *ngIf="profile.role === 'bombero'">
           <h2>Tu rol es de: Bombero</h2>
-          <p>Tienes permiso para cargar y editar datos a moviles.</p>
+          <p>Todavia no tienes permiso para cargar y editar datos a moviles.</p>
         </div>
         <button
           (click)="goPanel()"

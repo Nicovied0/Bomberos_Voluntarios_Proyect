@@ -47,7 +47,7 @@ export class AdminUsersEditComponent implements OnInit {
       await this.userService.updateUser(this.userId!, this.user);
       console.log('Cambios guardados correctamente.');
       // Después de guardar los cambios, puedes redirigir al usuario a la página de lista de usuarios
-      this.router.navigate(['/users']);
+      this.router.navigate(['/panelAdmin/Users']);
     } catch (error) {
       console.error('Error al guardar los cambios:', error);
     }

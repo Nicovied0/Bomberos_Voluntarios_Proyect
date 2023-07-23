@@ -1,7 +1,7 @@
 <div class="contenedor">
   <h2>Este es el panel, puedes acceder a realizar modificaciones</h2>
   <div class="div">
-    <button (click)="goUsers()" class="btn btn-primary btn-large m-2 p-2">
+    <button (click)="goUsers()" class="btn btn-primary btn-large m-2 p-2" *ngIf="myUser  === 'administrador' ">
       Usuarios
     </button>
     <button (click)="goNewPost()" class="btn btn-primary btn-large m-2 p-2">
