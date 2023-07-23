@@ -6,22 +6,24 @@
       <p style="margin-bottom: 0">Movil N° {{ movil?.movilNumber }}</p>
     </div>
   </div>
-  <div>
+  <div class="divInferior">
     <h5>Elige qué mantenimiento se quiere cargar</h5>
-    <div>
-      <select [(ngModel)]="selectedMaintenanceType">
-        <option value="maintenance">Mantenimiento espontaneo</option>
-        <option value="battery-change">Cambio de bateria</option>
-        <option value="recharge">Cargar de combustible</option>
-        <option value="service-programed">Service</option>
-      </select>
+    <div class="divInputs">
+      <div class="divInputs2">
+        <select [(ngModel)]="selectedMaintenanceType">
+          <option value="maintenance">Mantenimiento espontaneo</option>
+          <option value="battery-change">Cambio de bateria</option>
+          <option value="recharge">Cargar de combustible</option>
+          <option value="service-programed">Service</option>
+        </select>
+      </div>
+      <div class="divInputs2">
+        <label>Fecha</label>
+        <input type="date" [(ngModel)]="fecha" />
+        <label>Descripción</label>
+        <textarea [(ngModel)]="descripcion"></textarea>
+      </div>
+      <button (click)="addMaintenance()">Agregar Mantenimiento</button>
     </div>
-    <div>
-      <label>Fecha</label>
-      <input type="date" [(ngModel)]="fecha" />
-      <label>Descripción</label>
-      <textarea [(ngModel)]="descripcion"></textarea>
-    </div>
-    <button (click)="addMaintenance()">Agregar Mantenimiento</button>
   </div>
 </div>
