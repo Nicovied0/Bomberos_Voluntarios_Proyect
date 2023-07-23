@@ -1,22 +1,32 @@
 <div class="contenedor">
-  <div *ngIf="user">
+  <div *ngIf="user" class="div2">
     <h3>Editando usuario: {{ user.name }}</h3>
-    <label>Nombre:</label>
-    <input [(ngModel)]="user.name" type="text" />
+    <div class="div">
+      <label>Nombre:</label>
+      <input [(ngModel)]="user.name" type="text" class="form-control inputs" />
 
-    <label>Correo electrónico:</label>
-    <input [(ngModel)]="user.email" type="email" disabled />
+      <label>Correo electrónico:</label>
+      <input
+        [(ngModel)]="user.email"
+        type="email"
+        disabled
+        class="form-control inputs"
+      />
 
-    <label>Role:</label>
-    <select [(ngModel)]="user.role" [disabled]="canEditRole()">
-      <option *ngFor="let role of possibleRoles" [value]="role">
-        {{ role }}
-      </option>
-    </select>
+      <label>Rol:</label>
+      <select
+        [(ngModel)]="user.role"
+        [disabled]="canEditRole()"
+        class="form-select form-select mb-3 inputs"
+        aria-label=".form-select-lg example"
+      >
+        <option *ngFor="let role of possibleRoles" [value]="role">
+          {{ role }}
+        </option>
+      </select>
+    </div>
 
-    <!-- Agrega más campos de edición según las propiedades del usuario -->
-
-    <button (click)="onSaveChanges()">Guardar cambios</button>
+    <button (click)="onSaveChanges()" class="buttonMoviles">Guardar cambios</button>
   </div>
 
   <div *ngIf="!user">
