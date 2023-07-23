@@ -11,6 +11,7 @@ export class AdminUsersEditComponent implements OnInit {
   userId: string | null = null;
   user: any | null;
   possibleRoles = ["publico", "bombero", "administrador", "editor"];
+  myUser: any | null
 
   constructor(
     private route: ActivatedRoute,
@@ -23,16 +24,18 @@ export class AdminUsersEditComponent implements OnInit {
     this.userId = this.route.snapshot.paramMap.get('id');
     // Obtener la información del usuario específico
     this.getUserDetails();
+    this.getMyUser()
   }
 
   canEditRole(): boolean {
-    return this.user.role === 'administrador' || this.user.role === 'editor';
+    return this.myUser.role === 'administrador' || this.myUser.role === 'editor';
   }
 
   async getUserDetails() {
     try {
       const userResponse = await this.userService.getUsersId(this.userId!);
       this.user = userResponse as any;
+      console.log(this.user)
     } catch (error) {
       console.error('Error al obtener los detalles del usuario:', error);
     }
@@ -48,6 +51,12 @@ export class AdminUsersEditComponent implements OnInit {
     } catch (error) {
       console.error('Error al guardar los cambios:', error);
     }
+  }
+
+  getMyUser() {
+    const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
+    console.log(usuarioLogeado.role)
+    this.myUser = usuarioLogeado.role
   }
 }
 

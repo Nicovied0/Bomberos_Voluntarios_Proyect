@@ -21,19 +21,20 @@ import { AdminMovilComponent } from './admin-movil/admin-movil.component';
 import { AdminMovilEditComponent } from './admin-movil-edit/admin-movil-edit.component';
 import { AdminMovilEditMaintenanceComponent } from './admin-movil-edit-maintenance/admin-movil-edit-maintenance.component';
 import { VehicleInformationComponent } from './vehicle-information/vehicle-information.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'noticias', component: NewsComponent },
   { path: 'perfil', component: PerfilComponent },
-  { path: 'panelAdmin', component: PanelComponent },
-  { path: 'panelAdmin/Posts', component: AdminPostComponent },
-  { path: 'panelAdmin/NewPost', component: AdminNewPostComponent },
-  { path: 'panelAdmin/Users', component: AdminUsersComponent },
-  { path: 'panelAdmin/Vehicles', component: AdminMovilComponent },
-  { path: 'panelAdmin/Vehicles/:id', component: AdminMovilEditComponent },
-  { path: 'panelAdmin/Vehicles/maintenance/:id', component: AdminMovilEditMaintenanceComponent },
-  { path: 'panelAdmin/Users/:id', component: AdminUsersEditComponent },
+  { path: 'panelAdmin', component: PanelComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/Posts', component: AdminPostComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/NewPost', component: AdminNewPostComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/Users', component: AdminUsersComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/Vehicles', component: AdminMovilComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/Vehicles/:id', component: AdminMovilEditComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/Vehicles/maintenance/:id', component: AdminMovilEditMaintenanceComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/Users/:id', component: AdminUsersEditComponent, canActivate: [AuthGuard] },
   { path: 'perfil/editar', component: EditProfileComponent },
   { path: 'perfil/detalles', component: ProfiledetailComponent },
   { path: 'historia', component: HistoryComponent },

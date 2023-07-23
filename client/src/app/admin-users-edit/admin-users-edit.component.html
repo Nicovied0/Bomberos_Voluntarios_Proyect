@@ -8,7 +8,7 @@
     <input [(ngModel)]="user.email" type="email" disabled />
 
     <label>Role:</label>
-    <select [(ngModel)]="user.role" [disabled]="!canEditRole()">
+    <select [(ngModel)]="user.role" [disabled]="canEditRole()">
       <option *ngFor="let role of possibleRoles" [value]="role">
         {{ role }}
       </option>

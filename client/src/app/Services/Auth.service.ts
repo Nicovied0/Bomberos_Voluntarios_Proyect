@@ -27,11 +27,11 @@ export class AuthService {
   adminUser() {
     const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
 
-    if (usuarioLogeado.role === 'administrador') {
+    if (usuarioLogeado.role === 'administrador' || usuarioLogeado.role === 'editor') {
       return true
     }
     return false
   }
-  
+
 
 }
