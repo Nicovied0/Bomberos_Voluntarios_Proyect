@@ -1,9 +1,23 @@
 <div class="contenedor">
   <div class="divSuperior">
     <img class="img" src="{{ movil.image }}" />
-    <p style="margin-bottom: 0;">Movil N° {{ movil.movilNumber }}</p>
+    <p style="margin-bottom: 0">Movil N° {{ movil.movilNumber }}</p>
   </div>
   <div>
-
+    <h5>Elige que mantenimiento se quiere cargar</h5>
+    <div>
+      <select>
+        <option>Service</option>
+        <option>Mantenimiento espontaneo</option>
+        <option>Cambio de bateria</option>
+        <option>Cargar de combustible</option>
+      </select>
+    </div>
+    <div>
+      <label>Fecha</label>
+      <input type="date"  />
+      <label>Descripcion</label>
+      <textarea></textarea>
+    </div>
   </div>
 </div>
