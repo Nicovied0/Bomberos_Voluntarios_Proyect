@@ -4,7 +4,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ThemeService } from './Services/Theme.service';
 import { VehicleService } from './Services/Vehicles.service';
@@ -84,6 +84,7 @@ import { VehicleInformationComponent } from './vehicle-information/vehicle-infor
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     CarouselModule.forRoot()
   ],
   providers: [

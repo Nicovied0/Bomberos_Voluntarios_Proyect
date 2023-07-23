@@ -3,7 +3,7 @@
     <h2>Regístrarse</h2>
   </div>
   <div>
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="divinputs">
         <label for="name" class="label">Nombre:</label>
         <input
@@ -11,9 +11,13 @@
           id="name"
           name="name"
           class="input"
-          [(ngModel)]="formData.name"
+          formControlName="name"
           required
         />
+        <!-- Mostrar mensaje de error si el campo es inválido y ha sido tocado -->
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+          <small class="text-danger">Nombre inválido (mínimo 5 caracteres)</small>
+        </div>
       </div>
       <div class="divinputs">
         <label for="email" class="label">Email:</label>
@@ -22,9 +26,13 @@
           id="email"
           name="email"
           class="input"
-          [(ngModel)]="formData.email"
+          formControlName="email"
           required
         />
+        <!-- Mostrar mensaje de error si el campo es inválido y ha sido tocado -->
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+          <small class="text-danger">Email inválido</small>
+        </div>
       </div>
       <div class="divinputs">
         <label for="password" class="label">Contraseña:</label>
@@ -33,12 +41,17 @@
           id="password"
           name="password"
           class="input"
-          [(ngModel)]="formData.password"
+          formControlName="password"
           required
         />
+        <!-- Mostrar mensaje de error si el campo es inválido y ha sido tocado -->
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+          <small class="text-danger">Contraseña inválida (mínimo 8 caracteres, al menos una letra y un número)</small>
+        </div>
       </div>
       <div class="divinputs">
-        <button type="submit" class="button">Regístrarse</button>
+        <!-- Deshabilitar el botón si el formulario no es válido -->
+        <button type="submit" class="button" [disabled]="registerForm.invalid">Regístrarse</button>
       </div>
       <p class="text">
         Ya tienes cuenta?
