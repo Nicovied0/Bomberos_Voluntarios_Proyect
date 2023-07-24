@@ -57,4 +57,7 @@ export class VehicleComponent {
     this.userLoged = this.authService.adminUser()
   }
 
+  goBack(id: any) {
+    this.router.navigate(['moviles'])
+  }
 }

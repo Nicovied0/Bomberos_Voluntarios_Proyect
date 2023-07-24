@@ -1,9 +1,12 @@
 <div class="contenedor">
   <div class="contenedorDiv">
-    <div>
-      <h2 style="text-align: center;">Movil {{ vehicleId.movilNumber }}</h2>
-      <img src="{{ vehicleId.image }}" alt="a" class="img" />
+    <div></div>
+    <div class="divSuperior">
+      <i class="bi bi-arrow-left icon" (click)="goBack(vehicleId._id)"></i>
+
+      <h2 style="text-align: center">Movil {{ vehicleId.movilNumber }}</h2>
     </div>
+    <img src="{{ vehicleId.image }}" alt="a" class="img" />
     <div>
       <h3>{{ vehicleId.brand }}</h3>
       <h3>{{ vehicleId.model }}</h3>
@@ -11,7 +14,7 @@
     </div>
   </div>
   <div class="contenedorDiv2">
-    <h2  class="info">Información adicional</h2>
+    <h2 class="info">Información adicional</h2>
     <div>
       <h5>Último Manteniemiento Programado:</h5>
       <div *ngIf="vehicleId.lastServiceProgramed.length" class="divData">
@@ -40,12 +43,14 @@
     </div>
     <div>
       <h5>Último Manteniemiento:</h5>
-      <div *ngIf="vehicleId.lastMaintenance.length"  class="divData">
+      <div *ngIf="vehicleId.lastMaintenance.length" class="divData">
         <p>
           <strong>Fecha: </strong>
           {{
-            formatFecha(vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
-              .fecha)
+            formatFecha(
+              vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
+                .fecha
+            )
           }}
         </p>
         <p>
@@ -62,10 +67,14 @@
     </div>
     <div>
       <h5>Última Recarga de combustible:</h5>
-      <div *ngIf="vehicleId.lastRecharge.length"  class="divData">
+      <div *ngIf="vehicleId.lastRecharge.length" class="divData">
         <p>
           <strong>Fecha: </strong>
-          {{ formatFecha(vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1].fecha) }}
+          {{
+            formatFecha(
+              vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1].fecha
+            )
+          }}
         </p>
         <p>
           <strong>Descripción: </strong>
@@ -79,12 +88,15 @@
     </div>
     <div>
       <h5>Último cambio de batería:</h5>
-      <div *ngIf="vehicleId.lastBatteryChange.length"  class="divData">
+      <div *ngIf="vehicleId.lastBatteryChange.length" class="divData">
         <p>
           <strong>Fecha: </strong>
           {{
-            formatFecha(vehicleId.lastBatteryChange[vehicleId.lastBatteryChange.length - 1]
-              .fecha)
+            formatFecha(
+              vehicleId.lastBatteryChange[
+                vehicleId.lastBatteryChange.length - 1
+              ].fecha
+            )
           }}
         </p>
         <p>
@@ -103,7 +115,11 @@
       <button (click)="goInfo(vehicleId._id)" class="button">
         Ver mas información
       </button>
-      <button (click)="goUpdate(vehicleId._id)" class="button" *ngIf="userLoged">
+      <button
+        (click)="goUpdate(vehicleId._id)"
+        class="button"
+        *ngIf="userLoged"
+      >
         Cargar Datos
       </button>
     </div>
