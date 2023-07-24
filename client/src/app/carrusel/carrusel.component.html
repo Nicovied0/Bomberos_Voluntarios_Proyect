@@ -1,7 +1,12 @@
 <carousel [interval]="3000" class="slide">
   <slide *ngFor="let image of images" class="carousel-item">
     <div class="image-container">
-      <img [src]="image.url" alt="Imagen de producto" class="img" />
+      <img
+        [src]="image.url"
+        alt="Imagen de producto"
+        class="img"
+        loading="lazy"
+      />
       <div class="divInterno">
         <h2 class="title">{{ image.title }}</h2>
         <a
