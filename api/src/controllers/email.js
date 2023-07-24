@@ -17,8 +17,10 @@ const enviarCorreo = async (nombre, email, asunto, mensaje) => {
     to: "briannoviedo@gmail.com", // Cambiar por la dirección de correo destino
     subject: asunto,
     html: `
-   <h2>Email enviado por: ${nombre}, su email es: ${email} !</h2>
+   <h2>Email enviado por: ${nombre} !</h2>
+   <h3>Su email es: ${email}</h3>
    <br>
+   <h4>Mensaje:</h4>
    <p>${mensaje}</p>
    <br>
    <br>
