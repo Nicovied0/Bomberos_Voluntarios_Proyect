@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VehicleService } from '../Services/Vehicles.service';
+import { AuthService } from '../Services/Auth.service';
 
 @Component({
   selector: 'app-vehicle-information',
@@ -8,6 +9,7 @@ import { VehicleService } from '../Services/Vehicles.service';
   styleUrls: ['./vehicle-information.component.css']
 })
 export class VehicleInformationComponent {
+  public userLoged: boolean = false
   public vehicleId: any; // Declaración explícita de tipo 'any'
   public showLastMaintenance: boolean = false;
   public showAllMaintenances: boolean = false;
@@ -25,7 +27,8 @@ export class VehicleInformationComponent {
   constructor(
     private route: ActivatedRoute,
     private vehicleService: VehicleService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   @Input() vehicle: any;
@@ -37,9 +40,10 @@ export class VehicleInformationComponent {
         this.getVehicle(vehicleId);
       }
     });
+    this.userVerify()
   }
-  goBack(id:any) {
-    this.router.navigate(['moviles/',id])
+  goBack(id: any) {
+    this.router.navigate(['moviles/', id])
   }
   getVehicle(id: any) {
     this.vehicleService
@@ -123,5 +127,7 @@ export class VehicleInformationComponent {
     );
   }
 
-
+  userVerify() {
+    this.userLoged = this.authService.adminUser()
+  }
 }
