@@ -10,8 +10,8 @@
   width: 100%;
   margin-bottom: 2rem;
 }
-w
-.h2 {
+
+w .h2 {
   margin: 2rem 0;
 }
 
@@ -69,4 +69,21 @@ w
     width: 48%;
     margin-bottom: 0;
   }
+}
+
+.button {
+  /* ... otros estilos ... */
+  background-color: #fdc501;
+  /* ... otros estilos ... */
+}
+
+.button:disabled {
+  background-color: #f0e68c;
+  /* Cambia el color aquí al que desees cuando el botón está deshabilitado */
+  cursor: not-allowed;
+  /* Cambia el cursor a "not-allowed" para indicar que el botón no está activo */
+}
+
+.button:hover:not(:disabled) {
+  filter: brightness(0.8);
 }

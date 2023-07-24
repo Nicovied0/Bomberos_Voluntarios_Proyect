@@ -1,13 +1,16 @@
 <div class="contenedor">
   <div class="divs">
     <h2 class="h2">Plantilla de Contacto</h2>
-    <form>
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
       <div class="divForm">
         <input
           type="text"
           id="contactName"
           placeholder="Nombre Completo"
           class="input"
+          name="nombre"
+          [(ngModel)]="formData.nombre"
+          required
         />
       </div>
       <div class="divForm">
@@ -16,14 +19,20 @@
           id="contactEmail"
           placeholder="Email"
           class="input"
+          name="email"
+          [(ngModel)]="formData.email"
+          required
         />
       </div>
       <div class="divForm">
         <input
           type="text"
-          id="contactEmail"
+          id="contactAsunto"
           placeholder="Asunto"
           class="input"
+          name="asunto"
+          [(ngModel)]="formData.asunto"
+          required
         />
       </div>
       <div class="divForm">
@@ -31,10 +40,13 @@
           id="contactMessage"
           placeholder="Mensaje"
           class="input"
+          name="mensaje"
+          [(ngModel)]="formData.mensaje"
+          required
         ></textarea>
       </div>
       <div class="divForm">
-        <button type="submit" class="button">Enviar</button>
+        <button type="submit" class="button" [disabled]="!contactForm.valid">Enviar</button>
       </div>
     </form>
   </div>
