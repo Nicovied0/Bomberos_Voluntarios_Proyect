@@ -14,11 +14,11 @@ app.use(
 );
 
 // Rutas
-const routes = require("./src/routes/index");
+const routes = require("./routes/index");
 app.use("/", routes);
 
 // Conexión a la base de datos
-const connectDB = require("./src/db");
+const connectDB = require("./db");
 connectDB();
 
 app.listen(port, () => {
