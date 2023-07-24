@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProfileService } from '../Services/Profile.service';
 import { CloudinaryService } from '../Services/Cloudinary.service';
 import { event } from 'jquery';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-profile',
@@ -81,9 +82,17 @@ export class EditProfileComponent implements OnInit {
         if (response.profile) {
           const updatedProfile = response.profile;
           localStorage.setItem('profile', JSON.stringify(updatedProfile));
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Cambios Guardados',
+            showConfirmButton: false,
+            timer: 1500
+          });
           this.router.navigate(['/perfil']);
         } else {
           console.log('No se pudo actualizar el perfil');
+
         }
       },
       error => {
