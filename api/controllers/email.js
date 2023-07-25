@@ -6,8 +6,8 @@ const enviarCorreo = async (nombre, email, asunto, mensaje) => {
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: "briannoviedo@gmail.com", // Cambiar por tu dirección de correo
-      pass: "xgdpqqgodzcxbfhf", // Cambiar por tu contraseña
+      user: process.env.GMAIL_USER, // Cambiar por tu dirección de correo
+      pass: process.env.GMAIL_PASSWORD, // Cambiar por tu contraseña
     },
   });
 
