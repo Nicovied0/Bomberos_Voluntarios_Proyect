@@ -10,24 +10,34 @@ export class HamburgerMenuComponent {
   constructor(private router: Router) { }
   menuVisible: boolean = false;
   goContacts() {
-    this.router.navigate(['/contacto'])
+    this.router.navigate(['/contacto']).then(() => {
+      window.scrollTo(0, 0);
+    });
     this.menuVisible = false
   }
   goProfile() {
-    this.router.navigate(['/perfil'])
+    this.router.navigate(['/perfil']).then(() => {
+      window.scrollTo(0, 0);
+    });
     this.menuVisible = false
   }
 
   goHome() {
-    this.router.navigate(['/'])
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo(0, 0);
+    });
     this.menuVisible = false
   }
   goNews() {
-    this.router.navigate(['/noticias'])
+    this.router.navigate(['/noticias']).then(() => {
+      window.scrollTo(0, 0);
+    });
     this.menuVisible = false
   }
   goHistory() {
-    this.router.navigate(['/historia'])
+    this.router.navigate(['/historia']).then(() => {
+      window.scrollTo(0, 0);
+    });
     this.menuVisible = false
   }
 

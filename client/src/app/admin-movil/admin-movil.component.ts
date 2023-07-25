@@ -32,10 +32,14 @@ export class AdminMovilComponent implements OnInit {
     });
   }
   goEdit(_id: any) {
-    this.router.navigate(['panelAdmin/Vehicles', _id])
+    this.router.navigate(['panelAdmin/Vehicles', _id]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
   goUpload(_id: any) {
-    this.router.navigate(['panelAdmin/Vehicles/maintenance', _id])
+    this.router.navigate(['panelAdmin/Vehicles/maintenance', _id]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
 }

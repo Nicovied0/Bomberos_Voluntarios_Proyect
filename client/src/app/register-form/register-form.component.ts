@@ -22,7 +22,9 @@ export class RegisterFormComponent {
   }
 
   goLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   async onSubmit() {

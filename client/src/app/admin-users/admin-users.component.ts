@@ -27,7 +27,9 @@ export class AdminUsersComponent implements OnInit {
   }
 
   onEditUser(userId: any) {
-    this.router.navigate(['panelAdmin/Users', userId]); // Navegar a la ruta de edición con el ID del usuario
+    this.router.navigate(['panelAdmin/Users', userId]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   onDeleteUser(userId: string) {
@@ -54,10 +56,8 @@ export class AdminUsersComponent implements OnInit {
           // Cambiar el valor de actived a false
           userToDelete.actived = false;
           window.location.reload()
-          // Llamar al servicio para actualizar el usuario en el servidor
           this.userService.updateUser(userId, { actived: false })
             .then(() => {
-              // Mostrar SweetAlert de éxito
               Swal.fire(
                 '¡Eliminado!',
                 'El usuario ha sido desactivado.',
@@ -66,7 +66,6 @@ export class AdminUsersComponent implements OnInit {
             })
             .catch(error => {
               console.error('Error al desactivar el usuario:', error);
-              // Mostrar SweetAlert de error
               Swal.fire(
                 'Error',
                 'Ocurrió un error al desactivar el usuario. Por favor, inténtalo nuevamente.',

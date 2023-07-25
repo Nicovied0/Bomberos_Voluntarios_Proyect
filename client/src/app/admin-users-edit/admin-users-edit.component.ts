@@ -51,7 +51,9 @@ export class AdminUsersEditComponent implements OnInit {
         timer: 1300
       })
       // Después de guardar los cambios, puedes redirigir al usuario a la página de lista de usuarios
-      this.router.navigate(['/panelAdmin/Users']);
+      this.router.navigate(['/panelAdmin/Users']).then(() => {
+        window.scrollTo(0, 0);
+      });
     } catch (error) {
       console.error('Error al guardar los cambios:', error);
     }

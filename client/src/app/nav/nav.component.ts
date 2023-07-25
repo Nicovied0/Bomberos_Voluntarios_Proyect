@@ -12,20 +12,30 @@ export class NavComponent {
   public themeLocal = false
 
   goContacts() {
-    this.router.navigate(['/contacto'])
+    this.router.navigate(['/contacto']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
   goProfile() {
-    this.router.navigate(['/perfil'])
+    this.router.navigate(['/perfil']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   goHome() {
-    this.router.navigate(['/'])
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
   goNews() {
-    this.router.navigate(['/noticias'])
+    this.router.navigate(['/noticias']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
   goHistory() {
-    this.router.navigate(['/historia'])
+    this.router.navigate(['/historia']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   toggleTheme() {

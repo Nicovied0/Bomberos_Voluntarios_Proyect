@@ -18,7 +18,9 @@ export class LoginFormComponent {
   constructor(private authService: AuthService, private router: Router) { }
 
   goRegister() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/register']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   onSubmit() {

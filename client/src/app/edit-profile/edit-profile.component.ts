@@ -33,7 +33,9 @@ export class EditProfileComponent implements OnInit {
   }
 
   goProfile() {
-    this.router.navigate(['/perfil'])
+    this.router.navigate(['/perfil']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   changeImages() {
@@ -89,7 +91,9 @@ export class EditProfileComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           });
-          this.router.navigate(['/perfil']);
+          this.router.navigate(['/perfil']).then(() => {
+            window.scrollTo(0, 0);
+          });
         } else {
           console.log('No se pudo actualizar el perfil');
 

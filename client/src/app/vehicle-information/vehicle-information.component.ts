@@ -43,7 +43,9 @@ export class VehicleInformationComponent {
     this.userVerify()
   }
   goBack(id: any) {
-    this.router.navigate(['moviles/', id])
+    this.router.navigate(['moviles/', id]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
   getVehicle(id: any) {
     this.vehicleService

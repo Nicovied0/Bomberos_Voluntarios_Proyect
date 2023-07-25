@@ -29,7 +29,9 @@ export class AdminMovilEditMaintenanceComponent implements OnInit {
   }
 
   goBack(id: any) {
-    this.router.navigate(['moviles/', id])
+    this.router.navigate(['moviles/', id]).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   async getVehicleDetails() {
@@ -66,7 +68,9 @@ export class AdminMovilEditMaintenanceComponent implements OnInit {
         showConfirmButton: false,
         timer: 1300
       })
-      this.router.navigate(['/moviles', this.movilId])
+      this.router.navigate(['/moviles', this.movilId]).then(() => {
+        window.scrollTo(0, 0);
+      });
     } catch (error) {
       console.error('Error al agregar el mantenimiento:', error);
     }

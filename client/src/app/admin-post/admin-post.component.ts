@@ -36,7 +36,9 @@ export class AdminPostComponent implements OnInit {
   }
 
   goNew() {
-    this.router.navigate(['/panelAdmin/NewPost']);
+    this.router.navigate(['/panelAdmin/NewPost']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   eliminarPublicacion(publicacionId: string) {

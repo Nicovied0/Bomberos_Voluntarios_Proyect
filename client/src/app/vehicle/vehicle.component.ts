@@ -58,6 +58,8 @@ export class VehicleComponent {
   }
 
   goBack(id: any) {
-    this.router.navigate(['moviles'])
+    this.router.navigate(['moviles']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }

@@ -37,6 +37,8 @@ export class ProfiledetailComponent implements OnInit {
   }
 
   goProfile() {
-    this.router.navigate(['/perfil'])
+    this.router.navigate(['/perfil']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }

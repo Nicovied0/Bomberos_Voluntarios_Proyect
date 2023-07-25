@@ -22,7 +22,9 @@ export class AdminNewPostComponent {
           console.log(res);
           this.iframeLink = '';
           Swal.fire('Éxito', 'La publicación ha sido guardada exitosamente.', 'success');
-          this.router.navigate(['/noticias'])
+          this.router.navigate(['/noticias']).then(() => {
+            window.scrollTo(0, 0);
+          });
         },
         (error) => {
           console.error('Error al guardar la publicación:', error);
