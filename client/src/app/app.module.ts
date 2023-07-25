@@ -20,7 +20,6 @@ import { FooterComponent } from './footer/footer.component';
 import { PanelComponent } from './panel/panel.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { MapsComponent } from './maps/maps.component';
-import { IngresosComponent } from './ingresos/ingresos.component';
 import { NewsComponent } from './news/news.component';
 import { NoFoundComponent } from './no-found/no-found.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
@@ -57,7 +56,6 @@ import { AdminTextEditComponent } from './admin-text-edit/admin-text-edit.compon
     PanelComponent,
     LoginFormComponent,
     MapsComponent,
-    IngresosComponent,
     NewsComponent,
     NoFoundComponent,
     CarruselComponent,

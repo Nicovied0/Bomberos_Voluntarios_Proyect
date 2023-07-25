@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VehicleService } from '../Services/Vehicles.service';
-import Swal from 'sweetalert2'; // Importa sweetalert2
+declare const Swal: any;
+
 
 @Component({
   selector: 'app-admin-movil',

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UpdateTextService } from '../Services/UpdateText.service';
-import Swal from 'sweetalert2'; // Importa sweetalert2
+declare const Swal: any;
+
 
 @Component({
   selector: 'app-admin-text',
