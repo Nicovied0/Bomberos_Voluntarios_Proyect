@@ -27,6 +27,31 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// Ruta PUT para actualizar una imagen por su ID
+router.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  const { url, title, description } = req.body;
+
+  try {
+    // Buscar la imagen por su ID
+    const image = await Image.findById(id);
+    if (!image) {
+      return res.status(404).json({ error: "Imagen no encontrada" });
+    }
+
+    // Actualizar los campos de la imagen con los nuevos valores
+    image.url = url;
+    image.title = title;
+    image.description = description;
+
+    // Guardar los cambios en la base de datos
+    await image.save();
+
+    res.json(image);
+  } catch (err) {
+    res.status(500).json({ error: "Error al actualizar la imagen" });
+  }
+});
 
 
 
