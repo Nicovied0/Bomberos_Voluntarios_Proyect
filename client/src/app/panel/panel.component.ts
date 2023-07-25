@@ -30,6 +30,11 @@ export class PanelComponent {
       window.scrollTo(0, 0);
     });
   }
+  geText() {
+    this.router.navigate(['/panelAdmin/Texts']).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
 
   getMyUser() {
     const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
