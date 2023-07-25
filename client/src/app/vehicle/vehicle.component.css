@@ -45,6 +45,7 @@
   align-items: flex-start;
   justify-content: space-around;
   margin: 1rem;
+  max-width: 40rem;
 }
 
 .button {
