@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   async getUsers() {
-    const url = `http://localhost:3001/users`
+    const url = `https://bvscback.vercel.app/users`
     return this.http.get<any>(url).toPromise()
       .then((users: any[]) => {
         return users.filter((users: any) => users.actived !== false);
@@ -21,7 +21,7 @@ export class UserService {
   }
 
   async getUsersId(id: string) {
-    const url = `http://localhost:3001/users/${id}`;
+    const url = `https://bvscback.vercel.app/users/${id}`;
     try {
       const userResponse = await this.http.get<any>(url).toPromise();
       if (userResponse && userResponse.actived !== false) {
@@ -36,7 +36,7 @@ export class UserService {
   }
 
   async updateUser(id: string, userData: any) {
-    const url = `http://localhost:3001/users/${id}`;
+    const url = `https://bvscback.vercel.app/users/${id}`;
     return this.http.put(url, userData).toPromise();
   }
 

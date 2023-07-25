@@ -7,7 +7,7 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class PostService {
-  private apiUrl = 'http://localhost:3001/post';
+  private apiUrl = 'https://bvscback.vercel.app/post';
   private iframeRegex = /<iframe.*src=/i;
 
 

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class UpdatesService {
-  private apiUrl = 'http://localhost:3001/vehicles';
+  private apiUrl = 'https://bvscback.vercel.app/vehicles';
 
   constructor(private http: HttpClient) { }
 

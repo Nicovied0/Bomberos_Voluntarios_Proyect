@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CloudinaryService {
-  private uploadUrl = 'http://localhost:3001/uploadImage';
+  private uploadUrl = 'https://bvscback.vercel.app/uploadImage';
 
   constructor(private http: HttpClient) { }
 

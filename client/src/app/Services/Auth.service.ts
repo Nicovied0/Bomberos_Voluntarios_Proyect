@@ -11,7 +11,7 @@ export interface LoginResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3001/auth';
+  private baseUrl = 'https://bvscback.vercel.app/auth';
 
   constructor(private http: HttpClient) { }
 

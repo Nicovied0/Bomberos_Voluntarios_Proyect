@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UpdateTextService {
-  private apiUrl = 'http://localhost:3001/images'; // La URL de tu API para las imágenes
+  private apiUrl = 'https://bvscback.vercel.app/images'; // La URL de tu API para las imágenes
 
   constructor(private http: HttpClient) { }
 
@@ -32,7 +32,7 @@ export class UpdateTextService {
   updateImage(imageId: any, updatedData: any): Observable<any> {
     console.log(imageId)
     console.log(updatedData)
-    const url = `http://localhost:3001/images/${imageId}`;
+    const url = `https://bvscback.vercel.app/images/${imageId}`;
     return this.http.put(url, updatedData);
   }
 

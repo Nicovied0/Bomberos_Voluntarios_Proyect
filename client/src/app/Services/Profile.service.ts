@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class ProfileService {
-  private baseUrl = 'http://localhost:3001/auth/profile';
+  private baseUrl = 'https://bvscback.vercel.app/auth/profile';
 
   constructor(private http: HttpClient) { }
 
