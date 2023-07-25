@@ -1,15 +1,29 @@
-import { Component } from '@angular/core';
-// import Img from '../../assets/imgCarrusel1.png'
+import { Component, OnInit } from '@angular/core';
+import { UpdateTextService } from '../Services/UpdateText.service';
 
 @Component({
   selector: 'app-carrusel',
   templateUrl: './carrusel.component.html',
   styleUrls: ['./carrusel.component.css']
 })
-export class CarruselComponent {
-  images = [
-    { url: 'https://i.imgur.com/tDlggdI.png', title: 'Bomberos Voluntarios Santa Catalina', description: '' },
-    { url: 'https://i.imgur.com/eHcUzN6.jpeg', title: 'Correo Para Aspirantes', description: 'email.ejemplo@gmail.com' },
-    { url: 'https://i.imgur.com/HyQChy5.jpeg', title: 'Nuestras redes sociales', description: `Si querés enterarte de las últimas noticias al instante, puedes seguirnos o darle 'Me Gusta' a nuestra página de  Facebook . También, si quieres ver más contenido fotográfico, nos puedes buscar en   Instagram` },
-  ];
+export class CarruselComponent implements OnInit {
+  images: any[] = [];
+  imagesLoaded: boolean = false;
+
+  constructor(private updateTextService: UpdateTextService) { }
+
+  ngOnInit() {
+    this.getImages();
+  }
+
+  getImages() {
+    this.imagesLoaded = false; // Mostrar el indicador de carga
+    this.updateTextService.getImage().then((images) => {
+      this.images = images;
+      this.imagesLoaded = true; // Ocultar el indicador de carga cuando las imágenes se cargan
+    }).catch((error) => {
+      console.error('Error al obtener las imágenes', error);
+      this.imagesLoaded = true; // Asegurarse de ocultar el indicador de carga en caso de error
+    });
+  }
 }
