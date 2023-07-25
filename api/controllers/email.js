@@ -14,7 +14,7 @@ const enviarCorreo = async (nombre, email, asunto, mensaje) => {
   // Contenido del correo electrónico
   const mailOptions = {
     from: `${email}`, // Cambiar por tu dirección de correo
-    to: "briannoviedo@gmail.com", // Cambiar por la dirección de correo destino
+    to: "bv.stacatalina@gmail.com", // Cambiar por la dirección de correo destino
     subject: asunto,
     html: `
    <h2>Email enviado por: ${nombre} !</h2>

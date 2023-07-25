@@ -33,16 +33,25 @@
 .form {
   min-width: 100%
 }
-.inputs{
-  min-width: 25rem;
+
+.inputs {
   margin: 1rem 0
 }
-.div{
+
+.div {
   margin: 2rem;
+  width: 80%;
 }
+
 @media (min-width:900px) {
   .contenedor {
     flex-direction: row;
     justify-content: space-evenly;
   }
+}
+
+@media (max-width:600px) {
+  /* .inputs {
+    width: 15rem;
+  } */
 }
