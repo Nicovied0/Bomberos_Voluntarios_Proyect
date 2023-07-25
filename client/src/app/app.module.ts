@@ -44,6 +44,7 @@ import { AdminMovilEditComponent } from './admin-movil-edit/admin-movil-edit.com
 import { AdminMovilEditMaintenanceComponent } from './admin-movil-edit-maintenance/admin-movil-edit-maintenance.component';
 import { VehicleInformationComponent } from './vehicle-information/vehicle-information.component';
 import { AdminTextComponent } from './admin-text/admin-text.component';
+import { AdminTextEditComponent } from './admin-text-edit/admin-text-edit.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { AdminTextComponent } from './admin-text/admin-text.component';
     AdminMovilEditMaintenanceComponent,
     VehicleInformationComponent,
     AdminTextComponent,
+    AdminTextEditComponent,
   ],
   imports: [
     BrowserModule,

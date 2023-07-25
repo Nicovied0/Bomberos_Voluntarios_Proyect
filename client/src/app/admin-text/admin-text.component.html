@@ -1,1 +1,19 @@
-<p>admin-text works!</p>
+<div class="contenedor">
+  <div class="contenedor2">
+    <h2 style="text-align: center">Vehiculos</h2>
+
+    <div *ngIf="vehicles.length != 0">
+      <div *ngFor="let vehicle of vehicles" class="divNgFor">
+        <div class="divInterno">
+          <img src="{{ vehicle.image }}" class="img" />
+          <p class="p">Movil {{ vehicle.movilNumber }}</p>
+          <p class="p" (click)="goEdit(vehicle._id)">Editar</p>
+          <p class="p" (click)="goUpload(vehicle._id)">Cargar Datos</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="vehicles.length == 0">
+      <p>Actulmente no hay ninguna publicacion cargada</p>
+    </div>
+  </div>
+</div>
