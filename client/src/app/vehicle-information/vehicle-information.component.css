@@ -49,6 +49,22 @@
   cursor: pointer;
 }
 
+p {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0 0 1rem 0;
+}
+
+.hr {
+  width: 102%;
+  margin: 0 0 1rem;
+  padding: 0;
+  border-top: 2px solid var(--text-color-footer);
+}
+
 .divInfo {
   display: flex;
   align-items: baseline;
