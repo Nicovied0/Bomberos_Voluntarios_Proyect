@@ -8,6 +8,7 @@ const uploadImageRoutes = require("./uploadFile");
 const usersRoutes = require("./users");
 const postRoutes = require("./post");
 const emailRoutes = require("./email");
+const imagesRoutes = require("./images");
 
 router.use("/vehicles", vehiclesRoutes);
 router.use("/auth", authRoutes);
@@ -16,5 +17,6 @@ router.use("/upload", uploadDataRoutes);
 router.use("/post", postRoutes);
 router.use("/uploadImage", uploadImageRoutes);
 router.use("/email", emailRoutes);
+router.use("/images", imagesRoutes);
 
 module.exports = router;
