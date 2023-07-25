@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 
+
 export interface LoginResponse {
   token: string;
 }
@@ -53,5 +54,6 @@ export class AuthService {
       showConfirmButton: true
     });
   }
+
 }
 
