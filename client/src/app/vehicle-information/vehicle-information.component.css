@@ -1,3 +1,6 @@
+.contenedorPrincipal{
+  min-height: 80vh;
+}
 .contenedor {
   display: flex;
   flex-direction: column;

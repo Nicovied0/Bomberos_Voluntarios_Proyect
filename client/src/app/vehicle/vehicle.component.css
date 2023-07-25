@@ -1,3 +1,6 @@
+.contenedorPrincipal{
+  min-height: 80vh;
+}
 .contenedor {
   min-height: 80vh;
   padding: 1rem;

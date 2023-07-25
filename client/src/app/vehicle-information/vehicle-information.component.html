@@ -1,209 +1,215 @@
-<div class="contenedor">
-  <div class="divSuperior">
-    <i class="bi bi-arrow-left icon" (click)="goBack(vehicleId._id)"></i>
+<div class="contenedorPrincipal">
+  <div class="contenedor" *ngIf="vehicleId.image">
+    <div class="divSuperior">
+      <i class="bi bi-arrow-left icon" (click)="goBack(vehicleId._id)"></i>
 
-    <div class="divSuperior3">
-      <img class="img" src="{{ vehicleId.image }}" />
-      <h2 style="margin-bottom: 0">Movil N° {{ vehicleId.movilNumber }}</h2>
+      <div class="divSuperior3">
+        <img class="img" src="{{ vehicleId.image }}" />
+        <h2 style="margin-bottom: 0">Movil N° {{ vehicleId.movilNumber }}</h2>
+      </div>
+    </div>
+    <div class="contenedor">
+      <div>
+        <h3 style="margin-bottom: 2rem"><strong>Mantenimientos</strong></h3>
+        <!-- Últimos Mantenimientos -->
+        <div class="divSuperior2">
+          <div class="divInfo">
+            <div>
+              <h4 class="h4">Últimos Mantenimientos</h4>
+              <hr class="hr" />
+            </div>
+            <div class="div2">
+              <i
+                class="bi bi-arrow-up icon2"
+                *ngIf="showAllMaintenances && sortedMaintenances.length > 1"
+                (click)="toggleLastMaintenance()"
+                ><span class="span">ver menos</span></i
+              >
+              <i
+                class="bi bi-arrow-down icon2"
+                *ngIf="!showAllMaintenances && sortedMaintenances.length > 1"
+                (click)="toggleLastMaintenance()"
+                ><span class="span">ver mas</span></i
+              >
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li
+                *ngFor="
+                  let maintenance of sortedMaintenances.slice(
+                    0,
+                    showAllMaintenances ? sortedMaintenances.length : 1
+                  )
+                "
+              >
+                <p>
+                  <strong>Fecha:</strong>
+                  {{ maintenance.fecha | date : "medium" }}
+                </p>
+                <p><strong>Descripción:</strong> {{ maintenance.descripcion }}</p>
+                <p *ngIf="userLoged">
+                  <strong>Dato Cargado por:</strong> {{ maintenance.userUpdate }}
+                </p>
+              </li>
+            </ul>
+            <p *ngIf="!sortedMaintenances.length">
+              No hay información de mantenimientos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Últimos Cambios de Batería -->
+        <div class="divSuperior2">
+          <div class="divInfo">
+            <div>
+              <h4 class="h4">Últimos Cambios de Batería</h4>
+              <hr class="hr" />
+            </div>
+            <div class="div2">
+              <i
+                class="bi bi-arrow-up icon2"
+                *ngIf="showAllBatteryChanges && sortedBatteryChanges.length > 1"
+                (click)="toggleLastBatteryChange()"
+                ><span class="span">ver menos</span></i
+              >
+              <i
+                class="bi bi-arrow-down icon2"
+                *ngIf="!showAllBatteryChanges && sortedBatteryChanges.length > 1"
+                (click)="toggleLastBatteryChange()"
+                ><span class="span">ver mas</span></i
+              >
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li
+                *ngFor="
+                  let batteryChange of sortedBatteryChanges.slice(
+                    0,
+                    showAllBatteryChanges ? sortedBatteryChanges.length : 1
+                  )
+                "
+              >
+                <p>
+                  <strong>Fecha:</strong>
+                  {{ batteryChange.fecha | date : "medium" }}
+                </p>
+                <p>
+                  <strong>Descripción:</strong> {{ batteryChange.descripcion }}
+                </p>
+                <p *ngIf="userLoged">
+                  <strong>Dato Cargado por:</strong>
+                  {{ batteryChange.userUpdate }}
+                </p>
+              </li>
+            </ul>
+            <p *ngIf="!sortedBatteryChanges.length">
+              No hay información de cambios de batería.
+            </p>
+          </div>
+        </div>
+
+        <!-- Últimas Recargas -->
+        <div class="divSuperior2">
+          <div class="divInfo">
+            <div>
+              <h4 class="h4">Últimas Recargas de Combustible</h4>
+              <hr class="hr" />
+            </div>
+            <div class="div2">
+              <i
+                class="bi bi-arrow-up icon2"
+                *ngIf="showAllRecharges && sortedRecharges.length > 1"
+                (click)="toggleLastRecharge()"
+                ><span class="span">ver menos</span></i
+              >
+              <i
+                class="bi bi-arrow-down icon2"
+                *ngIf="!showAllRecharges && sortedRecharges.length > 1"
+                (click)="toggleLastRecharge()"
+                ><span class="span">ver mas</span></i
+              >
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li
+                *ngFor="
+                  let recharge of sortedRecharges.slice(
+                    0,
+                    showAllRecharges ? sortedRecharges.length : 1
+                  )
+                "
+              >
+                <p>
+                  <strong>Fecha:</strong> {{ recharge.fecha | date : "medium" }}
+                </p>
+                <p><strong>Descripción:</strong> {{ recharge.descripcion }}</p>
+                <p *ngIf="userLoged">
+                  <strong>Dato Cargado por:</strong> {{ recharge.userUpdate }}
+                </p>
+              </li>
+            </ul>
+            <p *ngIf="!sortedRecharges.length">No hay información de recargas.</p>
+          </div>
+        </div>
+
+        <!-- Últimos Servicios Programados -->
+        <div class="divSuperior2">
+          <div class="divInfo">
+            <div>
+              <h4 class="h4">Últimos Service Programados</h4>
+              <hr class="hr" />
+            </div>
+            <div class="div2">
+              <i
+                class="bi bi-arrow-up icon2"
+                *ngIf="
+                  showAllServiceProgramed && sortedServiceProgramed.length > 1
+                "
+                (click)="toggleLastServiceProgramed()"
+                ><span class="span">ver menos</span></i
+              >
+              <i
+                class="bi bi-arrow-down icon2"
+                *ngIf="
+                  !showAllServiceProgramed && sortedServiceProgramed.length > 1
+                "
+                (click)="toggleLastServiceProgramed()"
+                ><span class="span">ver mas</span></i
+              >
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li
+                *ngFor="
+                  let service of sortedServiceProgramed.slice(
+                    0,
+                    showAllServiceProgramed ? sortedServiceProgramed.length : 1
+                  )
+                "
+              >
+                <p>
+                  <strong>Fecha:</strong> {{ service.fecha | date : "medium" }}
+                </p>
+                <p><strong>Descripción:</strong> {{ service.descripcion }}</p>
+                <p *ngIf="userLoged">
+                  <strong>Dato Cargado por:</strong> {{ service.userUpdate }}
+                </p>
+              </li>
+            </ul>
+            <p *ngIf="!sortedServiceProgramed.length">
+              No hay información de servicios programados.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="contenedor">
-    <div>
-      <h3 style="margin-bottom: 2rem"><strong>Mantenimientos</strong></h3>
-      <!-- Últimos Mantenimientos -->
-      <div class="divSuperior2">
-        <div class="divInfo">
-          <div>
-            <h4 class="h4">Últimos Mantenimientos</h4>
-            <hr class="hr" />
-          </div>
-          <div class="div2">
-            <i
-              class="bi bi-arrow-up icon2"
-              *ngIf="showAllMaintenances && sortedMaintenances.length > 1"
-              (click)="toggleLastMaintenance()"
-              ><span class="span">ver menos</span></i
-            >
-            <i
-              class="bi bi-arrow-down icon2"
-              *ngIf="!showAllMaintenances && sortedMaintenances.length > 1"
-              (click)="toggleLastMaintenance()"
-              ><span class="span">ver mas</span></i
-            >
-          </div>
-        </div>
-        <div>
-          <ul>
-            <li
-              *ngFor="
-                let maintenance of sortedMaintenances.slice(
-                  0,
-                  showAllMaintenances ? sortedMaintenances.length : 1
-                )
-              "
-            >
-              <p>
-                <strong>Fecha:</strong>
-                {{ maintenance.fecha | date : "medium" }}
-              </p>
-              <p><strong>Descripción:</strong> {{ maintenance.descripcion }}</p>
-              <p *ngIf="userLoged">
-                <strong>Dato Cargado por:</strong> {{ maintenance.userUpdate }}
-              </p>
-            </li>
-          </ul>
-          <p *ngIf="!sortedMaintenances.length">
-            No hay información de mantenimientos.
-          </p>
-        </div>
-      </div>
-
-      <!-- Últimos Cambios de Batería -->
-      <div class="divSuperior2">
-        <div class="divInfo">
-          <div>
-            <h4 class="h4">Últimos Cambios de Batería</h4>
-            <hr class="hr" />
-          </div>
-          <div class="div2">
-            <i
-              class="bi bi-arrow-up icon2"
-              *ngIf="showAllBatteryChanges && sortedBatteryChanges.length > 1"
-              (click)="toggleLastBatteryChange()"
-              ><span class="span">ver menos</span></i
-            >
-            <i
-              class="bi bi-arrow-down icon2"
-              *ngIf="!showAllBatteryChanges && sortedBatteryChanges.length > 1"
-              (click)="toggleLastBatteryChange()"
-              ><span class="span">ver mas</span></i
-            >
-          </div>
-        </div>
-        <div>
-          <ul>
-            <li
-              *ngFor="
-                let batteryChange of sortedBatteryChanges.slice(
-                  0,
-                  showAllBatteryChanges ? sortedBatteryChanges.length : 1
-                )
-              "
-            >
-              <p>
-                <strong>Fecha:</strong>
-                {{ batteryChange.fecha | date : "medium" }}
-              </p>
-              <p>
-                <strong>Descripción:</strong> {{ batteryChange.descripcion }}
-              </p>
-              <p *ngIf="userLoged">
-                <strong>Dato Cargado por:</strong>
-                {{ batteryChange.userUpdate }}
-              </p>
-            </li>
-          </ul>
-          <p *ngIf="!sortedBatteryChanges.length">
-            No hay información de cambios de batería.
-          </p>
-        </div>
-      </div>
-
-      <!-- Últimas Recargas -->
-      <div class="divSuperior2">
-        <div class="divInfo">
-          <div>
-            <h4 class="h4">Últimas Recargas de Combustible</h4>
-            <hr class="hr" />
-          </div>
-          <div class="div2">
-            <i
-              class="bi bi-arrow-up icon2"
-              *ngIf="showAllRecharges && sortedRecharges.length > 1"
-              (click)="toggleLastRecharge()"
-              ><span class="span">ver menos</span></i
-            >
-            <i
-              class="bi bi-arrow-down icon2"
-              *ngIf="!showAllRecharges && sortedRecharges.length > 1"
-              (click)="toggleLastRecharge()"
-              ><span class="span">ver mas</span></i
-            >
-          </div>
-        </div>
-        <div>
-          <ul>
-            <li
-              *ngFor="
-                let recharge of sortedRecharges.slice(
-                  0,
-                  showAllRecharges ? sortedRecharges.length : 1
-                )
-              "
-            >
-              <p>
-                <strong>Fecha:</strong> {{ recharge.fecha | date : "medium" }}
-              </p>
-              <p><strong>Descripción:</strong> {{ recharge.descripcion }}</p>
-              <p *ngIf="userLoged">
-                <strong>Dato Cargado por:</strong> {{ recharge.userUpdate }}
-              </p>
-            </li>
-          </ul>
-          <p *ngIf="!sortedRecharges.length">No hay información de recargas.</p>
-        </div>
-      </div>
-
-      <!-- Últimos Servicios Programados -->
-      <div class="divSuperior2">
-        <div class="divInfo">
-          <div>
-            <h4 class="h4">Últimos Service Programados</h4>
-            <hr class="hr" />
-          </div>
-          <div class="div2">
-            <i
-              class="bi bi-arrow-up icon2"
-              *ngIf="
-                showAllServiceProgramed && sortedServiceProgramed.length > 1
-              "
-              (click)="toggleLastServiceProgramed()"
-              ><span class="span">ver menos</span></i
-            >
-            <i
-              class="bi bi-arrow-down icon2"
-              *ngIf="
-                !showAllServiceProgramed && sortedServiceProgramed.length > 1
-              "
-              (click)="toggleLastServiceProgramed()"
-              ><span class="span">ver mas</span></i
-            >
-          </div>
-        </div>
-        <div>
-          <ul>
-            <li
-              *ngFor="
-                let service of sortedServiceProgramed.slice(
-                  0,
-                  showAllServiceProgramed ? sortedServiceProgramed.length : 1
-                )
-              "
-            >
-              <p>
-                <strong>Fecha:</strong> {{ service.fecha | date : "medium" }}
-              </p>
-              <p><strong>Descripción:</strong> {{ service.descripcion }}</p>
-              <p *ngIf="userLoged">
-                <strong>Dato Cargado por:</strong> {{ service.userUpdate }}
-              </p>
-            </li>
-          </ul>
-          <p *ngIf="!sortedServiceProgramed.length">
-            No hay información de servicios programados.
-          </p>
-        </div>
-      </div>
-    </div>
+  <div *ngIf="!vehicleId.image">
+    <app-loading></app-loading>
   </div>
 </div>
+

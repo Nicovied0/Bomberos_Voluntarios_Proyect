@@ -47,10 +47,14 @@ export class VehicleComponent {
   }
 
   goUpdate(id: any) {
-    this.router.navigate(['/panelAdmin/Vehicles/maintenance', id])
+    this.router.navigate(['/panelAdmin/Vehicles/maintenance', id]).then(() => {
+      window.scrollTo(0, 0);
+    });;
   }
   goInfo(id: any) {
-    this.router.navigate(['moviles/Adicional', id])
+    this.router.navigate(['moviles/Adicional', id]).then(() => {
+      window.scrollTo(0, 0);
+    });;
   }
 
   userVerify() {

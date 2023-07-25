@@ -1,127 +1,134 @@
-<div class="contenedor">
-  <div class="contenedorDiv">
-    <div></div>
-    <div class="divSuperior">
-      <i class="bi bi-arrow-left icon" (click)="goBack(vehicleId._id)"></i>
+<div  class="contenedorPrincipal">
+  <div *ngIf="vehicleId.image" class="contenedor">
+    <div class="contenedorDiv">
+      <div></div>
+      <div class="divSuperior">
+        <i class="bi bi-arrow-left icon" (click)="goBack(vehicleId._id)"></i>
 
-      <h2 style="text-align: center">Movil {{ vehicleId.movilNumber }}</h2>
+        <h2 style="text-align: center">Movil {{ vehicleId.movilNumber }}</h2>
+      </div>
+      <img src="{{ vehicleId.image }}" alt="a" class="img" />
+      <div>
+        <h3>{{ vehicleId.brand }}</h3>
+        <h3>{{ vehicleId.model }}</h3>
+        <h5>Modelo: {{ vehicleId.year }}</h5>
+      </div>
     </div>
-    <img src="{{ vehicleId.image }}" alt="a" class="img" />
-    <div>
-      <h3>{{ vehicleId.brand }}</h3>
-      <h3>{{ vehicleId.model }}</h3>
-      <h5>Modelo: {{ vehicleId.year }}</h5>
-    </div>
-  </div>
-  <div class="contenedorDiv2">
-    <h2 class="info">Información adicional</h2>
-    <div>
-      <h5>Último Service Programado:</h5>
-      <div *ngIf="vehicleId.lastServiceProgramed.length" class="divData">
-        <p>
-          <strong>Fecha: </strong>
-          {{
-            formatFecha(
+    <div class="contenedorDiv2">
+      <h2 class="info">Información adicional</h2>
+      <div>
+        <h5>Último Service Programado:</h5>
+        <div *ngIf="vehicleId.lastServiceProgramed.length" class="divData">
+          <p>
+            <strong>Fecha: </strong>
+            {{
+              formatFecha(
+                vehicleId.lastServiceProgramed[
+                  vehicleId.lastServiceProgramed.length - 1
+                ].fecha
+              )
+            }}
+          </p>
+          <p>
+            <strong>Descripción: </strong>
+            {{
               vehicleId.lastServiceProgramed[
                 vehicleId.lastServiceProgramed.length - 1
-              ].fecha
-            )
-          }}
-        </p>
-        <p>
-          <strong>Descripción: </strong>
-          {{
-            vehicleId.lastServiceProgramed[
-              vehicleId.lastServiceProgramed.length - 1
-            ].descripcion
-          }}
+              ].descripcion
+            }}
+          </p>
+        </div>
+        <p *ngIf="!vehicleId.lastServiceProgramed.length">
+          No se ingreso información.
         </p>
       </div>
-      <p *ngIf="!vehicleId.lastServiceProgramed.length">
-        No se ingreso información.
-      </p>
-    </div>
-    <div>
-      <h5>Último Manteniemiento:</h5>
-      <div *ngIf="vehicleId.lastMaintenance.length" class="divData">
-        <p>
-          <strong>Fecha: </strong>
-          {{
-            formatFecha(
+      <div>
+        <h5>Último Manteniemiento:</h5>
+        <div *ngIf="vehicleId.lastMaintenance.length" class="divData">
+          <p>
+            <strong>Fecha: </strong>
+            {{
+              formatFecha(
+                vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
+                  .fecha
+              )
+            }}
+          </p>
+          <p>
+            <strong>Descripción: </strong>
+            {{
               vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
-                .fecha
-            )
-          }}
-        </p>
-        <p>
-          <strong>Descripción: </strong>
-          {{
-            vehicleId.lastMaintenance[vehicleId.lastMaintenance.length - 1]
-              .descripcion
-          }}
+                .descripcion
+            }}
+          </p>
+        </div>
+        <p *ngIf="!vehicleId.lastMaintenance.length">
+          No se ingreso información.
         </p>
       </div>
-      <p *ngIf="!vehicleId.lastMaintenance.length">
-        No se ingreso información.
-      </p>
-    </div>
-    <div>
-      <h5>Última Recarga de Combustible:</h5>
-      <div *ngIf="vehicleId.lastRecharge.length" class="divData">
-        <p>
-          <strong>Fecha: </strong>
-          {{
-            formatFecha(
-              vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1].fecha
-            )
-          }}
-        </p>
-        <p>
-          <strong>Descripción: </strong>
-          {{
-            vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1]
-              .descripcion
-          }}
-        </p>
+      <div>
+        <h5>Última Recarga de Combustible:</h5>
+        <div *ngIf="vehicleId.lastRecharge.length" class="divData">
+          <p>
+            <strong>Fecha: </strong>
+            {{
+              formatFecha(
+                vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1].fecha
+              )
+            }}
+          </p>
+          <p>
+            <strong>Descripción: </strong>
+            {{
+              vehicleId.lastRecharge[vehicleId.lastRecharge.length - 1]
+                .descripcion
+            }}
+          </p>
+        </div>
+        <p *ngIf="!vehicleId.lastRecharge.length">No se ingreso información.</p>
       </div>
-      <p *ngIf="!vehicleId.lastRecharge.length">No se ingreso información.</p>
-    </div>
-    <div>
-      <h5>Último Cambio de Batería:</h5>
-      <div *ngIf="vehicleId.lastBatteryChange.length" class="divData">
-        <p>
-          <strong>Fecha: </strong>
-          {{
-            formatFecha(
+      <div>
+        <h5>Último Cambio de Batería:</h5>
+        <div *ngIf="vehicleId.lastBatteryChange.length" class="divData">
+          <p>
+            <strong>Fecha: </strong>
+            {{
+              formatFecha(
+                vehicleId.lastBatteryChange[
+                  vehicleId.lastBatteryChange.length - 1
+                ].fecha
+              )
+            }}
+          </p>
+          <p>
+            <strong>Descripción: </strong>
+            {{
               vehicleId.lastBatteryChange[
                 vehicleId.lastBatteryChange.length - 1
-              ].fecha
-            )
-          }}
-        </p>
-        <p>
-          <strong>Descripción: </strong>
-          {{
-            vehicleId.lastBatteryChange[vehicleId.lastBatteryChange.length - 1]
-              .descripcion
-          }}
+              ].descripcion
+            }}
+          </p>
+        </div>
+        <p *ngIf="!vehicleId.lastBatteryChange.length">
+          No se ingreso información.
         </p>
       </div>
-      <p *ngIf="!vehicleId.lastBatteryChange.length">
-        No se ingreso información.
-      </p>
-    </div>
-    <div>
-      <button (click)="goInfo(vehicleId._id)" class="button">
-        Ver mas información
-      </button>
-      <button
-        (click)="goUpdate(vehicleId._id)"
-        class="button"
-        *ngIf="userLoged"
-      >
-        Cargar Datos
-      </button>
+      <div>
+        <button (click)="goInfo(vehicleId._id)" class="button">
+          Ver mas información
+        </button>
+        <button
+          (click)="goUpdate(vehicleId._id)"
+          class="button"
+          *ngIf="userLoged"
+        >
+          Cargar Datos
+        </button>
+      </div>
     </div>
   </div>
 </div>
+<div *ngIf="!vehicleId.image">
+  <app-loading></app-loading>
+</div>
+
