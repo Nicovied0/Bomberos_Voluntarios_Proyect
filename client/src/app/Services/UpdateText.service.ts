@@ -17,6 +17,18 @@ export class UpdateTextService {
       });
   }
 
+  getImageById(id: any) {
+    const url = `${this.apiUrl}/${id}`
+    return this.http.get<any>(url).toPromise()
+      .then((text: any) => {
+        if (text) {
+          return text
+        } else {
+          return null
+        }
+      });
+  }
+
   updateImage(imageId: any, updatedData: any): Observable<any> {
     const url = `${this.apiUrl}/${imageId}`;
     return this.http.put(url, updatedData); // Realiza una solicitud PATCH al backend para actualizar los datos de la imagen

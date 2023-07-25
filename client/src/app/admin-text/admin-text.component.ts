@@ -25,7 +25,7 @@ export class AdminTextComponent implements OnInit {
 
 
   goEdit(_id: any) {
-    this.router.navigate(['panelAdmin/Vehicles', _id]).then(() => {
+    this.router.navigate(['panelAdmin/Texts', _id]).then(() => {
       window.scrollTo(0, 0);
     });
   }
