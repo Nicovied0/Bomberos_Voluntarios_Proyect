@@ -10,17 +10,17 @@
   </div>
   <div class="div">
     <form (submit)="updateText()" class="form">
-      <label for="title">Texto Principal</label>
+      <label for="title"><strong>Texto Principal</strong></label>
       <input
         [(ngModel)]="text.title"
         name="title"
         type="text"
-        class="form-control form-control-lg  inputs"
+        class="form-control form-control-lg inputs"
       />
-      <label for="description">Texto Secundario</label>
+      <label for="description"><strong>Texto Secundario</strong></label>
       <textarea
         [(ngModel)]="text.description"
-        class="form-control  form-control-lg  inputs"
+        class="form-control form-control-lg inputs"
         name="description"
       ></textarea>
       <button type="submit" class="btn btn-primary">Guardar</button>
