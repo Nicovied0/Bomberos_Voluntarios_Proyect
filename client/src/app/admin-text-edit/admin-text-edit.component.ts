@@ -35,5 +35,10 @@ export class AdminTextEditComponent implements OnInit {
     }
   }
 
+  goBack() {
+    this.router.navigate(['/panelAdmin/Texts']).then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
 
 }

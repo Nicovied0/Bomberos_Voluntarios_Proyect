@@ -1,6 +1,28 @@
 <div class="contenedor">
-  <div>
-    <h2>Texto {{ text.title }}</h2>
+  <div class="div">
+    <div class="div2">
+      <i class="bi bi-arrow-left icon" (click)="goBack()"></i>
+      <h2>Slide</h2>
+    </div>
     <img src="{{ text.url }}" class="img" />
+    <h4><strong>Texto Principal:</strong> {{ text.title }}</h4>
+    <h5><strong>Descripcion:</strong> {{ text.description }}</h5>
+  </div>
+  <div class="div">
+    <form>
+      <label>Texto Principal</label>
+      <input
+        [(ngModel)]="text.title"
+        placeholder="{{ text.title }}"
+        class="form-control inputs"
+      />
+      <label>Texto Secundario</label>
+      <textarea
+        [(ngModel)]="text.description"
+        placeholder="{{ text.description }}"
+        class="form-control inputs"
+      ></textarea>
+      <button class="btn btn-primary">Guardar</button>
+    </form>
   </div>
 </div>

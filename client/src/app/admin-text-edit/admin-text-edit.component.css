@@ -13,3 +13,11 @@
   height: 400px;
   object-fit: cover;
 }
+
+
+.icon {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  color: var(--text-color-secondary);
+  cursor: pointer;
+}
