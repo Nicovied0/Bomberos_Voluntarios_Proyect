@@ -9,20 +9,21 @@
     <h5><strong>Descripcion:</strong> {{ text.description }}</h5>
   </div>
   <div class="div">
-    <form>
-      <label>Texto Principal</label>
+    <form (submit)="updateText()" class="form">
+      <label for="title">Texto Principal</label>
       <input
         [(ngModel)]="text.title"
-        placeholder="{{ text.title }}"
-        class="form-control inputs"
+        name="title"
+        type="text"
+        class="form-control form-control-lg  inputs"
       />
-      <label>Texto Secundario</label>
+      <label for="description">Texto Secundario</label>
       <textarea
         [(ngModel)]="text.description"
-        placeholder="{{ text.description }}"
-        class="form-control inputs"
+        class="form-control  form-control-lg  inputs"
+        name="description"
       ></textarea>
-      <button class="btn btn-primary">Guardar</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
   </div>
 </div>

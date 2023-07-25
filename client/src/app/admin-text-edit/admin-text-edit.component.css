@@ -20,4 +20,14 @@
   font-size: 2.5rem;
   color: var(--text-color-secondary);
   cursor: pointer;
+  margin: 0 1rem 0 0;
+}
+
+.div2 {
+  display: flex;
+  align-items: center;
+}
+
+.form {
+  min-width: 30rem
 }
