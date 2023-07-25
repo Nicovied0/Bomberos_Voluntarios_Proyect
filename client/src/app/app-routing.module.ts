@@ -22,6 +22,8 @@ import { AdminMovilEditComponent } from './admin-movil-edit/admin-movil-edit.com
 import { AdminMovilEditMaintenanceComponent } from './admin-movil-edit-maintenance/admin-movil-edit-maintenance.component';
 import { VehicleInformationComponent } from './vehicle-information/vehicle-information.component';
 import { AuthGuard } from './auth.guard';
+import { AdminTextComponent } from './admin-text/admin-text.component';
+import { AdminTextEditComponent } from './admin-text-edit/admin-text-edit.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
@@ -32,6 +34,8 @@ const routes: Routes = [
   { path: 'panelAdmin/NewPost', component: AdminNewPostComponent, canActivate: [AuthGuard] },
   { path: 'panelAdmin/Users', component: AdminUsersComponent, canActivate: [AuthGuard] },
   { path: 'panelAdmin/Vehicles', component: AdminMovilComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/Texts', component: AdminTextComponent, canActivate: [AuthGuard] },
+  { path: 'panelAdmin/Texts/:id', component: AdminTextEditComponent, canActivate: [AuthGuard] },
   { path: 'panelAdmin/Vehicles/:id', component: AdminMovilEditComponent, canActivate: [AuthGuard] },
   { path: 'panelAdmin/Vehicles/maintenance/:id', component: AdminMovilEditMaintenanceComponent, canActivate: [AuthGuard] },
   { path: 'panelAdmin/Users/:id', component: AdminUsersEditComponent, canActivate: [AuthGuard] },
