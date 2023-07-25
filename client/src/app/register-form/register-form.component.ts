@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService, LoginResponse } from '../Services/Auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 
 @Component({
   selector: 'app-register-form',

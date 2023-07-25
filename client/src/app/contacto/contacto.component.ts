@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 
 @Component({
   selector: 'app-contacto',
@@ -20,7 +21,7 @@ export class ContactoComponent {
 
   onSubmit() {
     // Realizar la solicitud POST al servidor
-    this.http.post('http://localhost:3001/email', this.formData).subscribe(
+    this.http.post('https://bvscback.vercel.app/email', this.formData).subscribe(
       (response) => {
         // Mostrar una alerta de SweetAlert para agradecer el envío del email
         Swal.fire({

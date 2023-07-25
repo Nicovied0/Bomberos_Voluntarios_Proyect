@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UpdateTextService } from '../Services/UpdateText.service';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 
 @Component({
   selector: 'app-admin-text-edit',

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../Services/User.service';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 @Component({
   selector: 'app-admin-users-edit',
   templateUrl: './admin-users-edit.component.html',

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { VehicleService } from '../Services/Vehicles.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 @Component({
   selector: 'app-vehicles',
   templateUrl: './vehicles.component.html',

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VehicleService } from '../Services/Vehicles.service';
 import { UpdatesService } from '../Services/Updates.service';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 @Component({
   selector: 'app-admin-movil-edit-maintenance',
   templateUrl: './admin-movil-edit-maintenance.component.html',

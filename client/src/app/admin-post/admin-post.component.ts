@@ -3,7 +3,8 @@ import { PostService } from '../Services/Post.service';
 import { Publicacion } from '../Services/publicacion.inteface';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 
 @Component({
   selector: 'app-admin-post',

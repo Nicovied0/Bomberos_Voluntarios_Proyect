@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../Services/User.service';
-import Swal from 'sweetalert2'; // Importa sweetalert2
+declare const Swal: any;
+
 
 @Component({
   selector: 'app-admin-users',
@@ -51,11 +52,12 @@ export class AdminUsersComponent implements OnInit {
         confirmButtonText: 'Sí, eliminarlo',
         cancelButtonText: 'No, cancelar',
         reverseButtons: true
-      }).then((result) => {
+      }).then((result:any) => {
         if (result.isConfirmed) {
           // Cambiar el valor de actived a false
           userToDelete.actived = false;
           window.location.reload()
+          // Llamar al servicio para actualizar el usuario en el servidor
           this.userService.updateUser(userId, { actived: false })
             .then(() => {
               Swal.fire(

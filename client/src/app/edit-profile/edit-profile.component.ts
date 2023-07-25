@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { ProfileService } from '../Services/Profile.service';
 import { CloudinaryService } from '../Services/Cloudinary.service';
 import { event } from 'jquery';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 
 @Component({
   selector: 'app-edit-profile',

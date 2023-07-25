@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PostService } from '../Services/Post.service';
-import Swal from 'sweetalert2';
+declare const Swal: any;
+
 import { Router } from '@angular/router';
 
 @Component({
