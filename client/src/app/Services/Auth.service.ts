@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 
 export interface LoginResponse {
@@ -36,24 +36,24 @@ export class AuthService {
   }
 
   // Agrega los siguientes métodos para mostrar mensajes de SweetAlert
-  mostrarMensajeExito(titulo: string, mensaje: string) {
-    Swal.fire({
-      title: titulo,
-      text: mensaje,
-      icon: 'success',
-      timer: 3000,
-      showConfirmButton: false
-    });
-  }
+  // mostrarMensajeExito(titulo: string, mensaje: string) {
+  //   Swal.fire({
+  //     title: titulo,
+  //     text: mensaje,
+  //     icon: 'success',
+  //     timer: 3000,
+  //     showConfirmButton: false
+  //   });
+  // }
 
-  mostrarMensajeError(titulo: string, mensaje: string) {
-    Swal.fire({
-      title: titulo,
-      text: mensaje,
-      icon: 'error',
-      showConfirmButton: true
-    });
-  }
+  // mostrarMensajeError(titulo: string, mensaje: string) {
+  //   Swal.fire({
+  //     title: titulo,
+  //     text: mensaje,
+  //     icon: 'error',
+  //     showConfirmButton: true
+  //   });
+  // }
 
 }
 

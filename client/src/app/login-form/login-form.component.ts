@@ -29,13 +29,26 @@ export class LoginFormComponent {
         (response: LoginResponse) => {
           if (response && response.token) {
             localStorage.setItem('token', response.token);
-            this.authService.mostrarMensajeExito('Inicio de Sesión Exitoso', '¡Has iniciado sesión correctamente!');
+            Swal.fire({
+              title: "Inicio de Sesión Exitoso",
+              text: "¡Has iniciado sesión correctamente!",
+              icon: 'success',
+              timer: 3000,
+              showConfirmButton: false
+            });
+
             this.router.navigate(['/perfil']);
           }
         },
         (error) => {
-          this.authService.mostrarMensajeError('Error en el Inicio de Sesión', 'Correo electrónico o contraseña inválidos. Por favor, inténtalo de nuevo.');
+          Swal.fire({
+            title: 'Error en el Inicio de Sesión',
+            text: 'Correo electrónico o contraseña inválidos. Por favor, inténtalo de nuevo.',
+            icon: 'error',
+            showConfirmButton: true
+          });
         }
+
       );
   }
 }
