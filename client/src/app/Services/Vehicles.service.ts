@@ -27,8 +27,7 @@ export class VehicleService {
 
   }
   deleteMaintenance(vehicleId: string, maintenanceId: string) {
-    // const url = `https://bvscback.vercel.app/vehicles/${vehicleId}/maintenance/${maintenanceId}`;
-    const url = `http://localhost:3001/vehicles/${vehicleId}/maintenance/${maintenanceId}`
+    const url = `https://bvscback.vercel.app/vehicles/${vehicleId}/maintenance/${maintenanceId}`;
     return this.http.delete(url).toPromise();
   }
 
