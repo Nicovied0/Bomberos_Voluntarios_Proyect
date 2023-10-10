@@ -1,13 +1,13 @@
 <div  class="contenedorPrincipal">
-  <div *ngIf="vehicleId.image" class="contenedor">
+  <div *ngIf="vehicleId?.image" class="contenedor">
     <div class="contenedorDiv">
       <div></div>
       <div class="divSuperior">
         <i class="bi bi-arrow-left icon" (click)="goBack(vehicleId._id)"></i>
 
-        <h2 style="text-align: center">Movil {{ vehicleId.movilNumber }}</h2>
+        <h2 style="text-align: center">Movil {{ vehicleId?.movilNumber }}</h2>
       </div>
-      <img src="{{ vehicleId.image }}" alt="a" class="img" />
+      <img src="{{ vehicleId?.image }}" alt="a" class="img" />
       <div>
         <h3>{{ vehicleId.brand }}</h3>
         <h3>{{ vehicleId.model }}</h3>

@@ -5,7 +5,7 @@
     <div *ngIf="vehicles.length != 0">
       <div *ngFor="let vehicle of vehicles" class="divNgFor">
         <div class="divInterno">
-          <img src="{{ vehicle.image }}" class="img" />
+          <img src="{{ vehicle?.image }}" class="img" />
           <p class="p">Movil {{ vehicle.movilNumber }}</p>
           <p class="p" (click)="goEdit(vehicle._id)">Editar</p>
           <p class="p" (click)="goUpload(vehicle._id)">Cargar Datos</p>
