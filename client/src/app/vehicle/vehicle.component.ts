@@ -30,7 +30,6 @@ export class VehicleComponent {
   getVehicle(id: any) {
     this.vehicleService.getVehiclesById(id)
       .then(vehicle => {
-        console.log(vehicle);
         this.vehicleId = vehicle;
 
       })

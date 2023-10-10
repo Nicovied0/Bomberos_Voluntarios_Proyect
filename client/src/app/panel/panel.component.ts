@@ -38,7 +38,6 @@ export class PanelComponent {
 
   getMyUser() {
     const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
-    console.log(usuarioLogeado.role)
     this.myUser = usuarioLogeado.role
   }
 

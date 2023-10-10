@@ -34,25 +34,5 @@ export class AuthService {
     return false;
   }
 
-  // Agrega los siguientes métodos para mostrar mensajes de SweetAlert
-  // mostrarMensajeExito(titulo: string, mensaje: string) {
-  //   Swal.fire({
-  //     title: titulo,
-  //     text: mensaje,
-  //     icon: 'success',
-  //     timer: 3000,
-  //     showConfirmButton: false
-  //   });
-  // }
-
-  // mostrarMensajeError(titulo: string, mensaje: string) {
-  //   Swal.fire({
-  //     title: titulo,
-  //     text: mensaje,
-  //     icon: 'error',
-  //     showConfirmButton: true
-  //   });
-  // }
-
 }
 

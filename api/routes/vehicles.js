@@ -221,4 +221,51 @@ router.post("/:id/service-programed", async (req, res) => {
   }
 });
 
+
+router.delete("/:vehicleId/maintenance/:maintenanceId", async (req, res) => {
+  try {
+    const vehicle = await Vehicles.findById(req.params.vehicleId);
+
+    if (!vehicle) {
+      return res.status(404).json({ error: "Vehículo no encontrado" });
+    }
+
+    const maintenanceIdToDelete = req.params.maintenanceId;
+    let maintenanceFound = false;
+
+    const maintenanceArrays = [
+      "lastRecharge",
+      "lastMaintenance",
+      "lastServiceProgramed",
+      "lastBatteryChange"
+    ];
+
+    for (const maintenanceArray of maintenanceArrays) {
+      vehicle[maintenanceArray] = vehicle[maintenanceArray].filter((maintenance) => {
+        if (maintenance._id.toString() === maintenanceIdToDelete) {
+          maintenanceFound = true;
+          return false;
+        }
+        return true;
+      });
+    }
+
+    if (!maintenanceFound) {
+      return res.status(404).json({ error: "Mantenimiento no encontrado en el vehículo" });
+    }
+
+    const updatedVehicle = await vehicle.save();
+
+    console.log(`Se llamó a la ruta DELETE /vehicles/${req.params.vehicleId}/maintenance/${maintenanceIdToDelete}`);
+    res.json(updatedVehicle);
+  } catch (error) {
+    console.error("Error al borrar el mantenimiento", error);
+    res.status(500).json({ error: "Error al borrar el mantenimiento" });
+  }
+});
+
+
+
+
+
 module.exports = router;

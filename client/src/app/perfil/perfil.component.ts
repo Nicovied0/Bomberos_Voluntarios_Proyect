@@ -30,7 +30,6 @@ export class PerfilComponent implements OnInit {
       const profileData = localStorage.getItem('profile');
 
       if (profileData) {
-        console.log('Perfil encontrado en el localStorage:', JSON.parse(profileData));
         this.profile = JSON.parse(profileData);
         this.loged = true;
         this.profileLoged = true;
@@ -40,11 +39,9 @@ export class PerfilComponent implements OnInit {
             if (response.profile) {
               const userProfile = response.profile;
               localStorage.setItem('profile', JSON.stringify(userProfile));
-              console.log('Perfil obtenido:', userProfile);
               this.loged = true;
               this.profileLoged = true;
             } else {
-              console.log('No se pudo obtener el perfil');
               this.loged = false;
               this.profileLoged = false;
               this.router.navigate(['/login']);
@@ -61,7 +58,6 @@ export class PerfilComponent implements OnInit {
         );
       }
     } else {
-      console.log('No se encontró un token');
       this.loged = false;
       this.profileLoged = false;
       this.router.navigate(['/login']);
@@ -71,15 +67,11 @@ export class PerfilComponent implements OnInit {
   getUser() {
     this.goProfile = false
     location.reload()
-    // this.profileLoged = !this.profileLoged
   }
 
   logout() {
-    // Eliminar el token y el perfil del localStorage
     localStorage.removeItem('token');
     localStorage.removeItem('profile');
-
-    // Redirigir al componente de inicio de sesión
     this.router.navigate(['/login']);
   }
 

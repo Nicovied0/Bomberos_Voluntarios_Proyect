@@ -17,10 +17,9 @@ export class AdminNewPostComponent {
 
   guardarPublicacion() {
     if (this.iframeValido) {
-      const iframeLinkAdjusted = this.postService.ajustarAnchoIframe(this.iframeLink, 500); // Ajustar el ancho a 500
+      const iframeLinkAdjusted = this.postService.ajustarAnchoIframe(this.iframeLink, 500);
       this.postService.guardarPublicacion(iframeLinkAdjusted).subscribe(
         (res) => {
-          console.log(res);
           this.iframeLink = '';
           Swal.fire('Éxito', 'La publicación ha sido guardada exitosamente.', 'success');
           this.router.navigate(['/noticias']).then(() => {
@@ -38,8 +37,6 @@ export class AdminNewPostComponent {
   }
 
   validarIframe() {
-    // Validar si el valor ingresado es un iframe válido (puedes utilizar expresiones regulares aquí)
-    // Por ejemplo, puedes verificar si el valor comienza con "<iframe" y termina con "</iframe>"
     this.iframeValido = this.iframeLink.startsWith('<iframe') && this.iframeLink.endsWith('</iframe>');
   }
 }

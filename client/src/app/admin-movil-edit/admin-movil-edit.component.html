@@ -1,6 +1,115 @@
 <div class="contenedor">
-  <div>
-    <h2>Movil {{ movil.movilNumber }}</h2>
-    <img src="{{ movil.image }}" class="img" />
+  <div class="contenedor__superior">
+    <h1>Movil {{ movil.movilNumber }}</h1>
+    <img src="{{ movil.image }}" class="contenedor__superior-img" />
+  </div>
+  <div class="contenedor__mantenimiento">
+    <h3 class="contenedor__mantenimiento-texto">Mantenimientos</h3>
+    <div class="contenedor__mantenimiento-box">
+      <ul class="contenedor__mantenimiento-box-ul">
+        <h5
+          class="contenedor__mantenimiento-box-ul-title"
+          *ngIf="lastMaintenance.length !== 0"
+        >
+          Últimos Mantenimientos
+        </h5>
+        <li
+          *ngFor="let maintenance of lastMaintenance"
+          class="contenedor__mantenimiento-box-ul-li"
+        >
+          <div class="contenedor__mantenimiento-box-ul-li-div">
+            <p class="contenedor__mantenimiento-box-ul-li-div-parrafo">
+              <strong>Fecha:</strong>
+              {{ maintenance.fecha | date : "MMM d, y" }}
+            </p>
+            <p><strong>Descripción:</strong> {{ maintenance.descripcion }}</p>
+          </div>
+          <i
+            class="bi bi-trash-fill icons"
+            (click)="onDeleteMaintenance(movil._id, maintenance._id)"
+          ></i>
+        </li>
+      </ul>
+    </div>
+    <div class="contenedor__mantenimiento-box">
+      <ul class="contenedor__mantenimiento-box-ul">
+        <h5
+          class="contenedor__mantenimiento-box-ul-title"
+          *ngIf="lastBatteryChange.length !== 0"
+        >
+          Últimos Cambios de Batería
+        </h5>
+        <li
+          *ngFor="let batteryChange of lastBatteryChange"
+          class="contenedor__mantenimiento-box-ul-li"
+        >
+          <div class="contenedor__mantenimiento-box-ul-li-div">
+            <p class="contenedor__mantenimiento-box-ul-li-div-parrafo">
+              <strong>Fecha:</strong>
+              {{ batteryChange.fecha | date : "MMM d, y" }}
+            </p>
+            <p><strong>Descripción:</strong> {{ batteryChange.descripcion }}</p>
+          </div>
+          <i
+            class="bi bi-trash-fill icons"
+            (click)="onDeleteMaintenance(movil._id, batteryChange._id)"
+          ></i>
+        </li>
+      </ul>
+    </div>
+    <div class="contenedor__mantenimiento-box">
+      <ul class="contenedor__mantenimiento-box-ul">
+        <h5
+          class="contenedor__mantenimiento-box-ul-title"
+          *ngIf="lastRecharge.length !== 0"
+        >
+          Últimas Recargas de Combustible
+        </h5>
+        <li
+          *ngFor="let lastRecharge of lastRecharge"
+          class="contenedor__mantenimiento-box-ul-li"
+        >
+          <div class="contenedor__mantenimiento-box-ul-li-div">
+            <p class="contenedor__mantenimiento-box-ul-li-div-parrafo">
+              <strong>Fecha:</strong>
+              {{ lastRecharge.fecha | date : "MMM d, y" }}
+            </p>
+            <p><strong>Descripción:</strong> {{ lastRecharge.descripcion }}</p>
+          </div>
+          <i
+            class="bi bi-trash-fill icons"
+            (click)="onDeleteMaintenance(movil._id, lastRecharge._id)"
+          ></i>
+        </li>
+      </ul>
+    </div>
+    <div class="contenedor__mantenimiento-box">
+      <ul class="contenedor__mantenimiento-box-ul">
+        <h5
+          class="contenedor__mantenimiento-box-ul-title"
+          *ngIf="lastServiceProgramed.length !== 0"
+        >
+          Últimos Service Programados
+        </h5>
+        <li
+          *ngFor="let serviceProgramed of lastServiceProgramed"
+          class="contenedor__mantenimiento-box-ul-li"
+        >
+          <div class="contenedor__mantenimiento-box-ul-li-div">
+            <p class="contenedor__mantenimiento-box-ul-li-div-parrafo">
+              <strong>Fecha:</strong>
+              {{ serviceProgramed.fecha | date : "MMM d, y" }}
+            </p>
+            <p>
+              <strong>Descripción:</strong> {{ serviceProgramed.descripcion }}
+            </p>
+          </div>
+          <i
+            class="bi bi-trash-fill icons"
+            (click)="onDeleteMaintenance(movil._id, serviceProgramed._id)"
+          ></i>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

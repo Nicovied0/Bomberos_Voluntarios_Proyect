@@ -15,15 +15,11 @@ export class VehiclesComponent {
   public vehicles: any = []
   public activeVehicles: boolean = false
 
-  //  mostrar directamente en pagina
   ngOnInit() {
     this.vehicleService.getVehicles().then((results) => {
       this.vehicles = results;
-      console.log(this.vehicles);
-
-      this.sortVehiclesByMobileNumber(); // Llamada al método para ordenar los vehículos
+      this.sortVehiclesByMobileNumber();
     }).catch((error) => {
-      console.error('Error al obtener los repositorios', error);
       const Toast = Swal.mixin({
         toast: true,
         position: 'center',
@@ -45,9 +41,7 @@ export class VehiclesComponent {
 
   sortVehiclesByMobileNumber() {
     this.vehicles.sort((a: any, b: any) => {
-      return a.movilNumber - b.movilNumber; // Orden ascendente
-      // Si deseas orden descendente, cambia la línea anterior por:
-      // return b.movilNumber - a.movilNumber;
+      return a.movilNumber - b.movilNumber;
     });
   }
 

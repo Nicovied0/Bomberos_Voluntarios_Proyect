@@ -45,7 +45,7 @@
               >
                 <p>
                   <strong>Fecha:</strong>
-                  {{ maintenance.fecha | date : "medium" }}
+                  {{ maintenance.fecha | date:'MMM d, y' }}.
                 </p>
                 <p><strong>Descripción:</strong> {{ maintenance.descripcion }}</p>
                 <p *ngIf="userLoged">
@@ -59,7 +59,6 @@
           </div>
         </div>
 
-        <!-- Últimos Cambios de Batería -->
         <div class="divSuperior2">
           <div class="divInfo">
             <div>
@@ -93,7 +92,7 @@
               >
                 <p>
                   <strong>Fecha:</strong>
-                  {{ batteryChange.fecha | date : "medium" }}
+                  {{ batteryChange.fecha |date:'MMM d, y' }}.
                 </p>
                 <p>
                   <strong>Descripción:</strong> {{ batteryChange.descripcion }}
@@ -143,7 +142,7 @@
                 "
               >
                 <p>
-                  <strong>Fecha:</strong> {{ recharge.fecha | date : "medium" }}
+                  <strong>Fecha:</strong> {{ recharge.fecha |date:'MMM d, y' }}.
                 </p>
                 <p><strong>Descripción:</strong> {{ recharge.descripcion }}</p>
                 <p *ngIf="userLoged">
@@ -192,7 +191,7 @@
                 "
               >
                 <p>
-                  <strong>Fecha:</strong> {{ service.fecha | date : "medium" }}
+                  <strong>Fecha:</strong> {{ service.fecha | date:'MMM d, y' }}.
                 </p>
                 <p><strong>Descripción:</strong> {{ service.descripcion }}</p>
                 <p *ngIf="userLoged">

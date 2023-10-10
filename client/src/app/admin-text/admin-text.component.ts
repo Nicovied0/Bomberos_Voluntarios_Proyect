@@ -17,8 +17,6 @@ export class AdminTextComponent implements OnInit {
   ngOnInit() {
     this.updateTextService.getImage().then((results) => {
       this.texts = results;
-      console.log(this.texts);
-
     }).catch((error) => {
       console.error('Error al obtener los textos', error);
     });

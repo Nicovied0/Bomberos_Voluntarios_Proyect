@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UpdateTextService {
-  private apiUrl = 'https://bvscback.vercel.app/images'; // La URL de tu API para las imágenes
+  private apiUrl = 'https://bvscback.vercel.app/images';
 
   constructor(private http: HttpClient) { }
 

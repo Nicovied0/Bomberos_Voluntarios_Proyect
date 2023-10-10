@@ -41,9 +41,7 @@ export class AdminUsersEditComponent implements OnInit {
 
   async onSaveChanges() {
     try {
-      // Aquí implementa la lógica para guardar los cambios del usuario
       await this.userService.updateUser(this.userId!, this.user);
-      console.log('Cambios guardados correctamente.');
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -51,7 +49,6 @@ export class AdminUsersEditComponent implements OnInit {
         showConfirmButton: false,
         timer: 1300
       })
-      // Después de guardar los cambios, puedes redirigir al usuario a la página de lista de usuarios
       this.router.navigate(['/panelAdmin/Users']).then(() => {
         window.scrollTo(0, 0);
       });
@@ -62,7 +59,6 @@ export class AdminUsersEditComponent implements OnInit {
 
   getMyUser() {
     const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
-    console.log(usuarioLogeado.role)
     this.myUser = usuarioLogeado.role
   }
 }

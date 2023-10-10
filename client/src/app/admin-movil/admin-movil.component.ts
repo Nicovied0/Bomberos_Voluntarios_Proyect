@@ -17,9 +17,7 @@ export class AdminMovilComponent implements OnInit {
   ngOnInit() {
     this.vehicleService.getVehicles().then((results) => {
       this.vehicles = results;
-      console.log(this.vehicles);
-
-      this.sortVehiclesByMobileNumber(); // Llamada al método para ordenar los vehículos
+      this.sortVehiclesByMobileNumber();
     }).catch((error) => {
       console.error('Error al obtener los repositorios', error);
     });
@@ -27,9 +25,7 @@ export class AdminMovilComponent implements OnInit {
 
   sortVehiclesByMobileNumber() {
     this.vehicles.sort((a: any, b: any) => {
-      return a.movilNumber - b.movilNumber; // Orden ascendente
-      // Si deseas orden descendente, cambia la línea anterior por:
-      // return b.movilNumber - a.movilNumber;
+      return a.movilNumber - b.movilNumber;
     });
   }
   goEdit(_id: any) {

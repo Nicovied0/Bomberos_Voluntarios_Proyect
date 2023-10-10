@@ -7,10 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
-
-// Configuración de CORS para permitir solicitudes desde "http://localhost:4200"
-app.use(cors()); //error de origen cruzado
-app.use(express.json()); //Manejar data .json
+app.use(cors());
 
 
 app.use((req, res, next) => {

@@ -10,7 +10,7 @@ import { AuthService } from '../Services/Auth.service';
 })
 export class VehicleInformationComponent {
   public userLoged: boolean = false
-  public vehicleId: any; // Declaración explícita de tipo 'any'
+  public vehicleId: any;
   public showLastMaintenance: boolean = false;
   public showAllMaintenances: boolean = false;
   public sortedMaintenances: any[] = [];
@@ -51,12 +51,11 @@ export class VehicleInformationComponent {
     this.vehicleService
       .getVehiclesById(id)
       .then((vehicle) => {
-        console.log(vehicle);
         this.vehicleId = vehicle;
-        this.sortMaintenancesByDate(); // Ordenar mantenimientos por fecha después de obtener el vehículo
-        this.sortBatteryChangesByDate(); // Ordenar cambios de batería por fecha después de obtener el vehículo
-        this.sortRechargesByDate(); // Ordenar recargas por fecha después de obtener el vehículo
-        this.sortServiceProgramedByDate(); // Ordenar servicios programados por fecha después de obtener el vehículo
+        this.sortMaintenancesByDate();
+        this.sortBatteryChangesByDate();
+        this.sortRechargesByDate();
+        this.sortServiceProgramedByDate();
       })
       .catch((error) => {
         console.error(error);
@@ -66,7 +65,6 @@ export class VehicleInformationComponent {
   }
 
   isAllMantenimientosEmpty(): boolean {
-    // Verificar si todas las listas de mantenimientos están vacías
     return (
       this.vehicleId.lastBatteryChange.length === 0 &&
       this.vehicleId.lastMaintenance.length === 0 &&
@@ -77,7 +75,6 @@ export class VehicleInformationComponent {
 
   toggleLastMaintenance() {
     this.showAllMaintenances = !this.showAllMaintenances;
-    console.log(this.showLastMaintenance)
   }
 
   getLastMaintenance() {

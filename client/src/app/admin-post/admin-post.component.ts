@@ -24,7 +24,6 @@ export class AdminPostComponent implements OnInit {
     this.postService.obtenerPublicaciones().subscribe(
       (publicaciones: Publicacion[]) => {
         this.publicaciones = publicaciones;
-        console.log(publicaciones);
       },
       (error) => {
         console.error('Error al obtener las publicaciones:', error);
@@ -45,7 +44,6 @@ export class AdminPostComponent implements OnInit {
   eliminarPublicacion(publicacionId: string) {
     this.postService.eliminarPublicacion(publicacionId).subscribe(
       () => {
-        // Eliminar la publicación del array de publicaciones
         this.publicaciones = this.publicaciones.filter((publicacion) => publicacion._id !== publicacionId);
         Swal.fire('Éxito', 'La publicación ha sido eliminada exitosamente.', 'success');
       },

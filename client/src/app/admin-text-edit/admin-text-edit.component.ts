@@ -33,7 +33,6 @@ export class AdminTextEditComponent implements OnInit {
     try {
       const userResponse = await this.updateTextService.getImageById(this.textId!);
       this.text = userResponse as any;
-      console.log(this.text);
     } catch (error) {
       console.error('Error al obtener los detalles del texto:', error);
     }
@@ -49,7 +48,6 @@ export class AdminTextEditComponent implements OnInit {
     if (this.text) {
       this.updateTextService.updateImage(this.textId, this.text).subscribe(
         (response) => {
-          console.log('Texto actualizado correctamente:', response);
           Swal.fire({
             icon: 'success',
             title: 'Texto actualizado correctamente',
@@ -61,7 +59,6 @@ export class AdminTextEditComponent implements OnInit {
               window.scrollTo(0, 0);
             });
           }, 1500);
-          // Actualizar el objeto 'text' con los nuevos valores del formulario.
           this.text.title = response.title;
           this.text.description = response.description;
         },

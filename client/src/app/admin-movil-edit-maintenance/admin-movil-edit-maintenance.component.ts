@@ -19,10 +19,10 @@ export class AdminMovilEditMaintenanceComponent implements OnInit {
 
   movilId: string | null = null;
   movil: any | null;
-  selectedMaintenanceType: string = 'maintenance'; // Corrige el valor aquí
+  selectedMaintenanceType: string = 'maintenance';
 
-  fecha: string = ''; // Agrega la propiedad fecha
-  descripcion: string = ''; // Agrega la propiedad descripcion
+  fecha: string = '';
+  descripcion: string = '';
 
   ngOnInit() {
     this.movilId = this.route.snapshot.paramMap.get('id');
@@ -39,29 +39,20 @@ export class AdminMovilEditMaintenanceComponent implements OnInit {
     try {
       const userResponse = await this.vehicleService.getVehiclesById(this.movilId!);
       this.movil = userResponse as any;
-      console.log('Detalles del vehículo:', this.movil);
     } catch (error) {
       console.error('Error al obtener los detalles del vehículo:', error);
     }
   }
 
   async addMaintenance() {
-    // Obtén la fecha y descripción del input
     const fecha = this.fecha;
     const descripcion = this.descripcion;
-
-    console.log('Fecha:', fecha);
-    console.log('Descripción:', descripcion);
 
     const data = { fecha, descripcion };
     const updateType = this.selectedMaintenanceType.toLowerCase().replace(' ', '-');
 
-    console.log('Data:', data);
-    console.log('UpdateType:', updateType);
-
     try {
       await this.updatesService.postUpdate(data, updateType, this.movilId!);
-      console.log('Mantenimiento agregado exitosamente');
       Swal.fire({
         position: 'center',
         icon: 'success',

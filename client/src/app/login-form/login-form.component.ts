@@ -37,7 +37,6 @@ export class LoginFormComponent {
               timer: 3000,
               showConfirmButton: false
             });
-
             this.router.navigate(['/perfil']);
           }
         },

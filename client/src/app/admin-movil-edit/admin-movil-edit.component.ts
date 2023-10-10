@@ -15,11 +15,14 @@ export class AdminMovilEditComponent implements OnInit {
   ) { }
   movilId: string | null = null;
   movil: any | null;
+  lastBatteryChange: any[] = [];
+  lastMaintenance: any[] = [];
+  lastRecharge: any[] = [];
+  lastServiceProgramed: any[] = [];
+
 
   ngOnInit() {
-    // Obtener el ID del usuario desde el parámetro de la ruta
     this.movilId = this.route.snapshot.paramMap.get('id');
-    // Obtener la información del usuario específico
     this.getVehicleDetails();
 
   }
@@ -28,9 +31,25 @@ export class AdminMovilEditComponent implements OnInit {
     try {
       const userResponse = await this.vehicleService.getVehiclesById(this.movilId!);
       this.movil = userResponse as any;
-      console.log(this.movil)
+
+      if (this.movil) {
+        this.lastBatteryChange = this.movil.lastBatteryChange;
+        this.lastMaintenance = this.movil.lastMaintenance;
+        this.lastRecharge = this.movil.lastRecharge;
+        this.lastServiceProgramed = this.movil.lastServiceProgramed;
+
+      }
     } catch (error) {
       console.error('Error al obtener los detalles del usuario:', error);
+    }
+  }
+
+  async onDeleteMaintenance(vehicleId: string, maintenanceId: string) {
+    try {
+      await this.vehicleService.deleteMaintenance(vehicleId, maintenanceId);
+      window.location.reload()
+    } catch (error) {
+      console.error('Error al eliminar el mantenimiento:', error);
     }
   }
 

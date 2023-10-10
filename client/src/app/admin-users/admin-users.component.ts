@@ -21,7 +21,6 @@ export class AdminUsersComponent implements OnInit {
     try {
       const usersResponse = await this.userService.getUsers();
       this.users = usersResponse as any[];
-      console.log(this.users);
     } catch (error) {
       console.error('Error al obtener los usuarios:', error);
     }
@@ -35,9 +34,7 @@ export class AdminUsersComponent implements OnInit {
 
   onDeleteUser(userId: string) {
     const userToDelete = this.users.find(user => user._id === userId);
-
     if (userToDelete) {
-      // Mostrar el SweetAlert personalizado
       Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success',
@@ -54,10 +51,8 @@ export class AdminUsersComponent implements OnInit {
         reverseButtons: true
       }).then((result:any) => {
         if (result.isConfirmed) {
-          // Cambiar el valor de actived a false
           userToDelete.actived = false;
           window.location.reload()
-          // Llamar al servicio para actualizar el usuario en el servidor
           this.userService.updateUser(userId, { actived: false })
             .then(() => {
               Swal.fire(
@@ -67,7 +62,6 @@ export class AdminUsersComponent implements OnInit {
               );
             })
             .catch(error => {
-              console.error('Error al desactivar el usuario:', error);
               Swal.fire(
                 'Error',
                 'Ocurrió un error al desactivar el usuario. Por favor, inténtalo nuevamente.',
@@ -75,7 +69,6 @@ export class AdminUsersComponent implements OnInit {
               );
             });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
-          // Si el usuario hace clic en Cancelar
           Swal.fire(
             'Cancelado',
             'El usuario no ha sido desactivado.',
